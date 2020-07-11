@@ -1,3 +1,14 @@
+/* ======= TESTS - DO NOT MODIFY =====
+This code is for running the tests, please ignore this and move onto the challenge below */
+let log = console.log,
+  logged = [];
+
+console.log = function () {
+  logged.push(arguments[0]);
+  log(...arguments);
+};
+/* ======= */
+
 /* Challenge 1: Famous Writers
 Did you know you can also have an array of objects? We've created one for you here. Loop through the array, 
 and for each object, `console.log()` out the sentence:
@@ -14,31 +25,81 @@ let writers = [
     lastName: "Woolf",
     occupation: "writer",
     age: 59,
-    alive: false
+    alive: false,
   },
   {
     firstName: "Zadie",
     lastName: "Smith",
     occupation: "writer",
     age: 41,
-    alive: true
+    alive: true,
   },
   {
     firstName: "Jane",
     lastName: "Austen",
     occupation: "writer",
     age: 41,
-    alive: false
+    alive: false,
   },
   {
     firstName: "bell",
     lastName: "hooks",
     occupation: "writer",
     age: 64,
-    alive: true
-  }
+    alive: true,
+  },
 ];
 
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
+Make sure to write the code for this underneath the code for the first task
 */
+
+/* ======= TESTS - DO NOT MODIFY ===== 
+There are some Tests in this file that will help you work out if your code is working.
+
+To run these tests type `node 1-writers.js` into your terminal or run in VS code (F5)
+*/
+
+function test(test_name, expr, expected, actual) {
+  let status;
+  if (expr) {
+    status = "PASSED";
+  } else {
+    status = "FAILED";
+  }
+
+  log(`\n${test_name}: ${status}
+    Expected: ${expected}
+    Actual: ${actual}`);
+}
+
+const expectedLogs = [
+  "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
+  "Hi, my name is Zadie Smith. I am 41 years old, and work as a writer.",
+  "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
+  "Hi, my name is bell hooks. I am 64 years old, and work as a writer.",
+];
+
+const expectedLogsTaskTwo = [
+  "Hi, my name is Zadie Smith. I am 41 years old, and work as a writer.",
+  "Hi, my name is bell hooks. I am 64 years old, and work as a writer.",
+];
+
+for (let i = 0; i < expectedLogs.length; i++) {
+  test(
+    `Logged sentence ${i + 1} correctly`,
+    expectedLogs[i] === logged[i],
+    expectedLogs[i],
+    logged[i]
+  );
+}
+
+for (let i = 0; i < expectedLogsTaskTwo.length; i++) {
+  test(
+    `Logged sentence ${i + 1} correctly for alive authors`,
+    expectedLogsTaskTwo[i] === logged[i + expectedLogs.length],
+    expectedLogsTaskTwo[i],
+    logged[i + expectedLogs.length]
+  );
+}
