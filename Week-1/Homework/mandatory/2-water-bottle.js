@@ -18,7 +18,7 @@ let bottle = {
   },
   empty: function () {
     // this function should return true if your bottle's volume = 0
-  },
+  }
 };
 
 /*
