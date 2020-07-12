@@ -7,3 +7,12 @@ Assign each of them to a separate variable
 
 */
 
+let person = {
+    name: "Daniel",
+    sex: "male",
+    age: 31,
+    height: "5'10",
+    weight: "100kg",
+};
+
+

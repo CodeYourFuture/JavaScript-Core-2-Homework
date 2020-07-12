@@ -38,13 +38,23 @@ let travelDestinations = [destination1, destination2, destination3, destination4
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
+let checkDistance = function (destination) {
+return destination.distanceKms < 500;
+}
 
+let destinationNamesWithin500Kms = travelDestinations.filter(checkDistance);// Complete here
 
-let destinationNamesWithin500Kms = // Complete here
+let checkFerry = function (destination) {
+    return destination.transportations.includes("ferry");
+}
 
-let destinationNameReachableByFerry = // Complete here
+let destinationNameReachableByFerry = travelDestinations.filter(checkFerry) // Complete here
 
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let more300Train = function (destination) {
+    return destination.transportations.includes("train") && destination.distanceKms > 300;
+}
+
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(more300Train);// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*
