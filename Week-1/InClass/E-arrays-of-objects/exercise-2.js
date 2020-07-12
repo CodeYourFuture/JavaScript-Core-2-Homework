@@ -42,19 +42,23 @@ let checkDistance = function (destination) {
 return destination.distanceKms < 500;
 }
 
-let destinationNamesWithin500Kms = travelDestinations.filter(checkDistance);// Complete here
+let getName = function (destination) {
+    return destination.destinationName;
+}
+
+let destinationNamesWithin500Kms = travelDestinations.filter(checkDistance).map(getName);// Complete here
 
 let checkFerry = function (destination) {
     return destination.transportations.includes("ferry");
 }
 
-let destinationNameReachableByFerry = travelDestinations.filter(checkFerry) // Complete here
+let destinationNameReachableByFerry = travelDestinations.filter(checkFerry).map(getName) // Complete here
 
 let more300Train = function (destination) {
     return destination.transportations.includes("train") && destination.distanceKms > 300;
 }
 
-let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(more300Train);// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(more300Train).map(getName);// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*
