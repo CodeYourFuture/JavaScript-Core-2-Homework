@@ -61,12 +61,20 @@ let restaurantFinderApplication = {
     restaurants: restaurants,
 
     findAvailableRestaurants: function(numberOfPeople) {
+        if (numberOfPeople <= restaurants.totalSeats) {
+            return restaurants.name;
+        } else {
+            return `Not enough seats`;
+        }
+
         // Complete here
     },
     findRestaurantServingDish: function(dishName) {
+        return restaurants.menu.includes("dishName");
         // Complete here
     },
     countNumberOfRestaurantsInArea: function(area) {
+        return restaurants.address.includes(area);
         // Complete here
     }
 };
