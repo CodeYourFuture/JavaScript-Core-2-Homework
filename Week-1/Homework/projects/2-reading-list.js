@@ -25,4 +25,36 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let book1 = {
+    title:"Lord Of The Ring1",
+    auther:"J. R. R. Tolkien",
+    alreadyRead:true
+    };
+    
+    let book2 = {
+    title:"The Great Gatsby",
+    auther:"F. Scott Fitzgerald",
+    alreadyRead:false
+    };
+    
+    let book3 = {
+    title:"The Note Book",
+    auther:"Nicholas Sparks",
+    alreadyRead:true
+    };
+    
+    let books = [book1,book2,book3];
+    
+    for(let i=0;i<books.length;i++){
+        console.log(`${books[i].title} by ${books[i].auther}`)
+      
+    }
+    
+    for(let i=0;i<books.length;i++){
+        if(books[i].alreadyRead===true){
+        console.log(`You already read ${books[i].title} by ${books[i].auther}`)
+        }
+        else{
+        console.log(`You still need to read ${books[i].title} by ${books[i].auther}`)  
+        }
+    }
