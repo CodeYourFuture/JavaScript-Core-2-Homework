@@ -10,7 +10,7 @@ let myLaptop = {
     brand: "MacBook",
     screenSize: 13,
     hardDisc: 128,
-    MicroChip: "8 Gen I5",
+    microChip: "8 Gen I5",
     operatingSystem: "MacOs",
     RAM: 8,
 }

@@ -13,7 +13,7 @@ let kitten = {
 console.log(kitten);
 console.log(kitten.ageMonths);
 console.log(kitten.isFemale);
-console.log(kitten.furColour);
+console.log(kitten["furColour"]);
 
 
 
