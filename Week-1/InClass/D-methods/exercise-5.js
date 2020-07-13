@@ -16,11 +16,22 @@ let coffeeMachine = {
         flatWhite: 3.00
     },
     insertedAmount: 0,
+
     insertMoney: function (amount) {
+        if (amount >= 3.00){
+            return this.flatWhite;
+       } 
+        if(amount >= 2.40 && amount < 3.00){
+           return this.cappuccino;
+       } 
+        if (amount >= 1.50 && amount < 2.40){
+            return this.blackCoffee;
+        }
 
     },
     getCoffee: function (coffee) {
 
+        return `Please take your ${coffeeMachine.insertMoney(coffee)}`;
     }
 };
 

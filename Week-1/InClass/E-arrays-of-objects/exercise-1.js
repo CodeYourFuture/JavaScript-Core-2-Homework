@@ -25,9 +25,9 @@ WRITE YOUR CODE BELOW
 */
 
 
-var persons = // Complete here
+var persons = [person1, person2, person3]; // Complete here
 
-var personNames = // Complete here
+var personNames = persons.map()// Complete here
 
 var personsYoungerThan28YearsOld = // Complete here
 
