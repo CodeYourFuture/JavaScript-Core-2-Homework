@@ -7,8 +7,8 @@ Define a method "makeFriend" to add a new friend to her list.
 let person = {
     name: "Alice",
     friends: ["John", "Nina"],
-    makeFriend: function (friend){
-        person.friends.push(friend);
+    makeFriend: function(friend) {
+        this.friends.push(friend);
     }
 };
 
