@@ -23,15 +23,14 @@ cocoa
 **/
 
 let recipes = {
-    title:"Mole",
-    serves:2,
-    ingredients:['cinnamon','cumin','cocoa']
+  title: 'Mole',
+  serves: 2,
+  ingredients: ['cinnamon', 'cumin', 'cocoa'],
 };
 
-console.log(recipes.title)
-console.log(`${Object.keys(recipes)[1]}: ${recipes.serves}`)
-console.log(`${Object.keys(recipes)[2]}: `)
-for(let i=0;i<recipes.ingredients.length;i++)
-{
-    console.log(recipes.ingredients[i])
+console.log (recipes.title);
+console.log (`${Object.keys (recipes)[1]}: ${recipes.serves}`);
+console.log (`${Object.keys (recipes)[2]}: `);
+for (let i = 0; i < recipes.ingredients.length; i++) {
+  console.log (recipes.ingredients[i]);
 }
