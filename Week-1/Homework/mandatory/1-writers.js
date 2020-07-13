@@ -40,7 +40,10 @@ let writers = [
 ];
 
 const jobs = writers.map(x=>`Hi, my name is ${x.firstName} ${x.lastName}. I am ${x.age} years old, and work as a $ {x.occupation}.`)
-console.log(sen);
+console.log(jobs);
+
+const alivesWriters = writers.filter(x=>x.alive === true).map(x=>x.firstName);
+console.log(`The writers that are alive ${alivesWriters}`)
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
