@@ -1,14 +1,4 @@
-/* ======= TESTS - DO NOT MODIFY =====
-This code is for running the tests, please ignore this and move onto the challenge below */
-let log = console.log,
-  logged = [];
-
-console.log = function () {
-  logged.push(arguments[0]);
-  log(...arguments);
-};
-/* ======= */
-
+require("./tests"); // This line is to help with running tests, please ignore this and move on to the challenge below
 
 // You're going shopping, and you need a shopping list.
 // 1. Update your groceryList with the items you need: Potatoes, Orange Juice and Rice.
@@ -30,20 +20,7 @@ There are some Tests in this file that will help you work out if your code is wo
 To run these tests type `node 3-groceries.js` into your terminal or run in VS code (F5)
 */
 
-function test(test_name, expr, expected, actual) {
-  let status;
-  if (expr) {
-    status = "PASSED";
-  } else {
-    status = "FAILED";
-  }
-
-  log(
-    `\n${test_name}: ${status}
-    Expected: ${expected}
-    Actual: ${actual}`.replace(/\}/g, "    }") // Format object clearly in output
-  );
-}
+const { test, logged } = require("./tests");
 
 const expectedGroceryList = {
   item1: "Potatoes",

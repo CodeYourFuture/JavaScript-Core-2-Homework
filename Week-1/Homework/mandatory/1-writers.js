@@ -1,13 +1,4 @@
-/* ======= TESTS - DO NOT MODIFY =====
-This code is for running the tests, please ignore this and move onto the challenge below */
-let log = console.log,
-  logged = [];
-
-console.log = function () {
-  logged.push(arguments[0]);
-  log(...arguments);
-};
-/* ======= */
+require("./tests"); // This line is to help with running tests, please ignore this and move on to the challenge below
 
 /* Challenge 1: Famous Writers
 Did you know you can also have an array of objects? We've created one for you here. Loop through the array, 
@@ -61,18 +52,7 @@ There are some Tests in this file that will help you work out if your code is wo
 To run these tests type `node 1-writers.js` into your terminal or run in VS code (F5)
 */
 
-function test(test_name, expr, expected, actual) {
-  let status;
-  if (expr) {
-    status = "PASSED";
-  } else {
-    status = "FAILED";
-  }
-
-  log(`\n${test_name}: ${status}
-    Expected: ${expected}
-    Actual: ${actual}`);
-}
+const { test, logged } = require("./tests");
 
 const expectedLogs = [
   "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",

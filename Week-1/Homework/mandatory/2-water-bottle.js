@@ -37,18 +37,7 @@ There are some Tests in this file that will help you work out if your code is wo
 To run these tests type `node 2-water-bottle.js` into your terminal or run in VS code (F5)
 */
 
-function test(test_name, expr, expected, actual) {
-  let status;
-  if (expr) {
-    status = "PASSED";
-  } else {
-    status = "FAILED";
-  }
-
-  console.log(`\n${test_name}: ${status}
-    Expected: ${expected}
-    Actual: ${actual}`);
-}
+const { test } = require("./tests");
 
 bottle.fill();
 bottle.drink();
