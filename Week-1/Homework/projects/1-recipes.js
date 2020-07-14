@@ -22,4 +22,16 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    title: "Pizza",
+    serves: 1,
+    ingredients: ["base", "cheese", "tomato sauce", "toppings"],
+};
+
+console.log(recipes.title);
+console.log(`Serves: ${recipes.serves}`);
+console.log(`Ingredients:`);
+console.log(recipes.ingredients[0]);
+console.log(recipes.ingredients[1]);
+console.log(recipes.ingredients[2]);
+console.log(recipes.ingredients[3]);

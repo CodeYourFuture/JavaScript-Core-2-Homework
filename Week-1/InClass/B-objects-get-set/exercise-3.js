@@ -3,7 +3,10 @@
 */
 
 // WRITE CODE BELOW THIS
-
+let kitten = {
+    name: "Gilbert",
+    age: 22,
+};
 // WRITE CODE ABOVE THIS
 
 console.log(kitten.name);

@@ -12,7 +12,7 @@ let kitten = {
 
 
 
-
+console.log(kittens.ageMonths, kittens.isFemale, kittens.furColour);
 
 
 // YOUR CODE GOES ABOVE HERE
