@@ -20,30 +20,24 @@ let coffeeMachine = {
     insertMoney: function(amount) {
 
         if (amount >= 1.50 && amount < 2.40) {
-            this.insertedAmount = amount;
-            return this.insertedAmount;
+            return this.insertedAmount = this.prices.blackCoffee;
         }
         if (amount >= 2.40 && amount < 3.00) {
-            this.insertedAmount = amount;
-            return this.insertedAmount;
+            return this.insertedAmount = this.prices.cappuccino;
         }
         if (amount >= 3.00) {
-            this.insertedAmount = amount;
-            return this.insertedAmount;
+            return this.insertedAmount = this.prices.flatWhite;
         }
     }
     getCoffee: function(coffee) {
 
-        if (insertedAmount >= 1.50 && insertedAmount < 2.40) {
-            this;
+        if (this.insertedAmount >= 1.50 && this.insertedAmount < 2.40) {
             return `Please take your ${coffee}`;
         }
-        if (insertedAmount >= 2.40 && insertedAmount < 3.00) {
-            coffee = coffeeTaken;
+        if (this.insertedAmount >= 2.40 && this.insertedAmount < 3.00) {
             return `Please take your ${coffee}`;
         }
         if (insertedAmount >= 3.00) {
-            coffee = coffeeTaken;
             return `Please take your ${coffee}`;
         } else {
             return `Sorry you don't have enough money for ${coffee}`;

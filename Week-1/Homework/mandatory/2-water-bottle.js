@@ -19,7 +19,7 @@ let bottle = {
     // calling this function should decrease your bottles volume by 10;
   },
   empty: function( ) {
-    this.volume === 0
+    this.volume === 0;
     }
     // this function should return true if your bottles volume = 0
 };

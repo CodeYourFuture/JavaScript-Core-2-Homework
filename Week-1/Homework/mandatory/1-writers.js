@@ -53,9 +53,9 @@ If you want an extra challenge, only `console.log()` the writers that are alive.
 for (let key in writers){
 
   if(writers[key].alive === true){
-    console.log(` Hi, my name is ${writers[key].firstName} ${writers[key].lastName}. I am ${writers[key].age} years old, and works as a  ${writers[key].occupation}.`);
+    console.log(` Hi, my name is ${writers[key].firstName} ${writers[key].lastName}. I am ${writers[key].age} years old, and works as a ${writers[key].occupation}.`);
   } 
-  /* else{
+  else{
     console.log(`${writers[key].firstName} ${writers[key].lastName} is death.`)
-  } */
+  }
 }

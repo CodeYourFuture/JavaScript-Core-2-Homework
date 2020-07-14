@@ -29,7 +29,7 @@ let parkAvenueHouse = {
 
   WRITE YOUR CODE BELOW
 */
-
+//let house =[kinningParkHouse, kinningParkHouse]; 
 // returns the full name (first name + last name) of the owner of the house
 function getOwnerFullName(house) {
     return `${house.currentOwner.firstName} ${house.currentOwner.lastName}`;

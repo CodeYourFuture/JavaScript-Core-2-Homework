@@ -61,8 +61,8 @@ let restaurantFinderApplication = {
     restaurants: restaurants,
 
     findAvailableRestaurants: function(numberOfPeople) {
-        if (numberOfPeople <= restaurants.totalSeats - restaurants.numberOfCustomers) {
-            return restaurants.name;
+        if (numberOfPeople <= this.restaurants.totalSeats - this.restaurants.numberOfCustomers) {
+            return this.restaurants.name;
         } else {
             return `Not enough seats`;
         }
