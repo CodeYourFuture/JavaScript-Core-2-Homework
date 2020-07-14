@@ -31,16 +31,19 @@ let parkAvenueHouse = {
 */
 
 // returns the full name (first name + last name) of the owner of the house
-function getOwnerFullName(house) {
 
+function getOwnerFullName(house) {
+return `${kinningParkHouse.currentOwner.firstName} ${kinningParkHouse.currentOwner.lastName}.`;
 }
 
-// returns an array of the owners' email addresses of the two houses
+// returns an array of the owners' email )addresses of the two houses
+let house = [house1, house2];
 function getEmailAddresses(house1, house2) {
 
 }
 
 // returns the address for the cheapest house out of the two
+let house = [house1, house2];
 function getCheapestAddress(house1, house2) {
 
 }
