@@ -17,32 +17,21 @@ let coffeeMachine = {
     },
     insertedAmount: 0,
 
-    insertMoney: function(amount) {
+    insertMoney: function (amount) {
+        return this.insertedAmount += amount;
+    },
 
-        if (amount >= 1.50 && amount < 2.40) {
-            return this.insertedAmount = this.prices.blackCoffee;
-        }
-        if (amount >= 2.40 && amount < 3.00) {
-            return this.insertedAmount = this.prices.cappuccino;
-        }
-        if (amount >= 3.00) {
-            return this.insertedAmount = this.prices.flatWhite;
-        }
-    }
-    getCoffee: function(coffee) {
-
-        if (this.insertedAmount >= 1.50 && this.insertedAmount < 2.40) {
+    getCoffee: function (coffee) {
+        if (this.insertedAmount && coffee === 'flatWhite' >= 3.00) {
+            return `Please take your ${coffee}`;
+        } else if (this.insertedAmount >= 2.40 && coffee === 'cappuccino') {
+            return `Please take your ${coffee}`;
+        } else if (this.insertedAmount >= 1.50 && coffee === 'blackCoffee') {
             return `Please take your ${coffee}`;
         }
-        if (this.insertedAmount >= 2.40 && this.insertedAmount < 3.00) {
-            return `Please take your ${coffee}`;
-        }
-        if (insertedAmount >= 3.00) {
-            return `Please take your ${coffee}`;
-        } else {
+        else {
             return `Sorry you don't have enough money for ${coffee}`;
         }
-
     }
 };
 

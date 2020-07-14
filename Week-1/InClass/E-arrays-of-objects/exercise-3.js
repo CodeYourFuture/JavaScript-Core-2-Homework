@@ -60,25 +60,26 @@ let restaurantFinderApplication = {
     applicationVersion: "1.0",
     restaurants: restaurants,
 
-    findAvailableRestaurants: function(numberOfPeople) {
-        if (numberOfPeople <= this.restaurants.totalSeats - this.restaurants.numberOfCustomers) {
+    findAvailableRestaurants: function(numberOfPeople) { // Complete here
+        if (numberOfPeople <= (this.restaurants.totalSeats - this.restaurants.numberOfCustomers)) {
             return this.restaurants.name;
         } else {
             return `Not enough seats`;
-        }
+        } 
+    },
 
-        // Complete here
+    findRestaurantServingDish: function(dishName) { // Complete here
+        return this.restaurants.menu.includes("dishName");
     },
-    findRestaurantServingDish: function(dishName) {
-        return restaurants.menu.includes("dishName");
-        // Complete here
-    },
-    countNumberOfRestaurantsInArea: function(area) {
-        return restaurants.address.includes("area");
-        // Complete here
+
+    countNumberOfRestaurantsInArea: function(area) { // Complete here
+        return this.restaurants.address.includes("area");
     }
 };
 
+function restaurantNames (restaurant){
+    return restaurant.name;
+}
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
