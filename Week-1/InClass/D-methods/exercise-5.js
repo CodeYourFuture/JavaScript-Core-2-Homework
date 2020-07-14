@@ -17,10 +17,16 @@ let coffeeMachine = {
     },
     insertedAmount: 0,
     insertMoney: function (amount) {
-
+        return insertedAmount = amount;
     },
     getCoffee: function (coffee) {
-
+        let prices = coffee;
+        if (insertedAmount >= 3) {
+            return `Please take your ${coffee}`;
+        } else if (insertedAmount >= 2.4) {
+            return `Please take your ${coffee}`;
+        } else if (insertedAmount >= 1.5) {
+            return `Please take your ${coffee}`;
     }
 };
 
