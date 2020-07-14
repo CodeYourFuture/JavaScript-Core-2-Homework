@@ -59,9 +59,17 @@ let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
-    findAvailableRestaurants: function (numberOfPeople) {
-        // Complete here
-    },
+
+    findAvailableRestaurants: function(numberOfPeople) {
+        let namesOfRestaurants = "";
+        restaurants.forEach(restaurant => {
+            if(numberOfPeople <= restaurant.totalSeats - restaurant.numberOfCustomers) {
+                namesOfRestaurants += restaurant.name + ","
+            }
+            })
+            return namesOfRestaurants;
+        },
+
     findRestaurantServingDish: function (dishName) {
         // Complete here
     },
