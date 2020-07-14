@@ -25,4 +25,44 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+  (book1 = {
+    title: "From My Sisters Lips",
+    author: "Naima Robert",
+    alreadyRead: true,
+  }),
+  (book2 = {
+    title: "The Size of a Mustard Seed",
+    author: "Umm Juwayriyah",
+    alreadyRead: true,
+  }),
+  (book3 = {
+    title: "Once Upon an Eid",
+    author: "S.K. Ali",
+    alreadyRead: false,
+  }),
+  (book4 = {
+    title: "Isabella A Girl of Muslim Spain",
+    author: "Yahiya Emerick",
+    alreadyRead: false,
+  }),
+  (book5 = {
+    title: "She Wore Red Trainers",
+    author: "Naima Robert",
+    alreadyRead: true,
+  }),
+];
+
+let titleAuthor = books.map((book) => `${book.title} by ${book.author}`);
+console.log(titleAuthor);
+
+//function checkBookStatus(book) {
+let readingList = books.map((book) => {
+  if (book.already === true) {
+    return `You already read ${book.title} by ${book.author}.`;
+  }
+  return `You still need to read ${book.title} by ${book.author}.`;
+});
+//}
+
+console.log(checkBookStatus("From my Sisters Lips"));
