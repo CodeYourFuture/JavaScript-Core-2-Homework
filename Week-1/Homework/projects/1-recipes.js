@@ -22,4 +22,13 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipeCard = {
+    title: "Mole",
+    serves:2,
+    ingredients:["cinnemon", "cumin", "cocoa"]
+};
+
+console.log(recipeCard);
+console.log(recipeCard.title);
+console.log(recipeCard.serves);
+console.log(recipeCard.ingredients);
