@@ -61,20 +61,40 @@ let restaurantFinderApplication = {
     restaurants: restaurants,
 
     findAvailableRestaurants: function(numberOfPeople) { // Complete here
-        if (numberOfPeople <= (this.restaurants.totalSeats - this.restaurants.numberOfCustomers)) {
-            return this.restaurants.name;
-        } else {
-            return `Not enough seats`;
-        } 
+        let namesOfRestaurants = "";
+        restaurants.forEach(restaurant => {
+            if(numberOfPeople <= restaurant.totalSeats - restaurant.numberOfCustomers){
+                namesOfRestaurants += restaurant.name + "," 
+            }
+        })
+        return namesOfRestaurants;
     },
 
-    findRestaurantServingDish: function(dishName) { // Complete here
-        return this.restaurants.menu.includes("dishName");
+   findRestaurantServingDish: function (dishName) { // Complete here
+        return this.restaurants.filter(restaurant => restaurant.menu.includes(dishName)).map(restaurant => restaurant.name);
     },
 
-    countNumberOfRestaurantsInArea: function(area) { // Complete here
-        return this.restaurants.address.includes("area");
+    /* findRestaurantServingDish: function(dishName) { // Complete here
+       let newArr=[];
+        restaurants.filter(menu => {
+
+            //newArr = restaurants.includes(dishName);
+            newArr.push(restaurants.menu.includes(dishName))
+        });
+        return newArr;
+    }, */
+
+/////////
+ 
+    countNumberOfRestaurantsInArea: function (area) { // Complete here
+        return (this.restaurants.filter(x => x.address.area == area)).length;
     }
+
+/////////
+    //countNumberOfRestaurantsInArea: function() { // Complete here
+       // return this.restaurants.address.includes("area");
+   // }
+
 };
 
 function restaurantNames (restaurant){
