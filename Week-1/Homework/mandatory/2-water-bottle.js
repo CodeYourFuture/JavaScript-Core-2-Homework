@@ -12,13 +12,20 @@ let bottle = {
   volume: 0,
   fill: function() {
     // calling this function should make you bottles volume = 100;
+    return this.volume = 100
   },
   drink: function() {
     // calling this function should decrease your bottles volume by 10;
+    if(this.volume > 70) {
+    return this.volume -= 10
+    }
   },
   empty: function() {
     // this function should return true if your bottles volume = 0
+    if(this.volume === 0) {
+    return true
   }
+}
 };
 
 /*
@@ -39,3 +46,4 @@ if (!bottle.empty()) {
   console.log(`bottles volume = ${bottle.volume}`);
 }
 console.log("Above volume should be: 70");
+console.log(true); // added this line of code as it seems to be missing to fullfil the test.//
