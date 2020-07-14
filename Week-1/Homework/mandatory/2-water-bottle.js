@@ -16,9 +16,7 @@ let bottle = {
   },
   drink: function() {
     // calling this function should decrease your bottles volume by 10;
-    if(this.volume > 70) {
-    return this.volume -= 10
-    }
+     return this.volume -= 10
   },
   empty: function() {
     // this function should return true if your bottles volume = 0
