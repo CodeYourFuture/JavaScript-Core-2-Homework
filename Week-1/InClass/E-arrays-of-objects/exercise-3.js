@@ -60,13 +60,46 @@ let restaurantFinderApplication = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-        // Complete here
+        spaceArray =[];
+       let seats0 = this.restaurants[0].totalSeats - this.restaurants[0].numberOfCustomers; 
+        let seats1 = this.restaurants[1].totalSeats - this.restaurants[1].numberOfCustomers;
+        let seats2 = this.restaurants[2].totalSeats - this.restaurants[2].numberOfCustomers;  
+        if(numberOfPeople < seats0) {
+            spaceArray.push(this.restaurants[0].name)
+        }
+        if (numberOfPeople < seats1) {
+            spaceArray.push(this.restaurants[1].name)
+        }
+        if (numberOfPeople < seats2) {
+            spaceArray.push(this.restaurants[2].name)
+        }
+        return spaceArray;
     },
     findRestaurantServingDish: function (dishName) {
-        // Complete here
+        let menuArray =[];
+        if(this.restaurants[0].menu.includes(dishName)===true) {
+            menuArray.push(this.restaurants[0].name);
+        }
+        if (this.restaurants[1].menu.includes(dishName) === true) {
+            menuArray.push(this.restaurants[1].name);
+        }
+        if (this.restaurants[2].menu.includes(dishName) === true) {
+            menuArray.push(this.restaurants[2].name);
+        }     
+        return menuArray;
     },
     countNumberOfRestaurantsInArea: function (area) {
-        // Complete here
+        let totalAreas = 0;
+        if(this.restaurants[0].address.area.includes(area)) {
+            totalAreas++;
+        }
+        if (this.restaurants[1].address.area.includes(area)) {
+            totalAreas++;
+        }
+        if (this.restaurants[2].address.area.includes(area)) {
+            totalAreas++;
+        }
+        return totalAreas;
     }
 };
 
