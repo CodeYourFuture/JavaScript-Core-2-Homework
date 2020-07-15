@@ -87,7 +87,7 @@ let restaurantFinderApplication = {
 /////////
  
     countNumberOfRestaurantsInArea: function (area) { // Complete here
-        return (this.restaurants.filter(x => x.address.area == area)).length;
+        return (this.restaurants.filter(restaurant => restaurant.address.area == area)).length;
     }
 
 /////////
