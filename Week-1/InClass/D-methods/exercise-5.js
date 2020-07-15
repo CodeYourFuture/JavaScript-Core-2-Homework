@@ -17,10 +17,13 @@ let coffeeMachine = {
     },
     insertedAmount: 0,
     insertMoney: function (amount) {
-
+        return this.insertedAmount = coffeeMachine b.amount;
     },
     getCoffee: function (coffee) {
-
+        if(this.amount >= coffee.prices) {
+            return coffee
+        } else
+        return 'Sorry you dont have enough money for a flatWhite'
     }
 };
 

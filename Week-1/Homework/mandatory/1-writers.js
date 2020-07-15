@@ -38,7 +38,19 @@ let writers = [
     alive: true
   }
 ];
-
+function writerAlive (writer){
+  if(writer.alive){
+    
+    console.log (`Hi, my name is ${writer.firstName} ${writer.lastName} I am ${writer.age} years old, and work as a ${writer.occupation}.`);
+  return writer;
+  }
+}
+let writersThatAreAlive = writers.filter(writerAlive);
+console.log(writersThatAreAlive);
+// let allWriters = writers.map(writer => `Hi, my name is ${writer.firstName} ${writer.lastName} I am ${writer.age} years old, and work as a ${writer.occupation}.`);
+// console.log(allWriters);
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+
+
