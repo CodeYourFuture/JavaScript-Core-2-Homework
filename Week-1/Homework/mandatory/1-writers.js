@@ -39,6 +39,15 @@ let writers = [
   }
 ];
 
+
+
+
+for (const key of writers) {
+  console.log(`Hi, my name is ${key["firstName"]} ${key["lastName"]}. I am ${key["age"]} years old, and work as a ${key["occupation"]}.`);
+ 
+  } 
+
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
