@@ -55,17 +55,23 @@ WRITE YOUR CODE BELOW
 */
 
 
+
 let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-        // Complete here
+        return restaurants.filter(item => item.totalSeats -item.numberOfCustomers >= numberOfPeople).map(item => item.name);
+    
+      // Complete here
     },
     findRestaurantServingDish: function (dishName) {
+        return restaurants.filter(item => item.menu.includes(dishName)).map(item =>item.name);
         // Complete here
     },
     countNumberOfRestaurantsInArea: function (area) {
+        return  restaurants.filter(item => item.address.area === area).length;
+        
         // Complete here
     }
 };
