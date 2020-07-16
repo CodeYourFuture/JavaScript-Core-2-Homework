@@ -22,4 +22,18 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    Title: "Mole",
+    Serves: 2,
+    Ingredients: ["cinnamon", "cumin", "cocoa"]
+};
+
+const show = [[0, 1], [1, 1], [1, 0]];
+var count = 0;
+for(let key in recipes){
+    console.log(["",key + ": "][show[count][0]] + ["", recipes[key]][show[count][1]]);
+    count++;
+}
+for(let ingr in recipes.Ingredients){
+    console.log(recipes.Ingredients[ingr]);
+}
