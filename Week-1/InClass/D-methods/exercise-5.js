@@ -17,9 +17,22 @@ let coffeeMachine = {
     },
     insertedAmount: 0,
     insertMoney: function (amount) {
+        return this.insertedAmount = amount
 
     },
     getCoffee: function (coffee) {
+        if(this.insertedAmount >= 2.40 && this.insertedAmount< 3.00){
+            return 'Please take your cappuccino'
+        }
+        else if(this.insertedAmount >= 1.50 && this.insertedAmount < 2.40){
+            return 'Please take your blackCoffee'
+        }
+        else if(this.insertedAmount >= 4.00){
+            return 'Please take your flatWhite'
+        }
+        else if(this.insertedAmount >3.00 && this.insertedAmount < 4.00){
+            return 'Sorry you don\'t have enough money for a flatWhite'
+        }
 
     }
 };
@@ -38,6 +51,6 @@ console.log(`Expected result: 'Please take your blackCoffee'. Actual result: ${c
 coffeeMachine.insertMoney(4.00);
 console.log(`Expected result: 'Please take your flatWhite'. Actual result: ${coffeeMachine.getCoffee('flatWhite')}`);
 
-coffeeMachine.insertMoney(2.40);
+coffeeMachine.insertMoney(3.40);
 console.log(`Expected result: 'Sorry you don't have enough money for a flatWhite'. Actual result: ${coffeeMachine.getCoffee('flatWhite')}`);
 
