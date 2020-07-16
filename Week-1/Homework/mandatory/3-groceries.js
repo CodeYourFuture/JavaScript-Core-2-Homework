@@ -10,7 +10,8 @@ let groceryList = {
   item2: "Orange Juice",
   item3: "Rice"
 };
-for(let items in groceryList){
-  groceriesToBuy.push(items)
+for (let [keys,value] of Object.entries(groceryList)) {
+  groceriesToBuy.push(value)
 }
+
 console.log(groceriesToBuy)
