@@ -22,4 +22,29 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+  title: "Fluffy Pancakes",
+  servings: 4,
+  ingredients: [
+    "flour",
+    "melted butter",
+    "milk",
+    "bicarbonate of Soda",
+    "salt",
+    "sugar",
+    "egg",
+    "vinegar",
+  ],
+};
+
+// console.log(`${recipes.title}
+// Serves: ${recipes.servings}
+// Ingredients: `);
+
+
+console.log(`${recipes.title}`);
+console.log(`Serves: ${recipes.servings}`);
+console.log(`Ingredients:`);
+for (let key in recipes.ingredients) {
+  console.log(recipes.ingredients[key]);
+}

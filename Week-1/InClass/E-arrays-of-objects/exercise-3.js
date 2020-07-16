@@ -59,29 +59,40 @@ let restaurantFinderApplication = {
   applicationVersion: "1.0",
   restaurants: restaurants,
   findAvailableRestaurants: function (numberOfPeople) {
-    let availableRestaurant = restaurants
+    let availableRestaurant = this.restaurants
       .filter(
         (restaurant) =>
-          restaurant.totalSeats - restaurant.numberOfCustomers >=
-          numberOfPeople
+          restaurant.totalSeats - restaurant.numberOfCustomers >= numberOfPeople
       )
       .map((restaurant) => restaurant.name);
+    return availableRestaurant;
   },
   findRestaurantServingDish: function (dishName) {
-     if (this.restaurants.menu.includes(dishName)) {
-    return this.restaurants.name;
-    //  }
+    let restaurantServingDish = this.restaurants
+      .filter((restaurant) => restaurant.menu.includes(dishName))
+      .map((restaurant) => restaurant.name);
+    return restaurantServingDish;
     // Complete here
   },
+  // countNumberOfRestaurantsInArea: function (area) {
+  //   //console.log(this.restaurants);
+  //   let count = 0;
+  //   for (let restaurant of this.restaurants) {
+  //     if (restaurant.address.area === area) {
+  //       count++;
+  //     }
+  //   } // Complete here
+  //   return count;
+  // },
   countNumberOfRestaurantsInArea: function (area) {
-    let count = 0;
-    if (this.restaurants.address["area"] === area) {
-      return count++;
-    } // Complete here
+    let numOfRestaurantsInArea = this.restaurants.filter(
+      (restaurant) => restaurant.address.area === area
+    );
+    return numOfRestaurantsInArea.length;
   },
 };
 //Define a method countNumberOfRestaurantsInArea which takes an area of Glasgow in parameter (center, west),
-//and returns the number of restaurants in this area.
+//and returns the number of restaurants in this area. [use filter and call ]
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
