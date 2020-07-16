@@ -28,7 +28,7 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 let books = [
     {
         title: 'Jurassic Park',
-        Author: 'Elon musk',
+        Author: 'Elon Musk',
         alreadyRead : true
     },
     {
@@ -51,7 +51,7 @@ let books = [
 
 let exercise1 = books.map(x=>`"${x.title} by ${x.Author}"`).toString();
 
-let exercise2 = books.filter(x=> x.alreadyRead === true ? `You already read ${x.title} by ${x.Author}` : ` You still need to read ${x.title} by ${x.Author}`);
+let exercise2 = books.map(x=> x.alreadyRead === true ? `You already read ${x.title} by ${x.Author}` : ` You still need to read ${x.title} by ${x.Author}`).toString();
 
 console.log(exercise1);
 
