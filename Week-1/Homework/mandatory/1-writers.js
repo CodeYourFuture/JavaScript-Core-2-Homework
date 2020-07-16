@@ -39,6 +39,15 @@ let writers = [
   }
 ];
 
+for (let writer of writers) {
+  console.log("Hi, my name is " + writer.firstName + " " + writer.lastName +
+                      ". I am " + writer.age + " years old, and work as a " + writer.occupation + ".")
+}
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+for (let writer of writers)
+  if (writer.alive) {
+    console.log("Hi, my name is " + writer.firstName + " " + writer.lastName +
+                        ". I am " + writer.age + " years old, and work as a " + writer.occupation + ".")
+  }
