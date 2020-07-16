@@ -33,16 +33,16 @@ let storeBranches = {
 
 // ONLY EDIT BELOW THIS LINE
 
-// # 1
+let cities = Object.keys(storeBranches);
+console.log(cities);
 // prints [ 'glasgow', 'edinburgh' ]
-console.log()
 
-// # 2
+let glasgowPositions = Object.keys(storeBranches.glasgow)
+console.log(glasgowPositions);
 // prints [ 'manager', 'assistant', 'interns' ]
-console.log()
 
-// # 3
+glasgowInternPositions = Object.keys(storeBranches.glasgow.interns)
+console.log(glasgowInternPositions);
 // prints [ 'head_intern', 'intern' ]
-console.log()
 
 // ONLY EDIT ABOVE THIS LINE
