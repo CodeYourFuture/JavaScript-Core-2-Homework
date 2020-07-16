@@ -40,13 +40,9 @@ WRITE YOUR CODE BELOW
 */
 
 
-let destinationNamesWithin500Kms = // Complete here
-
-let destinationNameReachableByFerry = // Complete here
-
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
-
-
+let destinationNamesWithin500Kms = travelDestinations.filter(a=> a.distanceKms<500).map(b=>b.destinationName);// Complete here
+let destinationNameReachableByFerry = travelDestinations.find(c=>c.transportations.includes('ferry')).destinationName;// Complete here
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(a=>a.distanceKms>300).filter(c=>c.transportations.includes('train')).map(a=> a.destinationName);// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */

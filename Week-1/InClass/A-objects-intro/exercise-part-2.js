@@ -5,17 +5,24 @@ The objects below have some syntax issues - try and fix them all!
 */
 
 let kitten = {
-    fur colour: "orange",
-    age "23"
+    furcolour: "orange",
+    age : "23"
 };
 
-let laptop =
-    brand: "Lenovo"
-    ram "5GB"
+let laptop ={
+    brand : "Lenovo",
+    ram : "5GB"
 }
 
 let phone = {
-    operating system "iOS",
+    operatingsystem: "iOS",
     hasStylus: true,
-    megapixels 12
+    megapixels : 12,
     "batteryLife": "24 hours"
+}
+
+console.log(phone);
+
+console.log(laptop);
+
+console.log(kitten);

@@ -22,4 +22,12 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    title : 'keledos',
+    serves : 4,
+    Ingredients : ['Potatoes', 'onion' , 'parsley' , 'pepper']
+};
+
+console.log(recipes.title);
+console.log(`Srves : ${recipes.serves}`);
+console.log(`Ingredients: ${recipes.Ingredients.toString()}`);

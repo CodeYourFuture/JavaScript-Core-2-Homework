@@ -25,4 +25,34 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+    {
+        title: 'Jurassic Park',
+        Author: 'Elon Musk',
+        alreadyRead : true
+    },
+    {
+        title: 'Lord of the rings',
+        Author: 'Donald trump',
+        alreadyRead : false
+    },
+    {
+        title: 'Peppa Pig',
+        Author: 'DEl Piero',
+        alreadyRead : true
+    },
+    {
+        title: 'Little Princess',
+        Author: 'Orhan Veli Kanik',
+        alreadyRead : false
+    }
+];
+
+
+let exercise1 = books.map(x=>`"${x.title} by ${x.Author}"`).toString();
+
+let exercise2 = books.map(x=> x.alreadyRead === true ? `You already read ${x.title} by ${x.Author}` : ` You still need to read ${x.title} by ${x.Author}`).toString();
+
+console.log(exercise1);
+
+console.log(exercise2);
