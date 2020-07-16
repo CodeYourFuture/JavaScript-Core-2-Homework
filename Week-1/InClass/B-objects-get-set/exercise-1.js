@@ -10,9 +10,9 @@ let kitten = {
 
 // YOUR CODE GOES BELOW HERE
 
+const kittenValues = Object.values(kitten);
 
-
-
+console.log(kittenValues);
 
 
 // YOUR CODE GOES ABOVE HERE
