@@ -15,7 +15,16 @@ Write JavaScript below that logs:
     --> should log a list of nodes with a length of 3
 
 */
-
+//          (1)
+console.log(document.querySelectorAll("p"));
+//          (2)
+console.log(document.querySelector("div"))
+//          (3)
+console.log(document.querySelector("#jumbotron-text"))
+console.log(document.getElementById("jumbotron-text"))
+//          (4)
+parArray=Array.from( document.querySelectorAll(".primary-content p"))
+console.log(parArray)
 
 /*
 Task 2
