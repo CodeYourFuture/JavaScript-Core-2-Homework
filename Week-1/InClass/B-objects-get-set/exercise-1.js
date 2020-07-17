@@ -7,6 +7,7 @@ let kitten = {
     isFemale: true,
     furColour: "brown"
 };
+console.log(kitten.furColour);
 
 // YOUR CODE GOES BELOW HERE
 

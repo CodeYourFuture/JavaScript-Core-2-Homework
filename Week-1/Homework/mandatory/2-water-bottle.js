@@ -1,24 +1,34 @@
-/*
-Create an object that acts like a water bottle. 
-It will need a volume key to store how full or empty the bottle is. 
-It will be 100 when full and 0 when empty. 
-Give your water bottle methods for filling it up, 
-drinking some of it, and emptying it.
-
-We made a start on this for you here: 
-*/
+/**
+ * /*
+ * Create an object that acts like a water bottle.
+ * It will need a volume key to store how full or empty the bottle is.
+ * It will be 100 when full and 0 when empty.
+ * Give your water bottle methods for filling it up,
+ * drinking some of it, and emptying it.
+ *
+ * We made a start on this for you here:
+ *
+ * @format
+ */
 
 let bottle = {
   volume: 0,
-  fill: function() {
+  fill: function () {
     // calling this function should make you bottles volume = 100;
+    bottle.volume = 100;
   },
-  drink: function() {
+  drink: function () {
     // calling this function should decrease your bottles volume by 10;
+    bottle.volume = bottle.volume - 10;
   },
-  empty: function() {
+  empty: function () {
     // this function should return true if your bottles volume = 0
-  }
+    if (bottle.volume === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 };
 
 /*
