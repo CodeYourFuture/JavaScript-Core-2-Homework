@@ -60,13 +60,13 @@ let restaurantFinderApplication = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-        // Complete here
+        return restaurants.filter(rest => rest.totalSeats - rest.numberOfCustomers -numberOfPeople >= 0).map(rest => rest.name);
     },
     findRestaurantServingDish: function (dishName) {
-        // Complete here
+        return restaurants.filter(rest => rest.menu.includes(dishName)).map(rest => rest.name);
     },
     countNumberOfRestaurantsInArea: function (area) {
-        // Complete here
+        return restaurants.filter(rest => rest.address.area === area).length;
     }
 };
 
