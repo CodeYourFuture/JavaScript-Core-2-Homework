@@ -40,11 +40,11 @@ WRITE YOUR CODE BELOW
 */
 
 
-let destinationNamesWithin500Kms = // Complete here
+let destinationNamesWithin500Kms = travelDestinations.filter(distance => distance.distanceKms <= 500).map(names=>names.destinationName) // Complete here
 
-let destinationNameReachableByFerry = // Complete here
+let destinationNameReachableByFerry = travelDestinations.filter(transport=>transport.transportations.includes("ferry")).map(names => names.destinationName) // Complete here
 
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(distance => distance.distanceKms >= 300 && distance.transportations.includes("train")).map(names => names.destinationName)// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*
