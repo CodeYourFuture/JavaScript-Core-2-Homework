@@ -25,4 +25,13 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+    {title:"HTMl",Author:"danis",alreadyRead:false},
+    {title:"CSS",Author:"hadiya",alreadyRead:true},
+    {title:"JAva Script",Author:"lola",alreadyRead:false},
+    {title:"bootstrap",Author:"zubeda",alreadyRead:true}
+
+];
+for(let obj of books){
+    console.log(`${obj.title} By ${obj.Author}`)
+}
