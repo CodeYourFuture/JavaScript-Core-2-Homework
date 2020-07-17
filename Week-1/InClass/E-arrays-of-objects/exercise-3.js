@@ -54,19 +54,19 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
-
+//MA's version
 let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-        // Complete here
+        return this.restaurants.filter(x => x.totalSeats - x.numberOfCustomers >= numberOfPeople).map(x => x.name)// Complete here
     },
     findRestaurantServingDish: function (dishName) {
-        // Complete here
+        return this.restaurants.filter(x => x.menu.includes(dishName)).map(x => x.name)// Complete here
     },
-    countNumberOfRestaurantsInArea: function (area) {
-        // Complete here
+    countNumberOfRestaurantsInArea: function (location) {
+        return this.restaurants.filter(x => x.address.area === location).length;// Complete here
     }
 };
 

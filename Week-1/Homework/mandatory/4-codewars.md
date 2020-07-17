@@ -16,7 +16,57 @@ function animal(obj){
 }
 
 - [Welcome!](https://www.codewars.com/kata/welcome/train/javascript)
+function greet(language) {
+	var database = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  };
+  for (var key in database) {
+    if(key == language) {
+      return database[key];
+    }
+  }
+  return database['english'];
+}
 
+function greet(language) {
+  return languages[language] || languages['english'];
+}
+
+var languages = {
+  'english': 'Welcome',
+  'czech': 'Vitejte',
+  'danish': 'Velkomst',
+  'dutch': 'Welkom',
+  'estonian': 'Tere tulemast',
+  'finnish': 'Tervetuloa',
+  'flemish': 'Welgekomen',
+  'french': 'Bienvenue',
+  'german': 'Willkommen',
+  'irish': 'Failte',
+  'italian': 'Benvenuto',
+  'latvian': 'Gaidits',
+  'lithuanian': 'Laukiamas',
+  'polish': 'Witamy',
+  'spanish': 'Bienvenido',
+  'swedish': 'Valkommen',
+  'welsh': 'Croeso'
+}
 
 - [Crash Override](https://www.codewars.com/kata/crash-override/train/javascript)
 

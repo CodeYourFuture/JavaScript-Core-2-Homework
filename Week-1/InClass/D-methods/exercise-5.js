@@ -7,7 +7,7 @@ insertMoney takes an amount in parameter to add money in the coffee machine.
 getCoffee takes a coffee type in parameter and dispends the selected coffee 
 only if the inserted amount is greater or equal than the price of the coffee!
 */
-
+// GG's version
 let coffeeMachine = {
     brand: "Super Coffee",
     prices: {
@@ -17,31 +17,18 @@ let coffeeMachine = {
     },
     insertedAmount: 0,
     insertMoney: function (amount) {
-        return insertedAmount = amount;
+        this.insertedAmount += amount;
     },
     getCoffee: function (coffee) {
-        // check coffee entered matches the correct amount
-        // if true, return Please take your coffee
-        // if false, return Sorry
-        if (insertedAmount >= 3 && coffee === "flatWhite") {
-            return `Please take your ${coffee}`;
-        } else if (insertedAmount < 3 && coffee === "flatWhite") {
-            return `Sorry you don't have enough money for a ${coffee}`;
-
-
-        } else if (insertedAmount >= 2.4 && coffee === "cappuccino") {
-            return `Please take your ${coffee}`;
-        } else if (insertedAmount < 2.4 && coffee === "cappuccino") {
-            return `Sorry you don't have enough money for a ${coffee}`;
-
-
-        } else if (insertedAmount >= 1.5 && coffee === "blackCoffee") {
-            return `Please take your ${coffee}`;
-        } else if (insertedAmount < 1.5 && coffee === "blackCoffee") {
-            return `Sorry you don't have enough money for a ${coffee}`;
+        if (this.insertedAmount >= this.prices[coffee]) {
+            this.insertedAmount = 0;
+            return `Please take your ${coffee}.`;
+        }
+        else {
+            return `Sorry you don't have enough money for a ${coffee}.`
         }
     }
-};
+
 
 
 /*
