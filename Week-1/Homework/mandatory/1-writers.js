@@ -38,7 +38,9 @@ let writers = [
     alive: true
   }
 ];
-writers.forEach(function(obj){
+writers.filter(function(obj){
+  return obj.alive===true;
+}).forEach(function(obj){
   console.log(`Hi, my name is ${obj.firstName} ${obj.lastName}. I am ${obj.age} years old, and work as a ${obj.occupation}.
   `);
 })
