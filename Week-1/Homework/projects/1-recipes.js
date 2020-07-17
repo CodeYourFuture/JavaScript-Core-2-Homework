@@ -22,4 +22,13 @@ cocoa
 
 **/
 
-let recipes = {};
+const recipes = {
+  title: 'Guacamole',
+  servings: 2,
+  ingredients: ['3 avocados', 'onion', 'lime', 'coriander', 'tomato', 'chilli'],
+};
+
+console.log(recipes.title);
+console.log(`Serves: ${recipes.servings}`);
+console.log('Ingredients:');
+recipes.ingredients.forEach((ingredient) => console.log(ingredient));
