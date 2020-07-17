@@ -1,3 +1,4 @@
+
 /*
 
 You have an object of mentors and their ages below, but the keys are inconsistent. JOSH and JAMIE are uppercase, while james and Mozafar are not. You want to return an array of mentors with the names in uppercase.
@@ -15,9 +16,9 @@ let mentorsAges = {
 
 // ONLY EDIT BELOW THIS LINE
 
-let mentorsNames = ;
+let mentorsNames = Object.keys(mentorsAges);
 
-let mentorsNamedUppercased = ;
+let mentorsNamedUppercased = mentorsNames.map(mentorName => mentorName.toUpperCase());
 
 // ONLY EDIT ABOVE THIS LINE
 
