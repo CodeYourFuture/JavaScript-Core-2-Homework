@@ -6,7 +6,13 @@
 let groceriesToBuy = [];
 
 let groceryList = {
-  item1: "",
-  item2: "",
-  item3: ""
+  item1: "Potatoes",
+  item2: "Orange juice",
+  item3: "Rice"
 };
+
+for(item in groceryList){
+    groceriesToBuy.push(groceryList[item]);
+    console.log(groceryList[item]);
+
+}

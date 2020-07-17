@@ -39,6 +39,11 @@ let writers = [
   }
 ];
 
+function loopThrough(arr){
+  arr.filter(x => console.log(`Hi my name is ${x.firstName} ${x.lastName}.
+   I am ${x.age} years old, and work as a ${x.occupation}`));
+}
+console.log(loopThrough(writers));
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
