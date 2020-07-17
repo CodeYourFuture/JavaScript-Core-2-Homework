@@ -22,4 +22,11 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    name: 'Cinnamon porridge oats with banana and berries',
+    servings: 1,
+    ingredients: ['almond milk', 'oats', 'cinnamon', 'wallnuts', 'flax seeds', 'banana',  'berries']
+};
+
+
+console.log(`${recipes.name} \n Serves: ${recipes.servings} \n Ingredients: \n ${recipes.ingredients.map(item=> item)}`);
