@@ -7,3 +7,8 @@ Assign each of them to a separate variable
 
 */
 
+let child={
+    age:7,
+    city:"Birmingham",
+    school:"Brockshill"
+}
