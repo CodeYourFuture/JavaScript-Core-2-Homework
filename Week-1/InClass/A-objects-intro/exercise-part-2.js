@@ -9,7 +9,7 @@ let kitten = {
     age: "23",
 }
 
-let laptop ={
+let laptop = {
     brand: "Lenovo",
     ram: "5GB",
 }
