@@ -10,3 +10,12 @@ let groceryList = {
   item2: "",
   item3: ""
 };
+
+groceryList["item1"] = 'Potatoes';
+groceryList["item2"] = 'Orange Juice';
+groceryList["item3"] = 'Rice';
+
+//  I'd  prefer to to this ===> groceriesToBuy = Object.values(groceryList)
+// the exercise asks for a loop
+for (let item in groceryList) groceriesToBuy.push(groceryList[item])
+console.log(groceriesToBuy);
