@@ -39,7 +39,7 @@ var personsYoungerThan28YearsOld = persons.filter(person => person.age < 28)
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
-console.log("Question 1: array defined with 3 persons -> ", 
+'console.log("Question 1: array defined with 3 persons -> ", 
     (persons[0] === person1 && persons[1] === person2 && persons[2] === person3) ? 'Passed :)' : 'Not yet :(');
 
 console.log("Question 2: array containing the person names -> ", 
