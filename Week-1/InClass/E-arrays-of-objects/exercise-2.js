@@ -34,17 +34,33 @@ let destination4 = {
 
 let travelDestinations = [destination1, destination2, destination3, destination4];
 
+
 /* 
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
+function checkdestination (trip){
+    return trip.distanceKms <= 500;
+    }
+function ferryReachableDestination (trip){
+return trip.transportations.includes("ferry");
+}
+function destinationByTrainAndreachableWithin300(trip){
+    return trip.distanceKms >= 300;
+}
+function destinationWithTrain(trip) {
+    return trip.transportations.includes("train");
+}
+function destinationWithNames (trip) {
+    return trip.destinationName;
+}
 
+let destinationNamesWithin500Kms = travelDestinations.filter(checkdestination).map(destinationWithNames); 
+// Complete here
 
-let destinationNamesWithin500Kms = // Complete here
+let destinationNameReachableByFerry = travelDestinations.filter(ferryReachableDestination).map(destinationWithNames);// Complete here
 
-let destinationNameReachableByFerry = // Complete here
-
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(destinationByTrainAndreachableWithin300).filter(destinationWithTrain).map(destinationWithNames); // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
 
 
 /*
