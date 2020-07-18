@@ -22,4 +22,20 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+  title: "Chocolate Chip Cookies",
+  servings: 5,
+  ingredients: [
+    "Sugar",
+    "Flour",
+    "Butter",
+    "Egg",
+    "Vanilla Extract",
+    "Chocolate Chips",
+  ],
+};
+
+console.log(recipes.title);
+console.log(`Serves: ${recipes.servings}`);
+console.log("Ingredients:");
+recipes.ingredients.forEach((ingredient) => console.log(ingredient));
