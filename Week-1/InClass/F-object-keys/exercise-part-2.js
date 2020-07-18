@@ -43,4 +43,4 @@ console.log(Object.keys(storeBranches.glasgow));
 // prints [ 'head_intern', 'intern' ]
 console.log(Object.keys(storeBranches.edinburgh.interns));
 
-// ONLY EDIT ABOVE THIS LINE
+// ONLY EDIT ABOVE THIS LINE  
