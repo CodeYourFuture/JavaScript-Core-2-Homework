@@ -20,3 +20,7 @@ let phone = {
     megaPixels: 12,
     batteryLife: "24 hours",
 }
+
+console.log(JSON.stringify(kitten));
+console.log(JSON.stringify(laptop));
+console.log(JSON.stringify(phone));

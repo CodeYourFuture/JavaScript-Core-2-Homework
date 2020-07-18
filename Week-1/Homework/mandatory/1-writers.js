@@ -46,7 +46,7 @@ function writerAlive (writer){
   }
 }
 let writersThatAreAlive = writers.filter(writerAlive);
-console.log(writersThatAreAlive);
+console.log(JSON.stringify(writersThatAreAlive));
 
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
