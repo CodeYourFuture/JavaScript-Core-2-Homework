@@ -23,6 +23,9 @@ let bottle = {
     if (this.volume === 0) {
       return true;
     }
+
+    //or you can
+    //this.volume = 0 ? true : this.volume;
   },
 };
 
