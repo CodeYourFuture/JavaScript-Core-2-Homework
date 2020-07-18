@@ -24,5 +24,24 @@ Now use an if/else statement to change the output depending on whether you read 
 If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolkien', and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
 
 **/
+function book(title, author, alreadyRead) {
+    this.title = title;
+    this.author = author;
+    this.alreadyRead = alreadyRead
+}
 
-let books = [];
+let books = [new book("A Tale of Two Cities", "Charles Dickens", false), 
+             new book("The Little Prince", "Antoine de Saint-Exupéry", false), 
+             new book("Harry Potter and the Philosopher's Stone", "J. K. Rowling", true),
+             new book("The Hobbit", "J. R. R. Tolkien", false),
+             new book("And Then There Were None", "Agatha Christie", false)
+            ];
+
+for (let i = 0; i < books.length; ++i) {
+    if (books[i].alreadyRead) {
+        console.log(`You already read "${books[i].title}" by ${books[i].author}.`);
+    }
+    else {
+        console.log(`You still need to read "${books[i].title}" by ${books[i].author}.`);
+    }
+}
