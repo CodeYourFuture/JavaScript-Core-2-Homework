@@ -25,7 +25,11 @@ let newCurrentOwner = {
   WRITE YOUR CODE BELOW
 */
 
-// - assign the value of the variable 'newCurrentOwner' as the value to the house's "currentOwner"
+house.currentOwner=newCurrentOwner;
+house.previousOwners[1] = "Stephen B.";
+house.isForSale=false;
+
+// - assign the value of the  'newCurrentOwner' as the value to the house's "currentOwner"
 // - from the list of previous owners, replace only "John A." with "Stephen B."
 // - give the house a new property called 'isForSale' with the value 'false'
 
