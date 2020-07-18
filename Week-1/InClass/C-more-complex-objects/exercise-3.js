@@ -16,7 +16,7 @@ let kinningParkHouse = {
 
 let parkAvenueHouse = {
     address: "50 Park Avenue",
-    price: 105000,
+    price: 195000,
     currentOwner: {
       firstName: "Marie",
       lastName: "McDonald",
@@ -33,37 +33,26 @@ let parkAvenueHouse = {
 
 // returns the full name (first name + last name) of the owner of the house
 
-function getOwnerFullName() {
-return `${kinningParkHouse.currentOwner.firstName} ${kinningParkHouse.currentOwner.lastName}.`;
+function getOwnerFullName(house) {
+return `${house.currentOwner.firstName} ${house.currentOwner.lastName}.`
 }
+//return `${kinningParkHouse.currentOwner.firstName} ${kinningParkHouse.currentOwner.lastName}.`
+
 
 // returns an array of the owners' email )addresses of the two houses
-let houses = [kinningParkHouse, parkAvenueHouse];
-function getEmailAddresses(house) {
-for(let key in houses) {
-  return houses[key].currentOwner.email;
+
+function getEmailAddresses(house1, house2) {
+return `${house1.currentOwner.email} ${house2.currentOwner.email}.`
 }
-}
+
 
 // returns the address for the cheapest house out of the two
-function getCheapestAddress(house1, house2) {
-for(let key in houses) {
-  if(houses[key].price > houses[key].price) {
-    return false
-  }else 
-  return houses[key].address
-}
-}
-
-// function getCheapestAddress(house) {
-//   houses.forEach(house => {
-//     if(house.price >= house.price) {
-//       return false
-//     }else 
-//     return house.address
-//   })
-//   };
-  
+  function getCheapestAddress(house1, house2) {
+    if(house1.price < house2.price) {
+      return house1.address
+    }else 
+    return house2.address
+  };
   
 
 /*
