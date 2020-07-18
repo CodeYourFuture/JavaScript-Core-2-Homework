@@ -21,26 +21,26 @@ let coffeeMachine = {
         this.insertedAmount += amount   
     },
 
-    // getCoffee: function (coffee) {
-    //     if(coffeeMachine.insertMoney >= coffeeMachine.prices) {
-    //         return `'Please take your ${coffee}'.`
-    //     }
-    //     // else if (coffeeMachine.insertMoney < coffeeMachine.prices)
-    //     return `Sorry you don't have enough money for a ${coffee}.`
-    // }
-
     getCoffee: function (coffee) {
-        if (this.insertedAmount >= 3.00 && coffee === 'flatWhite') {
-            return `Please take your ${coffee}`;
-        } else if (this.insertedAmount >= 2.40 && coffee === 'cappuccino') {
-            return `Please take your ${coffee}`;
-        } else if (this.insertedAmount >= 1.50 && coffee === 'blackCoffee') {
-            return `Please take your ${coffee}`;
+        if(coffeeMachine.insertMoney >= coffeeMachine.prices) {
+            return `'Please take your ${coffee}'.`
         }
-        else {
-            return `Sorry you don't have enough money for ${coffee}`;
-        }
+        // else if (coffeeMachine.insertMoney < coffeeMachine.prices)
+        return `Sorry you don't have enough money for a ${coffee}.`
     }
+
+//     getCoffee: function (coffee) {
+//         if (this.insertedAmount >= 3.00 && coffee === 'flatWhite') {
+//             return `Please take your ${coffee}`;
+//         } else if (this.insertedAmount >= 2.40 && coffee === 'cappuccino') {
+//             return `Please take your ${coffee}`;
+//         } else if (this.insertedAmount >= 1.50 && coffee === 'blackCoffee') {
+//             return `Please take your ${coffee}`;
+//         }
+//         else {
+//             return `Sorry you don't have enough money for ${coffee}`;
+//         }
+//     }
 };
 
 
