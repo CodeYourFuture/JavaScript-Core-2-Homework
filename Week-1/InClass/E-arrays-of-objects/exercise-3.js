@@ -69,15 +69,9 @@ let restaurantFinderApplication = {
         return restaurants.filter(menus=>menus.menu.includes(dishName)).map(names=>names.name)
     },
     countNumberOfRestaurantsInArea: function (area){
-        let count = 0
-        for(let area in restaurants.address){
-        if(address.area==='center'|| 'west'){
-            count++
-
-        }
-    }
-        return count
-        // Complete here
+        return restaurants.filter(menus=>menus.address.area===area).length       
+    
+                // Complete here
     }
 };
 
