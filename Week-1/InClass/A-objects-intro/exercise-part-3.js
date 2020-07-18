@@ -1,5 +1,5 @@
 /*
-  Done
+  
 Choose a few nearby colleagues and one mentor, and go through each variable you 
 declared above in Part 1 and 2, reading everything that happens out loud.
 
