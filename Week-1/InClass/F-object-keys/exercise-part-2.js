@@ -34,15 +34,15 @@ let storeBranches = {
 // ONLY EDIT BELOW THIS LINE
 
 // # 1
-// prints [ 'glasgow', 'edinburgh' ]
-console.log()
+// // prints [ 'glasgow', 'edinburgh' ]
+console.log(Object.keys(storeBranches));
 
 // # 2
 // prints [ 'manager', 'assistant', 'interns' ]
-console.log()
+console.log(Object.keys(storeBranches.glasgow))
 
 // # 3
 // prints [ 'head_intern', 'intern' ]
-console.log()
+console.log(Object.keys(storeBranches.edinburgh.interns))
 
 // ONLY EDIT ABOVE THIS LINE
