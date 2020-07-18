@@ -25,7 +25,8 @@ let restaurant1 = {
     menu: ["pizza", "calzone", "salad"]
 };
 
-let restaurant2 = {
+let restaurant2 = 
+{
     name: "Ubiquitous Chip",
     totalSeats: 20,
     numberOfCustomers: 10,
@@ -59,18 +60,33 @@ let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
-    findAvailableRestaurants: function (numberOfPeople) {
-        // Complete here
-    },
-    findRestaurantServingDish: function (dishName) {
-        // Complete here
-    },
-    countNumberOfRestaurantsInArea: function (area) {
-        // Complete here
-    }
+
+    findAvailableRestaurants: function(numberOfPeople) {
+        let namesOfRestaurants = "";
+        restaurants.forEach(restaurant => {
+            if(numberOfPeople <= restaurant.totalSeats - restaurant.numberOfCustomers) {
+                namesOfRestaurants += restaurant.name + ","
+            }
+            })
+            return namesOfRestaurants;
+        },
+
+
+        // 2) Define a method findRestaurantServingDish which takes a dish name in parameter and returns
+        // all the restaurant names serving this dish. filter > includes > map
+        findRestaurantServingDish: function (dishName) {
+        return this.restaurants.filter(restaurant => restaurant.menu.includes(dishName)).map(restaurant => restaurant.name);
+        },
+    
+    
+        countNumberOfRestaurantsInArea: function (area) {
+            return this.restaurants.filter(restaurant => restaurant.address.area == area).length;
+        }
+        
+        // countNumberOfRestaurantsInArea: function (area) {
+        //     return count(this.restaurants.filter(restaurant => restaurant.address.area.includes("center")).map(restaurant => restaurant.name));
+        // }
 };
-
-
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */

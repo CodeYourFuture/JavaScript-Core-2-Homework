@@ -39,12 +39,30 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+let destinationNamesWithin500Kms = [];      // Complete here
 
-let destinationNamesWithin500Kms = // Complete here
+for(let key in travelDestinations) {
+    if(travelDestinations[key].distanceKms < 500) {
+       destinationNamesWithin500Kms.push(travelDestinations[key].destinationName)
+    }
+}
 
-let destinationNameReachableByFerry = // Complete here
 
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let destinationNameReachableByFerry = []; 
+
+for(let key in travelDestinations) {
+    if(travelDestinations[key].transportations.includes("ferry")) {
+       destinationNameReachableByFerry.push(travelDestinations[key].destinationName)
+    }
+}// Complete here
+
+
+let destinationNamesMoreThan300KmsAwayByTrain = [];// Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+for(let key in travelDestinations) {
+    if(travelDestinations[key].distanceKms > 300 && travelDestinations[key].transportations.includes("train")){
+destinationNamesMoreThan300KmsAwayByTrain.push(travelDestinations[key].destinationName)
+    }
+}
 
 
 /*
