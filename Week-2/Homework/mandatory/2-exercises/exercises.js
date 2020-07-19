@@ -15,6 +15,15 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for(let i =0; i < arrayOfPeople.length; i++){
+    let h1El = document.createElement("h1");
+    let h2El = document.createElement("h2");
+    content.appendChild(h1El);
+    content.appendChild(h2El);
+    h1El.innerHTML = `${arrayOfPeople[i].name}`;
+    h2El.innerHTML = `${arrayOfPeople[i].job}`;
+
+  }
 }
 
 /**
