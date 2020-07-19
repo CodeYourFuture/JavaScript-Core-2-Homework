@@ -17,9 +17,24 @@ let coffeeMachine = {
     },
     insertedAmount: 0,
     insertMoney: function (amount) {
+        return this.insertedAmount = amount;
+     if (amount >= 1.50 && amount < 2.40) {
+        return this.insertedAmount;
+     }else if (amount >=2.40 && amount <3.00) {
+         return this.insertedAmount;
+     }else {
+         return this.insertedAmount;
+     }
 
     },
     getCoffee: function (coffee) {
+        if (this.insertedAmount >= 1.50 && this.insertedAmount < 2.40) {
+            return `Please take your ${coffee}`;
+        }else if (this.insertedAmount >= 2.40 && this.insertedAmount < 3.00) {
+            return `Plaase take your ${coffee}`;
+        }else {
+            return `Please take your ${coffee}`
+        }
 
     }
 };
