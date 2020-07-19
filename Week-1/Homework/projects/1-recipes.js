@@ -21,5 +21,18 @@ cumin
 cocoa
 
 **/
+//https://stackoverflow.com/questions/54851645/how-to-display-both-key-and-value-in-object-using-javascript/54851680
 
-let recipes = {};
+let recipes = {
+    Title: 'Mole',
+    Serves: 2,
+    Ingredients: [
+        'cinnamon',
+        'cumin',
+        'cocoa',
+    ]
+};
+
+for (let key in recipes) {
+    console.log(key, recipes[key]);
+  }

@@ -14,3 +14,16 @@ Make sure you use words like:
 - etc.
 
 */
+
+/*
+1. Below is a variable with an object literal.
+2. The variable is laptop.
+2. There are 3 properties in the object literal: brand, ram and hasTouchscreen.
+3. Values are Lenovo [a string], 5GB [a string], false [a boolean] respectively.
+*/
+
+let laptop = {
+    brand: "Lenovo",
+    ram: "5GB",
+    hasTouchscreen: false
+}
