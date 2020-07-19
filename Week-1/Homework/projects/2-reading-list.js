@@ -25,4 +25,11 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+    {title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    alreadyRead: false
+    }
+];
+
+books.forEach(x => console.log(`${x.title} by ${x.author}`);
