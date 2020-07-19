@@ -22,7 +22,6 @@ function exerciseOne(arrayOfPeople) {
     content.appendChild(h2El);
     h1El.innerHTML = `${arrayOfPeople[i].name}`;
     h2El.innerHTML = `${arrayOfPeople[i].job}`;
-
   }
 }
 
@@ -35,6 +34,13 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let ulEl = document.createElement("ul");
+  content.appendChild(ulEl);
+  for(let i =0; i < shopping.length; i++){
+    let liEl = document.createElement("li");
+    ulEl.appendChild(liEl);
+    liEl.textContent = shopping[i]; 
+  }
 }
 
 /**
