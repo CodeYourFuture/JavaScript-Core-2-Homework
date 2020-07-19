@@ -22,4 +22,26 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    title:"Brownie",
+    servings:"10",
+    ingredients:["eggs","Chocolate","Flour","Butter","Sugar"]
+};
+
+function display(obj)
+{
+    for(item in obj)
+    {
+        value= obj[item];
+        arr=Array.isArray(value);
+        if(arr)
+        {
+            console.log(item+":");            
+            console.log(value.join('\r\n'));
+        }
+        else
+            console.log(value);
+    }
+}
+
+display(recipes);

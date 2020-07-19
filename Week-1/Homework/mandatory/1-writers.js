@@ -1,5 +1,6 @@
 /* Challenge 1: Famous Writers
-Did you know you can also have an array of objects? We've created one for you here. Loop through the array, 
+Did you know you can also have an array of objects?
+We've created one for you here. Loop through the array, 
 and for each object, `console.log()` out the sentence:
 
 "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
@@ -38,6 +39,18 @@ let writers = [
     alive: true
   }
 ];
+
+
+function display(writer)
+{
+  for(i in writer){
+    if(writer[i].alive)
+    console.log(`Hi, my name is ${writer[i].firstName} ${writer[i].lastName}. I am ${writer[i].age} years old, and work as a ${writer[i].occupation}.`);
+  }
+}
+
+display(writers);
+
 
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.

@@ -25,4 +25,10 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+
+    
+
+
+
+];
