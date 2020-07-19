@@ -22,4 +22,14 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+	Title: 'Tiramiso',
+	Serves: 6,
+	Ingredients: [ 'Double Cream', 'Choclate', 'Sugar', 'Biscuite', 'Caramel' ]
+};
+console.log(recipes.Title);
+console.log(`Serves : ${recipes.Serves}`);
+console.log(`Ingredients:`);
+for (var i = 0; i < recipes.Ingredients.length; i++) {
+	console.log(recipes.Ingredients[i]);
+}
