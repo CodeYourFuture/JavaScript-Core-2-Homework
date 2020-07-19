@@ -22,4 +22,9 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    title: "Mole",
+    numberOfServings: 2,
+    ingredients: ["cinnamon", "cumin", "cocoa"]
+};
+console.log(recipes.title);

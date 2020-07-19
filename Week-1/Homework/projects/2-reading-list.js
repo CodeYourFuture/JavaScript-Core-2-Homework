@@ -25,4 +25,28 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+    {
+        title: "the Hobbit",
+        author: "J.R.R. Tolkien",
+        alreadyRead: true
+    },
+    {
+        title: "Harry Potter",
+        author: "Rowling",
+        alreadyRead: true
+    },
+    {
+        title: "Lord of the Flies",
+        author: "Golding",
+        alreadyRead: true
+    }
+];
+
+books.forEach(function(book) {
+    if (books.alreadyRead)
+    console.log("You ara already read " + book.title + " by " + book.author);
+    else {
+        console.log("You still need to read " + book.title + " by " + book.author);
+    }
+});
