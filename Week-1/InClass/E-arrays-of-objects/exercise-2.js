@@ -7,46 +7,56 @@ Each destination has a name, a distance from Glasgow, and a list of transportati
 3) Find all the destination names that are both more than 300 kms far away and reachable by train.
 */
 
-
 let destination1 = {
-    destinationName: "Edinburgh",
-    distanceKms: 80,
-    transportations: ["car", "bus", "train"]
+	destinationName: 'Edinburgh',
+	distanceKms: 80,
+	transportations: [ 'car', 'bus', 'train' ]
 };
 
 let destination2 = {
-    destinationName: "London",
-    distanceKms: 650,
-    transportations: ["car", "bus", "train"]
+	destinationName: 'London',
+	distanceKms: 650,
+	transportations: [ 'car', 'bus', 'train' ]
 };
 
 let destination3 = {
-    destinationName: "Paris",
-    distanceKms: 900,
-    transportations: ["train", "plane"]
+	destinationName: 'Paris',
+	distanceKms: 900,
+	transportations: [ 'train', 'plane' ]
 };
 
 let destination4 = {
-    destinationName: "Dublin",
-    distanceKms: 350,
-    transportations: ["plane", "ferry"]
+	destinationName: 'Dublin',
+	distanceKms: 350,
+	transportations: [ 'plane', 'ferry' ]
 };
 
-let travelDestinations = [destination1, destination2, destination3, destination4];
+let travelDestinations = [ destination1, destination2, destination3, destination4 ];
 
 /* 
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
+let destinationNamesWithin500Kms = '';
 
+travelDestinations.forEach(function(travelDestination) {
+	if (travelDestination.distanceKms <= 500) {
+		destinationNamesWithin500Kms += travelDestination.destinationName + ',';
+	}
+}); // Complete here
 
-let destinationNamesWithin500Kms = // Complete here
+let destinationNameReachableByFerry = '';
+travelDestinations.forEach(function(travelDestination) {
+	if (travelDestination.transportations.includes('ferry'))
+		destinationNameReachableByFerry += travelDestination.destinationName + ',';
+});
+// Complete here
 
-let destinationNameReachableByFerry = // Complete here
-
-let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
-
-
+let destinationNamesMoreThan300KmsAwayByTrain = ''; // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+travelDestinations.forEach(function(travelDestination) {
+	if (travelDestination.transportations.includes('train') && travelDestination.distanceKms >= 300)
+		destinationNamesMoreThan300KmsAwayByTrain += travelDestination.destinationName + ',';
+});
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
