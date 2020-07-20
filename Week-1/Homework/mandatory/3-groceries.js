@@ -10,3 +10,9 @@ let groceryList = {
   item2: "",
   item3: ""
 };
+
+for (let grocery in groceryList) {
+  groceriesToBuy.push(groceryList[grocery]);
+}
+
+console.log(groceriesToBuy);
