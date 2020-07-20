@@ -30,12 +30,6 @@ function exerciseOne(arrayOfPeople) {
     content.appendChild(h2Els);
 
   }
-
- 
-
-
-
-
   
 }
 
@@ -47,7 +41,27 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  
+  let shopList = document.querySelector('#shoppingList');
+  let shoppingTitle = document.createElement('h3');
+
+  shoppingTitle.textContent = "Shopping List";
+  shopList.appendChild(shoppingTitle);
+
+  for(let i=0; i< shopping.length; i++){
+    let unorderedList = document.createElement('ul');
+    let list = document.createElement('li');
+
+     list.textContent = shopping[i];
+
+     shopList.appendChild(unorderedList);
+     unorderedList.appendChild(list);
+  }
+  
+   
+  
+
+
 }
 
 /**
@@ -80,7 +94,41 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+
+  let bookDiv = document.querySelector('#bookList');
+  let bookpics = ["./bookImages/dan.jpeg", "./bookImages/human.jpeg", "./bookImages/pragmatic.jpeg"]
+  //create p elements
+  let bookTitle = document.createElement('h3');
+  bookDiv.appendChild(bookTitle);
+  
+  bookTitle.textContent = "Book List";
+
+  for(let i=0; i< books.length; i++){
+    let bookParagraph = document.createElement('p');
+    let unorderedBookList = document.createElement('ul');
+    let innerlist = document.createElement('li');
+    let bookImages = document.createElement('img');
+
+  //add title and author of books
+  bookParagraph.textContent = books[i].title + " - " + books[i].author;
+
+  //used bookpic array to display images
+  bookImages.src = bookpics[i];
+
+  //attach to parent nodes
+  bookDiv.appendChild(unorderedBookList);
+  unorderedBookList.appendChild(innerlist);
+  innerlist.appendChild(bookParagraph);
+  innerlist.appendChild(bookImages);
+  unorderedBookList.style.width = "400px";
+
+  if(books[i].alreadyRead === true){
+    innerlist.style.backgroundColor = "green";
+  }else {
+    innerlist.style.backgroundColor = "red";
+  }
+  }
+  
 }
 
 //
