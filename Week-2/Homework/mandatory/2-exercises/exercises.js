@@ -15,6 +15,15 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  for (let person of arrayOfPeople){
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    content.append(h1);
+    content.append(h2);
+    h1.innerHTML = person.name;
+    h2.innerHTML = person.job;
+  }
 }
 
 /**
@@ -26,6 +35,16 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  let ul = document.createElement("ul");
+  content.append(ul);
+
+  for(let item of shopping){
+    let li = document.createElement("li");
+    content.append(li);
+    li.innerHTML = item;
+  }
+
 }
 
 /**
@@ -59,6 +78,42 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  let script = document.querySelector("script");
+  let content = script.previousElementSibling;
+  let h1 = document.createElement("h1");
+  content.append(h1);
+  h1.innerHTML = "Book List"
+  let ul = document.createElement("ul");
+  ul.style.listStyle = "none";
+  ul.style.display = "flex";
+  ul.style.flexWrap = "wrap";
+  ul.style.padding = "20px";
+  //ul.style.width = "calc( 100% - 41px)";
+  content.append(ul);
+  let images = [ 
+      './images/The-Design-Of-Everyday-Things.jpg',
+      './images/The-Most-Human-Human.jpg',
+      './images/The-Pragmatic-Programmer.jpg'
+   ];
+   let bookIndex = 0;
+
+  for(let book of books){
+    let li = document.createElement("li");
+    li.style.margin = "10px";
+    li.style.padding = "10px";
+    li.style.minWidth = "250px";
+    li.style.fontSize = "10px";
+    ul.append(li);
+    li.style.backgroundColor = book.alreadyRead ? 'green' : 'red';
+    let p = document.createElement("p");
+    li.append(p);
+    p.innerHTML = `${book.title} - ${book.author}`;
+    
+    let image = document.createElement("img");
+    image.src = images[ bookIndex++ ];
+    image.style.width = "50%";
+    li.append(image);
+  }
 }
 
 //
