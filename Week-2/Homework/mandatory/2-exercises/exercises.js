@@ -15,6 +15,15 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  arrayOfPeople.forEach(element => {
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    h1.innerHTML = element.name;
+    h2.innerHTML = element.job;
+    content.appendChild(h1);
+    content.appendChild(h2);
+    
+  });
 }
 
 /**
@@ -26,6 +35,16 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  var divEl = document.createElement("div");
+  divEl.className = "content";
+  var ulEl = document.createElement("ul")
+  divEl.appendChild(ulEl)
+  for(let i=0; i<shopping.length;i++){
+    let liEl = document.createElement("li");
+    ulEl.appendChild(liEl);
+    liEl.innerHTML = shopping[i];
+  }
+  document.body.appendChild(divEl)
 }
 
 /**
@@ -59,6 +78,25 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  var ulE = document.createElement("ul"); 
+  document.body.appendChild(ulE);
+for(let i = 0; i< books.length; i++){
+  var imgEl = document.createElement("img")
+  var liEl = document.createElement("li")
+  ulE.appendChild(liEl);
+  var pEl = document.createElement("p");
+  liEl.appendChild(pEl);
+  pEl.innerHTML = `${books[i].title} - ${books[i].author}`
+  liEl.appendChild(imgEl);
+  liEl.style.listStyleType = "none"
+  if(books[i].alreadyRead){
+  liEl.style.backgroundColor = "green"
+  }else
+  liEl.style.backgroundColor = "red";
+imgEl.src = `img/${i.toString()}.jpg`
+}
+ulE.style.display = "flex";
+ulE.style.justifyContent = "space-evenly"
 }
 
 //
