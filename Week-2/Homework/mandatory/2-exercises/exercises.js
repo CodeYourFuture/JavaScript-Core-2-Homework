@@ -15,6 +15,28 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  for(let i=0; i < arrayOfPeople.length; i++){
+    //create h1 element
+    let h1Els =  document.createElement('h1');
+    let h2Els =  document.createElement('h2');
+
+    //add text with name from arrayOfPeople
+    h1Els.textContent = arrayOfPeople[i].name;
+    h2Els.textContent = arrayOfPeople[i].job;
+
+    //add to parent node
+    content.appendChild(h1Els);
+    content.appendChild(h2Els);
+
+  }
+
+ 
+
+
+
+
+  
 }
 
 /**
