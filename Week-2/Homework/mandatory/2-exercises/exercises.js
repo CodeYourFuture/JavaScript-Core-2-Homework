@@ -14,7 +14,19 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
+  let content = document.querySelector('#content');
+
+  arrayOfPeople.forEach((book) => {
+    const h1 = document.createElement('h1');
+    const h1text = document.createTextNode(book.name);
+    const h2 = document.createElement('h2');
+    const h2text = document.createTextNode(book.job);
+
+    h1.appendChild(h1text);
+    h2.appendChild(h2text);
+    content.appendChild(h1);
+    content.appendChild(h2);
+  });
 }
 
 /**
@@ -25,7 +37,14 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  const ul = document.createElement('ul');
+  content.appendChild(ul);
+
+  shopping.forEach((item) => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+  });
 }
 
 /**
@@ -58,7 +77,35 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  const h1 = document.createElement('h1');
+  const ul = document.createElement('ul');
+  h1.textContent = 'Books list';
+  ul.style.listStyle = 'none';
+  ul.style.display = 'flex';
+  ul.style.flexWrap = 'wrap';
+
+  content.appendChild(h1);
+  content.appendChild(ul);
+
+  books.forEach((book) => {
+    const li = document.createElement('li');
+    const p = document.createElement('p');
+    const img = document.createElement('img');
+    const id = Math.floor(Math.random() * 100);
+
+    li.style.backgroundColor = book.alreadyRead ? 'green' : 'red';
+    p.textContent = `${book.title} by ${book.author}`;
+    img.src = `https://picsum.photos/id/${id}/200/300`;
+
+    li.style.padding = '1em';
+    li.style.maxWidth = '500px';
+    li.style.minWidth = '400px';
+    li.style.marginRight = '3rem';
+    li.style.marginBottom = '3rem';
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+  });
 }
 
 //
@@ -72,33 +119,33 @@ function exerciseThree(books) {
 //
 
 let people = [
-  { name: "Chris", job: "Teacher" },
-  { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: 'Chris', job: 'Teacher' },
+  { name: 'Joanna', job: 'Student' },
+  { name: 'Boris', job: 'Prime Minister' },
 ];
 
 exerciseOne(people);
 
-let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
+let shopping = ['Milk', 'Break', 'Eggs', 'A Dinosaur', 'Cake', 'Sugar', 'Tea'];
 
 exerciseTwo(shopping);
 
 const books = [
   {
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    alreadyRead: false
+    title: 'The Design of Everyday Things',
+    author: 'Don Norman',
+    alreadyRead: false,
   },
   {
-    title: "The Most Human Human",
-    author: "Brian Christian",
-    alreadyRead: true
+    title: 'The Most Human Human',
+    author: 'Brian Christian',
+    alreadyRead: true,
   },
   {
-    title: "The Pragmatic Programmer",
-    author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    title: 'The Pragmatic Programmer',
+    author: 'Andrew Hunt',
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);
