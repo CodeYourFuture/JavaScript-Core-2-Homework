@@ -64,6 +64,36 @@ function validateInputs(inputs) {
     }
   });
 
+  /* An attempt to create new elements for error messages below */
+
+  inputs.forEach((input) => {
+    let errorElement = document.createElement('p');
+    errorElement.style.color = 'red';
+    errorElement.style.margin = 0;
+    errorElement.style.fontSize = '0.8rem';
+    errorElement.setAttribute('class', 'validationError');
+
+    // error already shown on the page, use the previously created element
+    if (input.previousElementSibling.classList.contains('validationError')) {
+      errorElement = input.previousElementSibling;
+    }
+
+    // error for blank field
+    if (input.value.length < 1) {
+      errorElement.textContent = 'This field cannot be left blank.';
+      input.parentElement.insertBefore(errorElement, input);
+      formValid = false;
+
+      // error for missing '@'
+    } else if (input.type === 'email' && !input.value.includes('@')) {
+      errorElement.textContent = 'Email must contain "@" character.';
+      input.parentElement.insertBefore(errorElement, input);
+      formValid = false;
+    } else {
+      // input is valid - remove the error element
+      errorElement.remove();
+    }
+  });
 
   return formValid;
 }
