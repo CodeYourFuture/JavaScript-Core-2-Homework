@@ -13,10 +13,27 @@
  *      .....
  * </div>
  */
+
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
-}
+  let nameOfPerson, jobOfPerson;
 
+  arrayOfPeople.forEach(person => {
+    nameOfPerson = document.createElement("h1");
+    nameOfPerson.innerText = person.name;
+    content.appendChild(nameOfPerson);
+
+    jobOfPerson = document.createElement("h2");
+    jobOfPerson.innerHTML = person.job;
+    content.appendChild(jobOfPerson);
+  })
+
+  
+
+ 
+}
+//exerciseOne();
 /**
  *
  * Create a list of shopping items. You should use an unordered list.
@@ -25,6 +42,15 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
+  let content = document.querySelector("#content");
+  let unOrderedList = document.createElement("ul")
+  content.appendChild(unOrderedList);
+
+  shopping.forEach(item => {
+    let li1 = document.createElement("li");
+    li1.innerText = item;
+    unOrderedList.appendChild(li1);
+  })
   //Write your code in here
 }
 
@@ -57,7 +83,17 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+
 function exerciseThree(books) {
+  
+  for (let i = 0; i < books.length; i ++){
+  let newPEl = document.createElement("p");
+  newPEl.innerHTML = books.title + books.author;
+  body.appendChild(newPEl);
+
+  }
+
+
   //Write your code in here
 }
 
