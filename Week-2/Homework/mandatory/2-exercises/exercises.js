@@ -85,12 +85,28 @@ function exerciseTwo(shopping) {
 **/
 
 function exerciseThree(books) {
-  
-  for (let i = 0; i < books.length; i ++){
-  let newPEl = document.createElement("p");
-  newPEl.innerHTML = books.title + books.author;
-  body.appendChild(newPEl);
 
+  let unOrderedListNew = document.createElement("ul")
+ 
+  for (let i = 0; i < books.length; i ++){
+    let listElement = document.createElement("li");
+    let newPEl = document.createElement("p");
+    let bookImage = document.createElement("img");
+
+    newPEl.innerHTML = books[i].title + " " + books[i].author;
+   
+    body.appendChild(unOrderedListNew);
+    unOrderedListNew.appendChild(listElement);
+    listElement.appendChild(newPEl);
+
+    bookImage.src = newPEl;
+    listElement.appendChild(bookImage);
+
+    if (books[i].alreadyRead ===  true){
+      return books[i].style.backgroundColor = "green";
+    } else {
+      return books[i].style.backgroundColor = "red";
+    }
   }
 
 
