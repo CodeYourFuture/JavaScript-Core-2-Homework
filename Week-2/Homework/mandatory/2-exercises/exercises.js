@@ -80,36 +80,56 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+let imageSrc = [
+  {
+    title:"The Design of Everyday Things", 
+    src:"images/the-design-of-everyday-things.jpeg" 
+  },
+   {
+    title:"The Most Human Human", 
+    src:"images/the-most-human-human.jpeg" 
+  },
+   {
+    title:"The Pragmatic Programmer", 
+    src:"images/the-pragmatic-programmer.jpeg" 
+  }
+]
 
 function exerciseThree(books) {
 
-  let unOrderedListNew = document.createElement("ul")
-  let content = document.querySelector("#content");
+  let bookList = document.createElement("ul");
+  books.forEach(book => {
+    let imageSrc = null;
 
-  for (let i = 0; i < books.length; i ++){
-    let listElement = document.createElement("li");
-    let newPEl = document.createElement("p");
-    let bookImage = document.createElement("img");
+    imageSrc.forEach(image => {
+      if (book.title === image.title){
+        imageSrc = image.src;
+      }
+    });
 
-    newPEl.innerHTML = books[i].title + " " + books[i].author;
-   
-    content.appendChild(unOrderedListNew);
-    unOrderedListNew.appendChild(listElement);
-    listElement.appendChild(newPEl);
+    let ListItem = document.createElement("li");
+    let bookHeader = document.createElement("p");
+    bookHeader.textContent = `${book.title} - ${book.author}`;
+    let image = document.createElement("img");
+    image.src = imageSrc;
 
-    bookImage.src = newPEl;
-    listElement.appendChild(bookImage);
-
-    if (books[i].alreadyRead ===  true){
-      return books[i].style.backgroundColor = "green";
-    } else {
-      return books[i].style.backgroundColor = "red";
+    if (book.alreadyRead === true){
+      listItem.style.backgroundColor = "green";
+    } else{
+      listItem.style.backgroundColor = "red";
     }
-  }
+
+    listItem.append(bookHeader);
+    listItem.append(image);
+    bookList.appendChild(listItem);
+  });
+
+  let content = document.querySelector("#content");
+  content.appendChild(bookList);
 
 
-  //Write your code in here
-}
+// let listItem = document.createElement("li");
+// listItem.className = "bookItem";
 
 //
 //
