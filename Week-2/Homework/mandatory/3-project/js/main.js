@@ -15,7 +15,6 @@ function clickButton(jumboColor,donateColor,volunteerColor1,volunteerColor2)
     donateBike.style.backgroundColor=donateColor;
     Volunteer.style.backgroundColor=volunteerColor1;
     Volunteer.style.color=volunteerColor2;
-
 }
 
 
@@ -53,11 +52,7 @@ var submit=document.querySelector("form button");
 function checkAllDetails(e)
 {
     e.preventDefault();
-    // nameEl.style.backgroundColor="red";
-
-
-     if(!id.value || !nameEl.value || !describe.value)
-    {
+    if(!id.value || !nameEl.value || !describe.value){
        
         if(!id.value)
         id.style.backgroundColor="red";
@@ -76,9 +71,7 @@ function checkAllDetails(e)
     else
     alert("Thank you for filling out the form");
 
-
-    document.querySelector("form").reset();
-    
+    document.querySelector("form").reset();    
 }
 
 function resetWhite()
