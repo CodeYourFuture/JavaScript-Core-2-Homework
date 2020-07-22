@@ -1,4 +1,4 @@
-//CHANGING WEBSITE THEME
+//PART 1 : CHANGING WEBSITE THEME
 
 //BLUE BUTTON
 let blueButton = document.querySelector("#blueBtn");
@@ -34,3 +34,13 @@ greenButton.addEventListener("click", function () {
   let volunteerBtn = document.querySelector(".btn-secondary");
   volunteerBtn.style.backgroundColor = "#8c9c08";
 });
+
+//PART 2 : FORM
+
+let emailInput = document.querySelector("#seexampleInputEmail1");
+let nameInput = document.querySelector(".form-control");
+let selfDescriptionInput = document.querySelector("#exampleTextarea")
+
+console.log(emailInput);
+console.log(nameInput);
+console.log(selfDescriptionInput);

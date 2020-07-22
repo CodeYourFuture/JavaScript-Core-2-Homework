@@ -76,28 +76,56 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+
+let images = [
+  {
+    title: "The Design of Everyday Things",
+    src:
+      "https://assets.wired.com/photos/w_1001/wp-content/uploads/2015/09/design-of-everyday-things.jpg",
+  },
+  {
+    title: "The Most Human Human",
+    src:
+      "https://www.kurzweilai.net/images/The-Most-Human-Human-Paperback-Front-Cover.jpg",
+  },
+  {
+    title: "The Pragmatic Programmer",
+    src:
+      "https://www.nytbooks.com/audiobooks/computers-technology/img/B0833FBNHV-300.jpg",
+  },
+];
 function exerciseThree(books) {
-  //Write your code in here
   let ulEl = document.createElement("ul");
-  document.body.appendChild(ulEl); //unordered list is appended to the body
+  document.body.appendChild(ulEl);
+  let imageSrc = null;
+
   for (let i = 0; i < books.length; i++) {
     let liEl = document.createElement("li");
     let pEl = document.createElement("p");
     pEl.textContent = `${books[i].title} - ${books[i].author}`;
-    liEl.body.appendChild(pEl); //paragraph is appended to the list element
-
     let imgEl = document.createElement("img");
+
+    if (images[i].title === books[i].title) {
+      imageSrc = images[i].src;
+    }
+
+    imgEl.src = imageSrc;
+    liEl.appendChild(pEl);
     liEl.appendChild(imgEl);
+    ulEl.appendChild(liEl);
 
-    //book[i]
-
-    ulEl.appendChild(liEl); //list element is appended to the unordered list element
-    liEl.appendChild(imgEl);
-
-    // imgEl.src =
-    //   "https://assets.wired.com/photos/w_1001/wp-content/uploads/2015/09/design-of-everyday-things.jpg";
+    if (books[i].alreadyRead) {
+      liEl.style.backgroundColor = "green";
+    } else {
+      liEl.style.backgroundColor = "red";
+    }
+    liEl.style.listStyle = "none";
+    liEl.style.paddingRight = "150px";
+    liEl.style.margin = "20px";
+    imgEl.style.width = "300px";
   }
-
+  ulEl.style.display = "flex";
+  ulEl.style.justifyContent = "spread-between";
 }
 
 //
