@@ -35,3 +35,12 @@ let books = [
 for(let obj of books){
     console.log(`${obj.title} By ${obj.Author}`)
 }
+for(let obj of books){
+    // console.log(`${obj.title} By ${obj.Author}`)
+    if(obj.alreadyRead===true){
+         console.log("You already read by "+obj.Author);
+    }else{
+         console.log("you still need to read by "+obj.Author);
+    }
+ }
+
