@@ -82,7 +82,7 @@ IF all the fields are valid, when you click **Submit** it should:
     let inPutDescribeYourself = document.getElementById("exampleTextarea");
 
     if ( inPutEmailAddress.value.length > 0 && inPutEmailAddress.innerHTML.includes("@") && inPutName.value.length > 0 && inPutDescribeYourself.value.length > 0){
-            alert("Thank you for filling the form correctly");
+        alert("Thank you for filling the form correctly");
     } else {
         inPutEmailAddress.style.backgroundColor = "red";
         inPutName.style.backgroundColor = "red";

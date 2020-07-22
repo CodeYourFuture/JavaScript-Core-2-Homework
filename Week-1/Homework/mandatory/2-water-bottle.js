@@ -11,7 +11,7 @@ We made a start on this for you here:
 let bottle = {
   volume: 0,
   fill: function() {
-    this.volume = this.volume + 100;
+    this.volume = 100;
     // calling this function should make you bottles volume = 100;
   },
   drink: function() {
