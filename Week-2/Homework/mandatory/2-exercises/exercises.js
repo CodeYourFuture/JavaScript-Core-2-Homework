@@ -14,7 +14,17 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
+
   let content = document.querySelector("#content");
+  for(let i=0; i<arrayOfPeople.length;i++)
+  {
+    let heading1=document.createElement("h1");
+    heading1.textContent+= arrayOfPeople[i].name;
+    content.appendChild(heading1);
+    let heading2=document.createElement("h2");
+    heading2.textContent+= arrayOfPeople[i].job;
+    content.appendChild(heading2);
+  }
 }
 
 /**
