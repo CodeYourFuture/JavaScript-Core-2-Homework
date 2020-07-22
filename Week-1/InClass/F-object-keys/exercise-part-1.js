@@ -7,17 +7,19 @@ You're going to have to used what we learned at the start of this lesson, and so
 */
 
 let mentorsAges = {
-  james: 29,
-  JOSH: 35,
-  JAMIE: 25,
-  Mozafar: 30
+	james: 29,
+	JOSH: 35,
+	JAMIE: 25,
+	Mozafar: 30,
 };
 
 // ONLY EDIT BELOW THIS LINE
-
-let mentorsNames = ;
-
-let mentorsNamedUppercased = ;
+function allCapitalLetters(names) {
+	return names.toUpperCase();
+}
+let mentorsNames = Object.keys(mentorsAges);
+console.log(mentorsNames);
+let mentorsNamedUppercased = mentorsNames.map(allCapitalLetters);
 
 // ONLY EDIT ABOVE THIS LINE
 

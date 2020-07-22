@@ -8,12 +8,14 @@ let person = {
     name: "Alice",
     friends: ["John", "Nina"]
 };
-
+person.makeFriend = function(newFriends){
+    return this.friends.push(newFriends);
+};
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
 person.makeFriend("Bob");
-
+person.makeFriend("Alice");
 console.log(`Expected result: 'John,Nina,Bob'. Actual result: ${person.friends}`);
