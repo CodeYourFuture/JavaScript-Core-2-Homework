@@ -45,7 +45,12 @@ let writers = [
 
   console.log(` Hi, my name is ${writers[key].firstName} ${writers[key].lastName}. I am ${writers[key].age} years old, and works as a  ${writers[key].occupation}.`);
 } */
-
+///////////////////////////////////////////////////////////
+//Writing with forEach() array method;
+let writeNames = writers.forEach(writer => {
+  console.log (` Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and works as a  ${writer.occupation}.`)
+})
+/////////////////////////////////////////////////////////////
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
