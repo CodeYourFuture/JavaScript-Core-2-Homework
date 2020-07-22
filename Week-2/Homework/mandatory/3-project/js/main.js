@@ -37,27 +37,36 @@ greenBtnEl.addEventListener("click", function (e) {
 let submitBtnEl = document.querySelector("form").lastElementChild;
 submitBtnEl.addEventListener("click", function (event) {
     event.preventDefault();
-    let formEls = document.querySelectorAll(".form-control");
-    if (formEls[0].value.includes("@")) {
+    let emailEl = document.querySelector("#exampleInputEmail1");
+    let nameEl = document.querySelector("#example-text-input");
+    let textEl = document.querySelector("#exampleTextarea");
+
+    if (emailEl.value.includes("@")) {
         validForm1 = true;
+        emailEl.style.backgroundColor = "white";
     } else {
-        formEls[0].style.backgroundColor = "red";
+        emailEl.style.backgroundColor = "red";
+        validForm1 = false;
     }
-    if (formEls[1].value.length > 0) {
+    if (nameEl.value.length > 0) {
         validForm2 = true;
+        nameEl.style.backgroundColor = "white";
     } else {
-        formEls[1].style.backgroundColor = "red";
+        nameEl.style.backgroundColor = "red";
+        validForm2 = false;
     }
-    if (formEls[2].value.length > 0) {
+    if (textEl.value.length > 0) {
         validForm3 = true;
+        textEl.style.backgroundColor = "white";
     } else {
-        formEls[2].style.backgroundColor = "red";
+        textEl.style.backgroundColor = "red";
+        validForm3 = false;
     }
 
 if(validForm1 && validForm2 && validForm3) {
     alert("thank you for filling out the form");
-    formEls[0].value = "";
-    formEls[1].value = "";
-    formEls[2].value = "";
+    emailEl.value = "";
+    nameEl.value = "";
+    textEl.value = "";
 }
 });
