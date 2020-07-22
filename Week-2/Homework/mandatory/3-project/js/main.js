@@ -39,3 +39,54 @@ bluebutton.addEventListener("click",buttonForBlue);
 orangeButton.addEventListener("click",buttonforOrange);
 
 greenButton.addEventListener("click",buttonForGreen);
+
+
+
+
+
+var id=document.getElementById("exampleInputEmail1");
+var nameEl=document.getElementById("example-text-input");
+var describe=document.getElementById("exampleTextarea");
+var submit=document.querySelector("form button");
+
+
+function checkAllDetails(e)
+{
+    e.preventDefault();
+    // nameEl.style.backgroundColor="red";
+
+
+     if(!id.value || !nameEl.value || !describe.value)
+    {
+       
+        if(!id.value)
+        id.style.backgroundColor="red";
+        if(!nameEl.value)
+        nameEl.style.backgroundColor="red";
+        if(!describe.value)
+        describe.style.backgroundColor="red";
+
+        alert("Enter all the required details");
+    }
+
+    else if(!id.value.includes("@")){
+        alert("Email Id must contain @");
+        id.style.backgroundColor="red";
+    }
+    else
+    alert("Thank you for filling out the form");
+
+
+    document.querySelector("form").reset();
+    
+}
+
+function resetWhite()
+{
+    id.style.backgroundColor="white";
+    nameEl.style.backgroundColor="white";
+    describe.style.backgroundColor="white";
+}
+
+submit.addEventListener("click",checkAllDetails);
+id.addEventListener("mouseover",resetWhite);
