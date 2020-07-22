@@ -82,7 +82,7 @@ Task 5
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
 
-let linksPage = document.querySelector("#largerLinksBtn");
+/* let linksPage = document.querySelector("#largerLinksBtn");
 linksPage.addEventListener("click", textSizeGetBigger);
 
 function textSizeGetBigger() {
@@ -91,7 +91,22 @@ function textSizeGetBigger() {
  for (var i=0; i < allLinksOnThePage.length; i++ ){
      allLinksOnThePage[i].classList.add(".larger");
  }
+} */
+
+
+let largeButton = document.getElementById("largerLinksBtn");
+console.log(largeButton);
+largeButton.addEventListener("click", textSizeBigger);
+
+function textSizeBigger() {
+  let allAnchorEls = document.getElementsByTagName("a");
+
+  for (let i=0; i < allAnchorEls.length; i++){
+      allAnchorEls[i].style.fontSize = "30px";
+  }
+  
 }
+
 
 /* Wahab lecture example
 let btn = document.querySelector('#largerLinksBtn');

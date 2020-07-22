@@ -29,9 +29,6 @@ function exerciseOne(arrayOfPeople) {
     content.appendChild(jobOfPerson);
   })
 
-  
-
- 
 }
 //exerciseOne();
 /**
@@ -41,6 +38,7 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+
 function exerciseTwo(shopping) {
   let content = document.querySelector("#content");
   let unOrderedList = document.createElement("ul")
@@ -51,7 +49,6 @@ function exerciseTwo(shopping) {
     li1.innerText = item;
     unOrderedList.appendChild(li1);
   })
-  //Write your code in here
 }
 
 /**
@@ -87,7 +84,8 @@ function exerciseTwo(shopping) {
 function exerciseThree(books) {
 
   let unOrderedListNew = document.createElement("ul")
- 
+  let content = document.querySelector("#content");
+
   for (let i = 0; i < books.length; i ++){
     let listElement = document.createElement("li");
     let newPEl = document.createElement("p");
@@ -95,7 +93,7 @@ function exerciseThree(books) {
 
     newPEl.innerHTML = books[i].title + " " + books[i].author;
    
-    body.appendChild(unOrderedListNew);
+    content.appendChild(unOrderedListNew);
     unOrderedListNew.appendChild(listElement);
     listElement.appendChild(newPEl);
 

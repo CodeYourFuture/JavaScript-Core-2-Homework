@@ -81,7 +81,9 @@ IF all the fields are valid, when you click **Submit** it should:
     let inPutName = document.getElementById("example-text-input");
     let inPutDescribeYourself = document.getElementById("exampleTextarea");
 
-    if ( inPutEmailAddress.value.length > 0 && inPutEmailAddress.innerHTML.includes("@") && inPutName.value.length > 0 && inPutDescribeYourself.value.length > 0){
+    console.log("exampleInputEmail1" + inPutEmailAddress.value );
+
+    if ( inPutEmailAddress.value.length > 0 && inPutEmailAddress.value.includes("@") && inPutName.value.length > 0 && inPutDescribeYourself.value.length > 0){
         alert("Thank you for filling the form correctly");
     } else {
         inPutEmailAddress.style.backgroundColor = "red";
