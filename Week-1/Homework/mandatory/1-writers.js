@@ -38,7 +38,11 @@ let writers = [
     alive: true
   }
 ];
-
+for(let key in writers){
+    if(writers[key].alive === true ){
+      console.log(`Hi, my name is ${writers[key].firstName} ${writers[key].lastName}. I am ${writers[key].age} years old, and work as a ${writers[key].occupation}`);
+    }  
+}
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
