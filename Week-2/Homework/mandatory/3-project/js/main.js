@@ -37,10 +37,10 @@ green.addEventListener('click', () => {
 });
 
 sub.addEventListener('click', function(e){
-    let test = emailplaceHolder.value.includes(emailChecker);
+    let test = emailplaceHolder.value.includes(emailChecker); 
     if(nameHolder.value.length > 0 ){
        if(describeHolder.value.length >0){
-           if(emailplaceHolder > 0 && test === true){
+           if(emailplaceHolder > 0 && test === true){  //the code after the && doesnt seem to be working :( (test === true)
                 alert('Thank you');
            }else{
                e.preventDefault();
@@ -57,7 +57,9 @@ sub.addEventListener('click', function(e){
         nameHolder.style.backgroundColor = "red";
     }
 
-    if(nameHolder.value.length > 0 && describeHolder.value.length > 0 && emailplaceHolder.value.length > 0 ){
+    if(nameHolder.value.length > 0 && describeHolder.value.length > 0 
+        && emailplaceHolder.value.length > 0 ){
+            
         alert('Thank you for filling out the form');
     }
     
