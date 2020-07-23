@@ -36,43 +36,45 @@ green.addEventListener('click', () => {
     volunteerBtn.style.backgroundColor = "#8c9c08";
 });
 
-sub.addEventListener('click', () => {
-   // console.log(nameHolder.value.length);
+sub.addEventListener('click', function(e){
+    let test = emailplaceHolder.value.includes(emailChecker);
+    if(nameHolder.value.length > 0 ){
+       if(describeHolder.value.length >0){
+           if(emailplaceHolder > 0 && test === true){
+                alert('Thank you');
+           }else{
+               e.preventDefault();
+               emailplaceHolder.style.backgroundColor = "red";
+           }
 
-   if(nameHolder.value.length > 0 && describeHolder.value.length > 0){
+       }else{
+           e.preventDefault();
+           describeHolder.style.backgroundColor = "red";
+       }
+
+    }else{
+        e.preventDefault();
+        nameHolder.style.backgroundColor = "red";
+    }
+
+    if(nameHolder.value.length > 0 && describeHolder.value.length > 0 && emailplaceHolder.value.length > 0 ){
         alert('Thank you for filling out the form');
-   }else{
-        nameHolder.style.backgroundColor = "red"; 
-        describeHolder.style.backgroundColor = "red";  
-   }
-
-   if(emailplaceHolder.value.length > 0 ){
-      let test =  emailplaceHolder.value.includes(emailChecker);
-      if(test === true){
-            alert('Thank you for filling out the form');
-      }else {
-          emailplaceHolder.style.backgroundColor = "red";
-      }
-
-   }else{
-     emailplaceHolder.style.backgroundColor = "red";
-   }
-
-   
-
+    }
+    
 
 });
 
+
+
 function emailChecker(string){
-     let arr = string.split('');
-      let res = arr.find(x => x === '@');
+    let arr = string.split('');
+    let result = arr.find(x => x === '@');
+    
+    if(result === undefined){
+        return false;
+    }else{
+        return true;
+    }
+ 
+ };
 
-      if(res === true){
-          return true;
-
-      }else {
-          return false;
-      }
-
-
-};
