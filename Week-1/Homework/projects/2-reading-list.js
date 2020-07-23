@@ -33,7 +33,7 @@ let books = [
     alreadyRead: false
     }
 ];
-
+let exercise1 - books.map(x => `${x.title} by ${x.author}`).toString();
 let bookAndAuthor = `"${books[0].title}" by ${books[0].author}`;
 
 console.log(bookAndAuthor);
@@ -49,4 +49,20 @@ function hasAlreadyRead() {
 }
 
 books.forEach(hasAlreadyRead());
+
+
+let exercise2 = books.map(x => x.alreadyRead === true ? `You already read ${x.title} by ${x.author}` :  `You still need to read $${x.title} by ${x.author}`).toString();
+
+
+
+
+
+
+
+
+
+
+
+
+
 

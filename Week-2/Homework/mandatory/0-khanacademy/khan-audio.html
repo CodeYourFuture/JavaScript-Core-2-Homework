@@ -1,0 +1,33 @@
+<!-- 
+    https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-events/pt/preventing-default-behavior-of-events
+    summary of DOM events https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-events/a/summary-dom-events
+-->
+
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Preventing default behavior of events</title>
+    </head>
+    <body>
+    
+        <a id="ohnoes" href="https://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3">What does Oh Noes say?</a>
+    
+      <script>
+        // Step 1: Find the element we want the event on
+        var ohnoesEl = document.getElementById("ohnoes");
+        // Step 2: Define the event listener function
+        var onOhNoesClick = function(e) {
+            // prevent browser to take you to the MP3 website by default
+            e.preventDefault();
+
+            var audioEl = document.createElement("audio");
+            audioEl.src = "https://www.kasandbox.org/programming-sounds/rpg/giant-no.mp3";
+            audioEl.autoplay = "true";
+            document.body.appendChild(audioEl);
+        };
+        // Step 3: Attach event listener to element
+        ohnoesEl.addEventListener("click", onOhNoesClick)
+      </script>
+    </body>
+</html>
