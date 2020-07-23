@@ -17,7 +17,7 @@ Clicking on the buttons should change the "theme" of the website:
 
   - **Jumbotron** background color to `#f0ad4e`
   - **Donate a bike** button background color to `#5751fd`
-  - **Volunteer** button background color to `#31b0d5` and text color to `white`
+  - **Volunteer** button background color to `#31b0d5` and text color to `white` 
 
 - When clicking **green** it should change:
   - **Jumbotron** background color to `#87ca8a`
