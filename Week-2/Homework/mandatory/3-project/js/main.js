@@ -1,76 +1,109 @@
+/**
+ Project Part-1
+ * 
+ */
+/**
+           Part-1: A
+ */
+//Targeting the blue button
 let blueButton = document.querySelector("#blueBtn");
+//Targeting the orange button
+let orangeButton = document.querySelector("#orangeBtn");
+// Targeting the green button
+let greenButton = document.querySelector("#greenBtn");
+//Targeting the jumbotron
+let jumbotron = document.querySelector(".jumbotron");
+//Targeting all buttons in the jumbotron
+let allButtons = document.querySelector(".buttons");
+// First button of the jumbotron
+let donatedBike = allButtons.querySelector("a:first-child");
+// Last child button of the jumbotron
+let volunteer = allButtons.querySelector("a:last-child");
+// creating an event if blue button clicked
 blueButton.addEventListener("click", blueFunction);
+//Function implemented when blue button is clicked
 function blueFunction() {
-	let jumbotron = document.querySelector(".jumbotron");
+	//Changin the jumbotron background colour
 	jumbotron.style.backgroundColor = "#588fbd";
-	let allButtons = document.querySelector(".buttons");
-	let donatedBike = allButtons.querySelector("a:first-child");
+	//Changing the background color of the firs child button when the blue button is clicked
 	donatedBike.style.backgroundColor = "#ffa500";
-	let volunteer = allButtons.querySelector("a:last-child");
+	// Changing the background colour when the blue button is clicked
 	volunteer.style.backgroundColor = "#000000";
+	// Changing the text color of volunteer button
 	volunteer.style.color = "#ffffff";
 }
-let orangeButton = document.querySelector("#orangeBtn");
+/**
+          Part-1: B
+ */
+
+// creating an event if the orange button clicked
 orangeButton.addEventListener("click", orangeFunction);
 function orangeFunction() {
-	let jumbotron = document.querySelector(".jumbotron");
+	//let jumbotron = document.querySelector(".jumbotron");
 	jumbotron.style.backgroundColor = "#f0ad4e";
-	let allButtons = document.querySelector(".buttons");
-	let donatedBike = allButtons.querySelector("a:first-child");
+	//Changing the background color of the firs child button when the orange button is clicked
 	donatedBike.style.backgroundColor = "#5751fd";
-	let volunteer = allButtons.querySelector("a:last-child");
+	// Changing the background colour when the orange button is clicked
 	volunteer.style.backgroundColor = "#31b0d5";
+	// Changing the text color of volunteer button
 	volunteer.style.color = "#ffffff";
 }
-let greenButton = document.querySelector("#greenBtn");
+/**
+            Part-1: C
+ */
 greenButton.addEventListener("click", greenFunction);
 function greenFunction() {
-	let jumbotron = document.querySelector(".jumbotron");
+	// Changing the background colour of jumbotron
 	jumbotron.style.backgroundColor = "#87ca8a";
-	let allButtons = document.querySelector(".buttons");
-	let donatedBike = allButtons.querySelector("a:first-child");
+	//Changing the background color of the firs child button when the green button is clicked
 	donatedBike.style.backgroundColor = "#000000";
-	let volunteer = allButtons.querySelector("a:last-child");
+	// Changing the background colour when the green button is clicked
 	volunteer.style.backgroundColor = "#8c9c08";
-	//volunteer.style.color = "#ffffff";
 }
+/*####################################################*/
 /*
-## Part 2
-
-Just below the buttons, there's a form called **Register with us**.
-
-Continue working in `./js/main.js` to add the following functionality:
-
-When the submit button is pressed, it should check that all the form fields are valid:
+                             Part 2
 */
-let submitForm = document.querySelector("form");
-submitForm.setAttribute("name", "myForm");
-let submitButton = submitForm.querySelector("button");
-submitButton.addEventListener("click", myFunction);
-function myFunction() {
-	
-
-	let x = document.querySelector("#example-text-input");
-	//
-	x.setAttribute("name", "example");
-	x = document.forms["myForm"]["example"].value;
-	if (x == "") {
-		//alert("Name must be filled out");
-		event((x.style.backgroundColor = "red"));
-		return false;
-	}
-
+let validatEmail, validateName, validateText;
+let submitButton = document.querySelector("form button");
+//console.log(submitButton);
+submitButton.addEventListener("click", function (event) {
+	// Adding prevent default functionto prevent the page from refreshing when the submit button is clicked
 	event.preventDefault();
-}
-
-/*
-
-
-For all the fields that invalid, it should make their background color `red`.
-IF all the fields are valid, when you click **Submit** it should:
-
-- Display an alert to thank you for filling out the form
-- Blank out (make empty) all the text fields
-
-**Important hint:** In your function that handles clicks on the `Submit` button you will need to call `event.preventDefault()` to stop the browser from refreshing the page.
-*/
+	//Targeting the email element in the form
+	let inputEmailElement = document.querySelector("#exampleInputEmail1");
+	// Targeting the name element in the form
+	let inputNameElement = document.querySelector("#example-text-input");
+	// Targeting the text area of the form
+	let inputTextElement = document.querySelector("#exampleTextarea");
+	// A condition to check if an email cretaria is met
+	if (
+		inputEmailElement.value.length > 0 &&
+		inputEmailElement.value.includes("@" && ".")
+	) {
+		// If the above condtion is met then accept the data
+		validatEmail = true;
+	} else {
+		//if the condition is not met do the following
+		inputEmailElement.style.backgroundColor = "red";
+		validatEmail = false;
+	}
+	if (inputNameElement.value.length > 0) {
+		validateName = true;
+	} else {
+		inputNameElement.style.backgroundColor = "red";
+		validateName = false;
+	}
+	if (inputTextElement.value.length > 0) {
+		validateText = true;
+	} else {
+		inputTextElement.style.backgroundColor = "#ff0000";
+		validateText = false;
+	}
+	if (validatEmail && validateName && validateText) {
+		alert("Thanks you for filling the form");
+		inputEmailElement.value = "";
+		inputNameElement.value = "";
+		inputTextElement.value = "";
+	}
+});
