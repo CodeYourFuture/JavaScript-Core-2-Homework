@@ -157,3 +157,14 @@ body {
 	   max-height: 80px;
 	}
 }
+img{
+	width: 14em;
+	
+}
+ul li{
+	width: 30%;
+	margin: 2em;
+	display: flex;
+	flex-direction: row;
+	
+}
