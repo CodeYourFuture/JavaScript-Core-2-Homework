@@ -76,18 +76,33 @@ IF all the fields are valid, when you click **Submit** it should:
  buttonPressed.addEventListener("click", checkValidity);
 
  function checkValidity(){
+
     event.preventDefault();
+
     let inPutEmailAddress= document.getElementById("exampleInputEmail1");
     let inPutName = document.getElementById("example-text-input");
     let inPutDescribeYourself = document.getElementById("exampleTextarea");
 
     console.log("exampleInputEmail1" + inPutEmailAddress.value );
 
-    if ( inPutEmailAddress.value.length > 0 && inPutEmailAddress.value.includes("@") && inPutName.value.length > 0 && inPutDescribeYourself.value.length > 0){
-        alert("Thank you for filling the form correctly");
-    } else {
+    let isValid = true;
+
+    if (!inPutEmailAddress.value.length > 0 || !inPutEmailAddress.value.includes("@") {
         inPutEmailAddress.style.backgroundColor = "red";
-        inPutName.style.backgroundColor = "red";
-        inPutDescribeYourself.style.backgroundColor = "red";
+        isValid = false;
     }
- }
+    if (!inPutName.value.length > 0 ){
+        inPutName.style.backgroundColor = "red";
+        isValid = false;
+    }
+    if (! inPutDescribeYourself.value.length > 0){
+        inPutDescribeYourself.style.backgroundColor = "red";
+        isValid = false;
+    } 
+    if(isValid){
+        alert("Thank you for filling the form correctly");
+        inPutEmailAddress.value = "";
+        inPutName.value = "";
+        inPutDescribeYourself.value = "";
+    }
+ };

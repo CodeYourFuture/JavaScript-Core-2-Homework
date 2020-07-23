@@ -15,7 +15,7 @@
  */
 
 
-function exerciseOne(arrayOfPeople) {
+/* function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
   let nameOfPerson, jobOfPerson;
 
@@ -29,7 +29,7 @@ function exerciseOne(arrayOfPeople) {
     content.appendChild(jobOfPerson);
   })
 
-}
+} */
 //exerciseOne();
 /**
  *
@@ -38,7 +38,7 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
-
+/* 
 function exerciseTwo(shopping) {
   let content = document.querySelector("#content");
   let unOrderedList = document.createElement("ul")
@@ -50,7 +50,7 @@ function exerciseTwo(shopping) {
     unOrderedList.appendChild(li1);
   })
 }
-
+ */
 /**
     I'd like to display my three favorite books inside a nice webpage!
 
@@ -80,7 +80,7 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
-let imageSrc = [
+let imageArr = [
   {
     title:"The Design of Everyday Things", 
     src:"images/the-design-of-everyday-things.jpeg" 
@@ -95,13 +95,16 @@ let imageSrc = [
   }
 ]
 
+
+
 function exerciseThree(books) {
 
   let bookList = document.createElement("ul");
-  books.forEach(book => {
-    let imageSrc = null;
 
-    imageSrc.forEach(image => {
+  books.forEach(book => {
+    let imageSrc;
+
+    imageArr.forEach(image => {
       if (book.title === image.title){
         imageSrc = image.src;
       }
@@ -109,7 +112,9 @@ function exerciseThree(books) {
 
     let ListItem = document.createElement("li");
     let bookHeader = document.createElement("p");
+
     bookHeader.textContent = `${book.title} - ${book.author}`;
+
     let image = document.createElement("img");
     image.src = imageSrc;
 
@@ -122,11 +127,14 @@ function exerciseThree(books) {
     listItem.append(bookHeader);
     listItem.append(image);
     bookList.appendChild(listItem);
+    let content = document.querySelector("#content");
+
   });
 
-  let content = document.querySelector("#content");
-  content.appendChild(bookList);
-
+  //let content = document.querySelector("#content");
+  //document.body.appendChild(bookList);
+  //content.appendChild(bookList);
+}
 
 // let listItem = document.createElement("li");
 // listItem.className = "bookItem";
