@@ -15,8 +15,16 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  let heading1, heading2;
+  arrayOfPeople.forEach((person) => {
+    heading1 = document.createElement("h1");
+    heading1.innerText = person.name;
+    content.appendChild(heading1);
+    heading2 = document.createElement("h2");
+    heading2.innerText = person.job;
+    content.appendChild(heading2);
+  });
 }
-
 /**
  *
  * Create a list of shopping items. You should use an unordered list.
@@ -26,6 +34,15 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  let myShoppingList = document.createElement("ul");
+  content.appendChild(myShoppingList);
+  shopping.forEach((item) => {
+    let item1 = document.createElement("li");
+    item1.innerText = item;
+    myShoppingList.appendChild(item1
+    );
+  });
 }
 
 /**
