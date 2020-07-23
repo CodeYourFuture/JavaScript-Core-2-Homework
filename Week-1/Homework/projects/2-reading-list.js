@@ -24,5 +24,25 @@ Now use an if/else statement to change the output depending on whether you read 
 If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolkien', and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
 
 **/
+let books = [
+    {title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    alreadyRead: false
+    },
+    {title: 'The Lion',
+    author: 'C. S. Lewis',
+    alreadyRead: true
+    }
+];
 
-let books = [];
+
+
+
+let exercise1 = books.map(x=>`"${x.title} by ${x.author}"`).toString();
+
+let exercise2 = books.map(x=> x.alreadyRead === true ? `You already read ${x.title} by ${x.author}` : ` You still need to read ${x.title} by ${x.author}`).toString();
+
+console.log(exercise1);
+
+console.log(exercise2);
+
