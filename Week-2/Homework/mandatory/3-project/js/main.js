@@ -83,11 +83,11 @@ IF all the fields are valid, when you click **Submit** it should:
     let inPutName = document.getElementById("example-text-input");
     let inPutDescribeYourself = document.getElementById("exampleTextarea");
 
-    console.log("exampleInputEmail1" + inPutEmailAddress.value );
+    //console.log("exampleInputEmail1" + inPutEmailAddress.value );
 
     let isValid = true;
 
-    if (!inPutEmailAddress.value.length > 0 || !inPutEmailAddress.value.includes("@") {
+    if (!inPutEmailAddress.value.length > 0 || !inPutEmailAddress.value.includes("@")){
         inPutEmailAddress.style.backgroundColor = "red";
         isValid = false;
     }
@@ -95,11 +95,11 @@ IF all the fields are valid, when you click **Submit** it should:
         inPutName.style.backgroundColor = "red";
         isValid = false;
     }
-    if (! inPutDescribeYourself.value.length > 0){
+    if (!inPutDescribeYourself.value.length > 0){
         inPutDescribeYourself.style.backgroundColor = "red";
         isValid = false;
     } 
-    if(isValid){
+    else if (isValid){
         alert("Thank you for filling the form correctly");
         inPutEmailAddress.value = "";
         inPutName.value = "";
