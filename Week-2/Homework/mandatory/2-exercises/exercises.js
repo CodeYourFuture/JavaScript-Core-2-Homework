@@ -81,6 +81,7 @@ function exerciseThree(books) {
     bookPEl.appendChild(bookUlEl);
     let bookLiEl = document.createElement("li");
     bookUlEl.appendChild(bookLiEl);
+    bookUlEl.style.listStyleType = "none";
     bookLiEl.textContent = `"${books[i].title}" by "${books[i].author}"`;
     let bookAEl = document.createElement("a");
     bookPEl.appendChild(bookAEl);

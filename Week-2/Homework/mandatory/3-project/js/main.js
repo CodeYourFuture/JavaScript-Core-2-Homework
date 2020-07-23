@@ -40,7 +40,10 @@ submitBtnEl.addEventListener("click", function (event) {
     let emailEl = document.querySelector("#exampleInputEmail1");
     let nameEl = document.querySelector("#example-text-input");
     let textEl = document.querySelector("#exampleTextarea");
-
+    let validForm1;
+    let validForm2;
+    let validForm3;
+    
     if (emailEl.value.includes("@")) {
         validForm1 = true;
         emailEl.style.backgroundColor = "white";
