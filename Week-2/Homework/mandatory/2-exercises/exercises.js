@@ -13,10 +13,19 @@
  *      .....
  * </div>
  */
-function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
-}
 
+function exerciseOne(arrayOfPeople) {
+  let content = this.document.querySelector('#content');
+  arrayOfPeople.forEach(element => {
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    h1.innerHTML = element.name;
+    h2.innerHTML = element.job;
+    content.appendChild(h1);
+    content.appendChild(h2);
+
+  });
+}
 /**
  *
  * Create a list of shopping items. You should use an unordered list.
@@ -26,6 +35,17 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let newDiv = document.createElement("div");
+
+  newDiv.className = "content";
+  let newUnOrderedList = document.createElement("ul")
+  newDiv.appendChild(newUnOrderedList)
+  for(let i=0; i<shopping.length;i++){
+    let newListElement = document.createElement("li");
+    newUnOrderedList.appendChild(newListElement);
+    newListElement.innerHTML = shopping[i];
+  }
+  document.body.appendChild(newDiv)
 }
 
 /**
@@ -57,8 +77,84 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+let imageSrc = [
+  {
+    title:"The Design of Everyday Things", 
+    src:"./extras.images/the design.jpg" 
+  },
+   {
+    title:"The Most Human Human", 
+    src:"./extras.images/the human.jpg" 
+  },
+   {
+    title:"The Pragmatic Programmer", 
+    src:"./extras.images/the pragmatic.jpg" 
+  }
+]
+
+// function exerciseThree(books) {
+ 
+//   let bookList = document.createElement("ul");
+  
+//   books.forEach(book => {
+//     let imageSrc = null;
+//     imageSrc.forEach(image => {
+//       if (book.title === image.title){
+//         imageSrc = image.src;
+//       }
+//     });
+//     let ListItem = document.createElement("li");
+//     let bookHeader = document.createElement("p");
+//     bookHeader.textContent = `${book.title} - ${book.author}`;
+//     let image = document.createElement("img");
+//     image.src = imageSrc;
+    
+//     if (book.alreadyRead === true){
+//       listItem.style.backgroundColor = "green";
+//     } else{
+//       listItem.style.backgroundColor = "red";
+//     }
+//     listItem.append(bookHeader);
+//     listItem.append(image);
+//     bookList.appendChild(listItem);
+//   });
+//   let content = document.querySelector("#content");
+//   content.appendChild(bookList);
+// }
+
 function exerciseThree(books) {
   //Write your code in here
+  let unOrderedList = document.createElement("ul"); 
+
+  document.body.appendChild(unOrderedList);
+
+for(let i = 0; i< books.length; i++){
+
+  let imgElement = document.createElement("img");
+
+  let elementOfList = document.createElement("li");
+
+  unOrderedList.appendChild(elementOfList);
+
+  let p = document.createElement("p");
+
+  elementOfList.appendChild(p);
+
+  p.innerHTML = `${books[i].title} - ${books[i].author}`
+
+  elementOfList.appendChild(imgElement);
+
+  elementOfList.style.listStyleType = "none"
+
+  if(books[i].alreadyRead){
+  elementOfList.style.backgroundColor = "green"
+  }else
+  elementOfList.style.backgroundColor = "red";
+   
+  imgElement.src = `img/${i.toString()}.jpg`
+}
+unOrderedList.style.display = "flex";
+unOrderedList.style.justifyContent = "space-around"
 }
 
 //

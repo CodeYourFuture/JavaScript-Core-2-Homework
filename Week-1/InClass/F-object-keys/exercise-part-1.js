@@ -13,13 +13,18 @@ let mentorsAges = {
   Mozafar: 30
 };
 
+let newArray = ['Patrick','Aman','MUrsel']
+
+newArray[0]
 // ONLY EDIT BELOW THIS LINE
 
-let mentorsNames = ;
+let mentorsNames = Object.keys(mentorsAges);
 
-let mentorsNamedUppercased = ;
+console.log(mentorsNames);
+
+//let mentorsNamedUppercased = mentorsNames.map(x=>x.toUpperCase());
 
 // ONLY EDIT ABOVE THIS LINE
 
-console.log(mentorsNamedUppercased);
+//console.log(mentorsNamedUppercased);
 // prints [ 'JAMES', 'JOSH', 'JAMIE', 'MOZAFAR' ]
