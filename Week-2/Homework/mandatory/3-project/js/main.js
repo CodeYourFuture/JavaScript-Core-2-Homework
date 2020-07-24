@@ -31,16 +31,25 @@ greenButton.addEventListener('click', event => {
 
 // PART 2
 
-let submitButton = document.querySelector('.form-group .btn-primary');
+let submitButton = document.querySelector('form .btn-primary');
 let email = document.getElementById('exampleInputEmail1');
 let name = document.getElementById('example-text-input');
 let textArea = document.getElementById('exampleTextarea');
 
-submitButton.addEventListener('submit', event => {
+
+submitButton.addEventListener('click', event => {
     event.preventDefault();
 
-    
+    if( email.value && name.value && textArea.value && email.value.includes('@')){
+        alert('Thank you for filling the form');
+        email.value = '';
+        name.value = '';
+        textArea.value = '';
+    }
 
+    email.value === '' ? email.style.backgroundColor = 'red': '';
+    name.value === '' ? name.style.backgroundColor = 'red': '';
+    textArea.value === '' ? textArea.style.backgroundColor = 'red': '';
 })
 
 
