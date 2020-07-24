@@ -64,6 +64,10 @@ sub.addEventListener('click', function(e){
             
         alert('Thank you for filling out the form');
     }
+
+    if(emailplaceHolder.value){
+
+    }
     
 
 });
