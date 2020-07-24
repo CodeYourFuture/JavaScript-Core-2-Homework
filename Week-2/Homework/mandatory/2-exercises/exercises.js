@@ -15,6 +15,16 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  for (let i = 0; i < arrayOfPeople.length; i++) {
+    //traverses through the arrayOfPeople
+    let newH1 = document.createElement("h1"); //creates a new h1 element
+    newH1.textContent = arrayOfPeople[i].name; //adds a name from the array to each h1 element
+    content.appendChild(newH1); //appends the h1 elements and it's text to the div with id content
+    let newH2 = document.createElement("h2"); // creates a new h2 element
+    newH2.textContent = arrayOfPeople[i].job; //adds a corresponding job from the array to each h2 element
+    content.appendChild(newH2); //appends the h2 elements and it's text to the div with id content
+  }
 }
 
 /**
@@ -26,6 +36,15 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  let ulListEl = document.createElement("ul"); //creates the unordered list element
+  content.appendChild(ulListEl); //appends the ul created to the div with id content
+
+  for (let i = 0; i < shopping.length; i++) {
+    let listEl = document.createElement("li"); //creates list element as long as there is an item in the shopping list
+    listEl.textContent = shopping[i]; //adds the items on the shopping list to each li element
+    ulListEl.appendChild(listEl); //appends the li element with it's text to the ul element created earlier
+  }
 }
 
 /**
@@ -57,8 +76,63 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+
+let images = [
+  {
+    title: "The Design of Everyday Things",
+    src:
+      "https://assets.wired.com/photos/w_1001/wp-content/uploads/2015/09/design-of-everyday-things.jpg",
+  },
+  {
+    title: "The Most Human Human",
+    src:
+      "https://www.kurzweilai.net/images/The-Most-Human-Human-Paperback-Front-Cover.jpg",
+  },
+  {
+    title: "The Pragmatic Programmer",
+    src:
+      "https://www.nytbooks.com/audiobooks/computers-technology/img/B0833FBNHV-300.jpg",
+  },
+];
+
 function exerciseThree(books) {
-  //Write your code in here
+  //HEADING - BOOK LIST
+  let heading = document.createElement("h1");
+  heading.textContent = "Book List";
+  document.body.appendChild(heading);
+  //UL ELEMENT
+  let ulEl = document.createElement("ul");
+  document.body.appendChild(ulEl);
+
+  let imageSrc = null;
+
+  for (let i = 0; i < books.length; i++) {
+    let liEl = document.createElement("li");
+    let pEl = document.createElement("p");
+    pEl.textContent = `${books[i].title} - ${books[i].author}`;
+    let imgEl = document.createElement("img");
+
+    if (images[i].title === books[i].title) {
+      imageSrc = images[i].src;
+    }
+
+    imgEl.src = imageSrc;
+    liEl.appendChild(pEl);
+    liEl.appendChild(imgEl);
+    ulEl.appendChild(liEl);
+
+    if (books[i].alreadyRead) {
+      liEl.style.backgroundColor = "green";
+    } else {
+      liEl.style.backgroundColor = "red";
+    }
+    liEl.style.listStyle = "none";
+    liEl.style.paddingRight = "150px";
+    liEl.style.margin = "20px";
+    imgEl.style.width = "300px";
+  }
+  ulEl.style.display = "flex";
+  ulEl.style.justifyContent = "spread-between";
 }
 
 //
@@ -74,7 +148,7 @@ function exerciseThree(books) {
 let people = [
   { name: "Chris", job: "Teacher" },
   { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Boris", job: "Prime Minister" },
 ];
 
 exerciseOne(people);
@@ -87,18 +161,18 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);
