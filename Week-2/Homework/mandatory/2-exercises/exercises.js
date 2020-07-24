@@ -97,6 +97,7 @@ let images = [
 function exerciseThree(books) {
   let ulEl = document.createElement("ul");
   document.body.appendChild(ulEl);
+ 
   let imageSrc = null;
 
   for (let i = 0; i < books.length; i++) {

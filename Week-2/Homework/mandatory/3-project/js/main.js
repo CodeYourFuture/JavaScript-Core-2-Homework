@@ -40,15 +40,16 @@ greenButton.addEventListener("click", function () {
 let emailInput = document.querySelector("#exampleInputEmail1");
 let nameInput = document.querySelector("#example-text-input");
 let selfDescriptionInput = document.querySelector("#exampleTextarea");
-console.log(emailInput.value.length);
+//console.log(emailInput.value.length);
 let submitBtn = document.querySelector("form .btn-primary");
-
-submitBtn.addEventListener("click", function(event) {
+console.log(emailInput);
+submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
   let isValid = true;
-
+  console.log(emailInput.value);
   if (!emailInput.value.length > 0 || !emailInput.value.includes("@")) {
-    emailInput.style.backgroundColor = "red";
+    emailInput.setAttribute("style", "background-color: red !important");
+
     isValid = false;
   }
   if (!nameInput.value.length > 0) {
@@ -58,9 +59,9 @@ submitBtn.addEventListener("click", function(event) {
   if (!selfDescriptionInput.value.length > 0) {
     selfDescriptionInput.style.backgroundColor = "red";
     isValid = false;
+  } else {
   }
-
-  if (isValid === true) {
+  if (isValid) {
     alert("Thank you for filling out the form");
     emailInput.value = "";
     nameInput.value = "";
