@@ -8,14 +8,37 @@
  * All of your HTML should go inside the Div tag with the id "content".
  *
  * <div id="content">
- *      <h1>{Name Here}</h1>
+ *      <h1>{Name Here}</h1> 
  *      <h2>{Job Here}</h2>
  *      .....
  * </div>
+ * 
  */
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  let heading1, heading2;
+  arrayOfPeople.forEach((person) => {
+      heading1 = document.createElement("h1");
+      heading1.innerText = person.name;
+      content.appendChild(heading1);
+      heading2 = document.createElement("h2");
+      heading2.innerText = person.job;
+      content.appendChild(heading2);
+  });
 }
+
+// another approach//
+//  function exerciseOne(arrayOfPeople) {
+//   let content = document.querySelector("#content");
+//   for(let i = 0; i < arrayOfPeople.length; i++) {
+//     let heading1 = document.createElement("h1");
+//     let heading2 = document.createElement("h2")
+//     content.appendChild(heading1).innerHTML = arrayOfPeople[i].name;
+//     content.appendChild(heading2).innerHTML = arrayOfPeople[i].job;
+//     heading1.style.backgroundColor = "indigo";
+//   }
+//}
 
 /**
  *
@@ -24,9 +47,30 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+
 function exerciseTwo(shopping) {
-  //Write your code in here
+let content = document.querySelector("#content");
+let shoppingList =  document.createElement("ul");
+content.appendChild(shoppingList);
+shopping.forEach((item) => {
+ let eachItem = document.createElement("li");
+ eachItem.innerText = item;
+ shoppingList.appendChild(eachItem);
+});
 }
+
+// function exerciseTwo(shopping) {
+//   //Write your code in here
+//   let content = document.querySelector("#content");
+//   let myShoppingList = document.createElement("ul");
+//   content.appendChild(myShoppingList);
+//   shopping.forEach((item) => {
+//       let item1 = document.createElement("li");
+//       item1.innerText = item;
+//   myShoppingList.appendChild(item1
+//     );
+//   });
+// }
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
