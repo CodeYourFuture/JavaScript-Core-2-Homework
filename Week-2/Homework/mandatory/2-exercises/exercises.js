@@ -15,6 +15,12 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for (var i = 0; i < arrayOfPeople.length; i++){
+    var str = `<h1>${arrayOfPeople[i].name}</h1> <h2>${arrayOfPeople[i].job}</h2>`;
+
+    content.innerHTML += str;
+  }
+   
 }
 
 /**
@@ -25,7 +31,11 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  for (var i = 0; i < shopping.length; i++){
+    content.innerHTML += "<li>" + shopping[i] + "</li>";
+
+  }
 }
 
 /**
@@ -57,9 +67,44 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+var bookCovers = [
+  '/Week-2/Homework/mandatory/2-exercises/images/Design-of-everything.png', 
+  '/Week-2/Homework/mandatory/2-exercises/images/most-human-human.jpg',
+  '\/Week-2/Homework/mandatory/2-exercises/images/the-pragmatic-programmer.jpg'
+];
+
+
 function exerciseThree(books) {
-  //Write your code in here
+  var favoriteBooks = document.createElement('ul');
+  for (var i = 0; i < books.length; i++) {
+
+    var bookEl = document.createElement('li');
+    var bookCover = document.createElement('img');
+    if (books[i].title === "The Design of Everyday Things"){
+      bookCover.src = bookCovers[0];
+    } else if (books[i].title === "The Most Human Human"){
+      bookCover.src = bookCovers[1];
+    } else{
+      bookCover.src = bookCovers[2];
+    }
+
+    bookEl.appendChild(bookCover);
+    var bookDescription = document.createElement('p');
+     bookDescription.textContent = `${books[i].title}   by   ${books[i].author}`;
+    bookEl.appendChild(bookDescription);
+
+      if (books[i].alreadyRead) {
+        bookEl.style.backgroundColor = 'green';
+    } else{
+      bookEl.style.backgroundColor = 'red';
+    } 
+    favoriteBooks.appendChild(bookEl);
+    document.body.appendChild(favoriteBooks);
+  }
+
+ 
 }
+
 
 //
 //
