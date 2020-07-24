@@ -59,19 +59,6 @@ shopping.forEach((item) => {
 });
 }
 
-// function exerciseTwo(shopping) {
-//   //Write your code in here
-//   let content = document.querySelector("#content");
-//   let myShoppingList = document.createElement("ul");
-//   content.appendChild(myShoppingList);
-//   shopping.forEach((item) => {
-//       let item1 = document.createElement("li");
-//       item1.innerText = item;
-//   myShoppingList.appendChild(item1
-//     );
-//   });
-// }
-
 /**
     I'd like to display my three favorite books inside a nice webpage!
 
@@ -101,8 +88,51 @@ shopping.forEach((item) => {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+let bookImages = [
+  {
+    title: "The Design of Everyday Things",
+    src: "./img/image1.jpg"
+},
+  {
+    title: "The Most Human Human",
+    src: "./img/image2.jpeg"
+}, 
+  {
+    title: "The Pragmatic Programmer",
+    src: "./img/image3.jpg"
+}
+];
+
 function exerciseThree(books) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  ulElement = document.createElement("ul");
+  ulElement.style.listStyle = "none";
+  ulElement.style.display = "flex";
+content.appendChild(ulElement);
+books.forEach((bookItem) => {
+  let imageSrc;
+  let liElement = document.createElement("li");
+  ulElement.appendChild(liElement);
+  let paragraph = document.createElement("p");
+  paragraph.textContent = `${bookItem.title} - ${bookItem.author}`;
+  liElement.appendChild(paragraph);
+  let imageElement = document.createElement("img");
+  bookImages.find(image => {
+    if(image.title === bookItem.title) {
+      imageSrc = image.src;
+    }
+  }) 
+imageElement.src = imageSrc;
+liElement.appendChild(imageElement);
+liElement.style.margin = "20px"
+if(bookItem.alreadyRead) {
+  liElement.style.backgroundColor = "green";
+}
+else {
+liElement.style.backgroundColor = "red";
+}
+})
+
 }
 
 //
