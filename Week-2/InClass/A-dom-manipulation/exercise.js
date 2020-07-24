@@ -32,6 +32,10 @@ Task 2
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
 
+let alertButton = document.getElementById("alertBtn");
+alertButton.addEventListener("click", function() {
+    alert("Thanks for visiting Bikes for Refugees!");
+})
 
 /*
 Task 3
@@ -68,12 +72,12 @@ Task 5
 
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
-// CSS style has to be added for .larger
+
 let largerText = document.querySelector("#largerLinksBtn");
 let links = document.querySelectorAll("a");
 
 largerText.addEventListener("click", function() {
     for (let i = 0; i < links.length; ++i) {
-        links[i].classList.add("larger");
+        links[i].style.fontSize = "large";
     }
 });
