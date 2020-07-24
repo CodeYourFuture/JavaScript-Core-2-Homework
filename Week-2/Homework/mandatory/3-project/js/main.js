@@ -53,9 +53,7 @@ submit.addEventListener("click",function(){
     if(e===true && n===true && t===true){
         alert("thank you for filling out the form");
     }
-  console.log(email.value.length);
-  console.log(name.value.length);
-  console.log(txtarea.value.length);
+ 
 })
 //console.log(email.value.length);
 //submit.style.backgroundColor="red";
