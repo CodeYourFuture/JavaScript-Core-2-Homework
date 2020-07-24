@@ -37,43 +37,85 @@ green.addEventListener('click', () => {
 });
 
  
-
 sub.addEventListener('click', function(e){
-    let test = emailplaceHolder.value.includes(emailChecker); 
-    if(nameHolder.value.length > 0 ){
-       if(describeHolder.value.length >0){
-           if(emailplaceHolder > 0 && test === true){  //the code after the && doesnt seem to be working :( (test === true)
-                alert('Thank you');
-           }else{
-               e.preventDefault();
-               emailplaceHolder.style.backgroundColor = "red";
-           }
-
-       }else{
-           e.preventDefault();
-           describeHolder.style.backgroundColor = "red";
-       }
-
-    }else{
         e.preventDefault();
-        nameHolder.style.backgroundColor = "red";
-    }
-
-    if(nameHolder.value.length > 0 && describeHolder.value.length > 0 
-        && emailplaceHolder.value.length > 0 ){
+        let test = emailplaceHolder.value.includes('@'); 
+        let validEmail = true;
+        let validName = true;
+        let validDescription = true;
+       
+        if(test){
             
-        alert('Thank you for filling out the form');
-    }
+        }else{
+            emailplaceHolder.style.backgroundColor = "red";
+            validEmail = false;
+        }
 
-    if(emailplaceHolder.value){
+        if(nameHolder.value.length > 0 ){
+           
+        }else{
+            validName = false;
+            nameHolder.style.backgroundColor = "red";
+        }
 
-    }
+        if(describeHolder.value.length >0){
+               
+    
+        }else{
+            validDescription = false;
+            describeHolder.style.backgroundColor = "red";
+        }
+    
+        if(validName && validDescription 
+            && validEmail){
+                
+            alert('Thank you for filling out the form');
+        }
+    
+    
+       
+        
+    
+    });
+
+// sub.addEventListener('click', function(e){
+//     let test = emailplaceHolder.value.includes('@'); 
+    
+//     if(nameHolder.value.length > 0 ){
+//        if(describeHolder.value.length >0){
+//            if(emailplaceHolder > 0 && test === true){  //the code after the && doesnt seem to be working :( (test === true)
+//                 alert('Thank you');
+//            }else{
+//                e.preventDefault();
+//                emailplaceHolder.style.backgroundColor = "red";
+//            }
+
+//        }else{
+//            e.preventDefault();
+//            describeHolder.style.backgroundColor = "red";
+//        }
+
+//     }else{
+//         e.preventDefault();
+//         nameHolder.style.backgroundColor = "red";
+//     }
+
+//     if(nameHolder.value.length > 0 && describeHolder.value.length > 0 
+//         && emailplaceHolder.value.length > 0 ){
+            
+//         alert('Thank you for filling out the form');
+//     }
+
+//     if(emailplaceHolder.value){
+
+//     }
     
 
-});
+// });
 
 
 //FUNCTION TO CONFIRM EMAIL IS VALID
+
 function emailChecker(arr){
    let arr2 = arr.split('');
     let result = arr2.find(x => x === '@');
