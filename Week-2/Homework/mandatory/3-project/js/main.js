@@ -77,6 +77,7 @@ sub.addEventListener('click', function(e){
         
     
     });
+//-------------------------------BELOW IS THE INITIAL APPROACH WHICH KIND OF WORKED EXCEPT IT DISPLAYED ALERT EVEN IF EMAIL WAS INVALID-------------------------------------------------
 
 // sub.addEventListener('click', function(e){
 //     let test = emailplaceHolder.value.includes('@'); 
@@ -116,15 +117,15 @@ sub.addEventListener('click', function(e){
 
 //FUNCTION TO CONFIRM EMAIL IS VALID
 
-function emailChecker(arr){
-   let arr2 = arr.split('');
-    let result = arr2.find(x => x === '@');
+// function emailChecker(arr){
+//    let arr2 = arr.split('');
+//     let result = arr2.find(x => x === '@');
     
-    if(result === undefined){
-        return false;
-    }else{
-        return true;
-    }
+//     if(result === undefined){
+//         return false;
+//     }else{
+//         return true;
+//     }
  
- };
+//  };
 
