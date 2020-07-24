@@ -36,3 +36,41 @@ greenBtnEl.addEventListener ('click', function () {
 //     document.querySelector ('.jumbotron .buttons .btn-secondary').style.backgroundColor = 'black';
 //     document.querySelector ('.jumbotron .buttons .btn-secondary').style.color = 'white';
 // }
+
+
+
+//PART 2 
+
+
+
+let submitting = document.querySelector ('form button');
+submitting.addEventListener ('click', function (x) {
+  x.preventDefault ();
+  let emailValue = document.getElementById ('exampleInputEmail1');
+  let nameValue = document.getElementById ('example-text-input');
+  let descriptionValue = document.getElementById ('exampleTextarea');
+
+  if (emailValue.value.length === 0 || !emailValue.value.includes ('@')) {
+    emailValue.style.backgroundColor = 'red';
+  }
+  if (nameValue.value.length === 0) {
+    nameValue.style.backgroundColor = 'red';
+  }
+  if (descriptionValue.value.length === 0) {
+    descriptionValue.style.backgroundColor = 'red';
+  }
+  if (
+    emailValue.value.length > 1 &&
+    emailValue.value.includes ('@') === true &&
+    nameValue.value.length > 0 &&
+    descriptionValue.value.length > 0
+  ) {
+    let formTag = document.querySelector ('form');
+    alert ('thank you for filling out the form');
+  }
+});
+
+// I added reset button , its working with "onclick" 
+function myFunction() {
+    document.getElementById("myForm").reset();
+  }
