@@ -139,6 +139,11 @@ body {
     height: 50px;
 }
 
+.larger {
+	font-size: 50px !important;
+	color: purple;
+}
+
 #blueBtn {
     background: #588fbd;
 }

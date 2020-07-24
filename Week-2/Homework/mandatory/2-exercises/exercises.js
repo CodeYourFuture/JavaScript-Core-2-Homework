@@ -15,6 +15,14 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for(let i =0; i < arrayOfPeople.length; i++){
+    let h1El = document.createElement("h1");
+    let h2El = document.createElement("h2");
+    content.appendChild(h1El);
+    content.appendChild(h2El);
+    h1El.innerHTML = `${arrayOfPeople[i].name}`;
+    h2El.innerHTML = `${arrayOfPeople[i].job}`;
+  }
 }
 
 /**
@@ -26,6 +34,13 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let ulEl = document.createElement("ul");
+  content.appendChild(ulEl);
+  for(let i =0; i < shopping.length; i++){
+    let liEl = document.createElement("li");
+    ulEl.appendChild(liEl);
+    liEl.textContent = shopping[i]; 
+  }
 }
 
 /**
@@ -59,6 +74,36 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  for(let i=0; i<books.length; i++){
+    let bookPEl = document.createElement("p");
+    document.body.appendChild(bookPEl);
+    let bookUlEl = document.createElement("ul");
+    bookPEl.appendChild(bookUlEl);
+    let bookLiEl = document.createElement("li");
+    bookUlEl.appendChild(bookLiEl);
+    bookUlEl.style.listStyleType = "none";
+    bookLiEl.textContent = `"${books[i].title}" by "${books[i].author}"`;
+    let bookAEl = document.createElement("a");
+    bookPEl.appendChild(bookAEl);
+    let bookImgEl = document.createElement("img");
+    bookAEl.appendChild(bookImgEl);
+    if(i === 0) {
+      bookImgEl.src = "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._SX326_BO1,204,203,200_.jpg";
+      bookAEl.href = "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._SX326_BO1,204,203,200_.jpg";
+
+    } else if(i===1){
+      bookImgEl.src = "https://images-na.ssl-images-amazon.com/images/I/41m1rQjm5tL._SX322_BO1,204,203,200_.jpg";
+      bookAEl.href = "https://images-na.ssl-images-amazon.com/images/I/41m1rQjm5tL._SX322_BO1,204,203,200_.jpg";
+    } else {
+      bookImgEl.src = "https://images-na.ssl-images-amazon.com/images/I/418M2053aNL._SX396_BO1,204,203,200_.jpg";
+      bookAEl.href = "https://images-na.ssl-images-amazon.com/images/I/418M2053aNL._SX396_BO1,204,203,200_.jpg";
+    }
+    if(books[i].alreadyRead === true) {
+      bookPEl.style.backgroundColor = "green";
+    } else {
+      bookPEl.style.backgroundColor = "red";
+    }
+  }
 }
 
 //
