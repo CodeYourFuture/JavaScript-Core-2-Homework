@@ -36,6 +36,8 @@ green.addEventListener('click', () => {
     volunteerBtn.style.backgroundColor = "#8c9c08";
 });
 
+ 
+
 sub.addEventListener('click', function(e){
     let test = emailplaceHolder.value.includes(emailChecker); 
     if(nameHolder.value.length > 0 ){
@@ -67,10 +69,10 @@ sub.addEventListener('click', function(e){
 });
 
 
-
-function emailChecker(string){
-    let arr = string.split('');
-    let result = arr.find(x => x === '@');
+//FUNCTION TO CONFIRM EMAIL IS VALID
+function emailChecker(arr){
+   let arr2 = arr.split('');
+    let result = arr2.find(x => x === '@');
     
     if(result === undefined){
         return false;
