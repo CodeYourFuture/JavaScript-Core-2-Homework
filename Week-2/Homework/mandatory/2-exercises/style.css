@@ -5,7 +5,20 @@
  * Lesson: 1,2
  * Class: Scotland 2017
  */
+ .book-head{
+	font-size: 12px;
+}
+.title{
+	font-size:10px;
+}
+.book{
+   display: inline-block;
+   margin-left: 15px;
+   width:200px;
+   height:200px;
+   text-align: left;
 
+}
 html,
 body {
 	font-family: "Source Sans Pro",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
