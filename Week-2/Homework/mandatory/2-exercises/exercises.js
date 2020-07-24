@@ -12,10 +12,10 @@
  *      <h2>{Job Here}</h2>
  *      .....
  * </div>
- */
 
+*/
 
-/* function exerciseOne(arrayOfPeople) {
+function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
   let nameOfPerson, jobOfPerson;
 
@@ -28,8 +28,7 @@
     jobOfPerson.innerHTML = person.job;
     content.appendChild(jobOfPerson);
   })
-
-} */
+} 
 //exerciseOne();
 /**
  *
@@ -38,7 +37,8 @@
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
-/* 
+
+ 
 function exerciseTwo(shopping) {
   let content = document.querySelector("#content");
   let unOrderedList = document.createElement("ul")
@@ -50,7 +50,7 @@ function exerciseTwo(shopping) {
     unOrderedList.appendChild(li1);
   })
 }
- */
+
 /**
     I'd like to display my three favorite books inside a nice webpage!
 
@@ -80,7 +80,7 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
-let imageArr = [
+let images = [
   {
     title:"The Design of Everyday Things", 
     src:"images/the-design-of-everyday-things.jpeg" 
@@ -95,7 +95,48 @@ let imageArr = [
   }
 ]
 
+function exerciseThree(books) {
+    
+    let content = document.querySelector("#content");
+    console.log (content);
 
+    let bookList = document.createElement("ul");
+    content.appendChild(bookList);
+    
+    books.forEach((book) => {
+        let imageSrc;
+        let listItem = document.createElement("li");
+        bookList.appendChild(listItem);
+        let bookHeader = document.createElement("p");
+        bookHeader.textContent = `${book.title} - ${book.author}`;
+        listItem.appendChild(bookHeader);
+        let imageItem = document.createElement("img");
+
+        images.find((image) => {
+            if (image.title === book.title){
+            imageSrc = image.src;
+          }
+        })
+
+        imageItem.src = imageSrc;
+        listItem.style.margin = "15px";
+        listItem.appendChild(imageItem);
+
+        if (book.alreadyRead){
+          listItem.style.backgroundColor = "green";
+        } else {
+          listItem.style.backgroundColor = "yellow";
+        }
+    });
+
+    bookList.style.listStyle = "none";
+    bookList.style.display = "flex";
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* This is another way of solution.
 
 function exerciseThree(books) {
 
@@ -139,6 +180,8 @@ function exerciseThree(books) {
 // let listItem = document.createElement("li");
 // listItem.className = "bookItem";
 
+*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //
 //
