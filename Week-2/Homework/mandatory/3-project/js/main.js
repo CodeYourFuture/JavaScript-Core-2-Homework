@@ -48,8 +48,7 @@ submitBtn.addEventListener("click", function (event) {
   let isValid = true;
   console.log(emailInput.value);
   if (!emailInput.value.length > 0 || !emailInput.value.includes("@")) {
-    emailInput.setAttribute("style", "background-color: red !important");
-
+    emailInput.style.backgroundColor = "red";
     isValid = false;
   }
   if (!nameInput.value.length > 0) {

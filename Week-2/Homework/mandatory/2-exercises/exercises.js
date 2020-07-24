@@ -94,10 +94,16 @@ let images = [
       "https://www.nytbooks.com/audiobooks/computers-technology/img/B0833FBNHV-300.jpg",
   },
 ];
+
 function exerciseThree(books) {
+  //HEADING - BOOK LIST
+  let heading = document.createElement("h1");
+  heading.textContent = "Book List";
+  document.body.appendChild(heading);
+  //UL ELEMENT
   let ulEl = document.createElement("ul");
   document.body.appendChild(ulEl);
- 
+
   let imageSrc = null;
 
   for (let i = 0; i < books.length; i++) {
