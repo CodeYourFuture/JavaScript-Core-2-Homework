@@ -14,16 +14,16 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
-  let heading1, heading2;
-  arrayOfPeople.forEach((person) => {
-    heading1 = document.createElement("h1");
-    heading1.innerText = person.name;
-    content.appendChild(heading1);
-    heading2 = document.createElement("h2");
-    heading2.innerText = person.job;
-    content.appendChild(heading2);
-  });
+	let content = document.querySelector("#content");
+	let heading1, heading2;
+	arrayOfPeople.forEach((person) => {
+		heading1 = document.createElement("h1");
+		heading1.innerText = person.name;
+		content.appendChild(heading1);
+		heading2 = document.createElement("h2");
+		heading2.innerText = person.job;
+		content.appendChild(heading2);
+	});
 }
 /**
  *
@@ -33,16 +33,15 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
-  let content = document.querySelector("#content");
-  let myShoppingList = document.createElement("ul");
-  content.appendChild(myShoppingList);
-  shopping.forEach((item) => {
-    let item1 = document.createElement("li");
-    item1.innerText = item;
-    myShoppingList.appendChild(item1
-    );
-  });
+	//Write your code in here
+	let content = document.querySelector("#content");
+	let myShoppingList = document.createElement("ul");
+	content.appendChild(myShoppingList);
+	shopping.forEach((item) => {
+		let item1 = document.createElement("li");
+		item1.innerText = item;
+		myShoppingList.appendChild(item1);
+	});
 }
 
 /**
@@ -74,8 +73,50 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+let images = [
+	{
+		title: "The Design of Everyday Things",
+		src: "./images/image1.jpeg",
+	},
+	{
+		title: "The Most Human Human",
+		src: "./images/image2.jpeg",
+	},
+	{
+		title: "The Pragmatic Programmer",
+		src: "./images/image3.jpeg",
+	},
+];
 function exerciseThree(books) {
-  //Write your code in here
+	//Write your code in here
+	let content = document.querySelector("#content");
+	let ulElement = document.createElement("ul");
+	content.appendChild(ulElement);
+	books.forEach((book) => {
+		let imageSrc;
+		let listElement = document.createElement("li");
+		ulElement.appendChild(listElement);
+		let pragraphElement = document.createElement("p");
+		pragraphElement.textContent = `${book.title} - ${book.author}`;
+		listElement.appendChild(pragraphElement);
+		let imageElement = document.createElement("img");
+		images.find((image) => {
+			if (image.title === book.title) {
+				imageSrc = image.src;
+			}
+		});
+		imageElement.src = imageSrc;
+		listElement.appendChild(imageElement);
+		//listElement.style.margin = "15px";
+
+		if (book.alreadyRead) {
+			listElement.style.backgroundColor = "green";
+		} else {
+			listElement.style.backgroundColor = "#ff0000";
+		}
+	});
+	ulElement.style.listStyle = "none";
+	ulElement.style.display = "flex";
 }
 
 //
@@ -89,9 +130,9 @@ function exerciseThree(books) {
 //
 
 let people = [
-  { name: "Chris", job: "Teacher" },
-  { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+	{ name: "Chris", job: "Teacher" },
+	{ name: "Joanna", job: "Student" },
+	{ name: "Boris", job: "Prime Minister" },
 ];
 
 exerciseOne(people);
@@ -101,21 +142,21 @@ let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
 exerciseTwo(shopping);
 
 const books = [
-  {
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    alreadyRead: false
-  },
-  {
-    title: "The Most Human Human",
-    author: "Brian Christian",
-    alreadyRead: true
-  },
-  {
-    title: "The Pragmatic Programmer",
-    author: "Andrew Hunt",
-    alreadyRead: true
-  }
+	{
+		title: "The Design of Everyday Things",
+		author: "Don Norman",
+		alreadyRead: false,
+	},
+	{
+		title: "The Most Human Human",
+		author: "Brian Christian",
+		alreadyRead: true,
+	},
+	{
+		title: "The Pragmatic Programmer",
+		author: "Andrew Hunt",
+		alreadyRead: true,
+	},
 ];
 
 exerciseThree(books);
