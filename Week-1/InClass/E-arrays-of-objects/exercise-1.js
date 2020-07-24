@@ -24,6 +24,8 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+var persons = [person1, person2, person3]; // Complete here
+
 function getPersonNames (person){
     return person.name;
 }
@@ -32,9 +34,8 @@ function youngerThan28Years (person){
     return person.age < 28;
 }
 
-var persons = [person1, person2, person3]; // Complete here
-
 var personNames = persons.map(getPersonNames); 
+
 // var personNames = persons.map(person => person.name); // Complete here
 
 var personsYoungerThan28YearsOld = persons.filter(youngerThan28Years); 
