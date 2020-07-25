@@ -7,6 +7,17 @@ Click "ATTEMPT" to test your solution.
 Exercises:
 
 - [Fix my Method](https://www.codewars.com/kata/558710234f02dcc4a8000005)
+function myFunction() {
+  var myObject = {
+    objProperty: "string",
+    objMethod: function() {
+      return myObject.objProperty;
+		}
+  }
+  
+  return myObject;
+};
+
 - [Regular Ball Super Ball](https://www.codewars.com/kata/53f0f358b9cb376eca001079/train/javascript)
 
 ## Reading

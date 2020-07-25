@@ -25,13 +25,19 @@ WRITE YOUR CODE BELOW
 */
 
 
-var persons = // Complete here
+var persons = [person1, person2, person3];// Complete here
 
-var personNames = // Complete here
+var personNames = var personNames =  persons.map(x => x.name);// Complete here
 
-var personsYoungerThan28YearsOld = // Complete here
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+// altnertive
+var personNames =  persons.map(function getNames(names){
+    return x.names;
+    });
 
+var personsYoungerThan28YearsOld = = persons.filter(x => x.age < 28);
 
+persons.filter(personsYoungerThan28YearsOld);
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */

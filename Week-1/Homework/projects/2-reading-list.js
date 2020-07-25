@@ -25,4 +25,44 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+//Exercise 1 -> the question asks to loop through the array. My solution only targets index 0. How would I loop should the array have more than 1 object?
+
+let books = [
+    {title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    alreadyRead: false
+    }
+];
+let exercise1 - books.map(x => `${x.title} by ${x.author}`).toString();
+let bookAndAuthor = `"${books[0].title}" by ${books[0].author}`;
+
+console.log(bookAndAuthor);
+
+//Exercise 2 -> I tried to create a function to insert into the forEach function but not sure how to continue with it. Or if there's a better way to formulate my function?
+
+function hasAlreadyRead() {
+    if (books.alreadyRead === true) {
+        return `You already read ${bookAndAuthor}`;
+    } else {
+        return `You still need to read "The Lord of the Rings" by J.R.R. Tolkien.`;
+    }
+}
+
+books.forEach(hasAlreadyRead());
+
+
+let exercise2 = books.map(x => x.alreadyRead === true ? `You already read ${x.title} by ${x.author}` :  `You still need to read $${x.title} by ${x.author}`).toString();
+
+
+
+
+
+
+
+
+
+
+
+
+
+

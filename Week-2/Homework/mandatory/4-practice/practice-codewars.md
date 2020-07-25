@@ -3,7 +3,15 @@ Complete the following CodeWars on JavaScript concepts you learned in previous w
 # CodeWars
 
 - [Is it even?](https://www.codewars.com/kata/555a67db74814aa4ee0001b5/train/javascript)
+function testEven(n) {
+    return n % 2 === 0 ? true : false;
+}
+
 - [Will you make it?](https://www.codewars.com/kata/5861d28f124b35723e00005e/train/javascript)
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return fuelLeft * mpg >= distanceToPump ? true : false;
+};
+
 - [Removing elements](https://www.codewars.com/kata/5769b3802ae6f8e4890009d2/train/javascript)
 - [Grasshopper - Summation](https://www.codewars.com/kata/55d24f55d7dd296eb9000030/train/javascript)
 - [Find the Difference in Age between Oldest and Youngest Family Members](https://www.codewars.com/kata/5720a1cb65a504fdff0003e2/train/javascript)
