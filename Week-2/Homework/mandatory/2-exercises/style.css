@@ -151,6 +151,38 @@ body {
 	background: #87ca8a
 }
 
+
+
+
+/* ----------------------------- */
+/* Adding some classes to make javascript neat  */
+
+.ulList
+{
+	display: flex;
+	justify-content: space-around;
+	list-style-type:none ;
+}
+
+.liItem
+{
+	padding:1rem;
+	width:27vw;
+}
+
+.imgDimension
+{
+	width:200px;
+	height:300px;
+}
+
+
+
+
+
+
+
+
 @media screen and (min-width: 992px) {
 
 	.navbar-brand > img {

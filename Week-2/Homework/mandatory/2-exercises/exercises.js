@@ -14,7 +14,17 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
+
   let content = document.querySelector("#content");
+  for(let i=0; i<arrayOfPeople.length;i++)
+  {
+    let heading1=document.createElement("h1");
+    heading1.textContent+= arrayOfPeople[i].name;
+    content.appendChild(heading1);
+    let heading2=document.createElement("h2");
+    heading2.textContent+= arrayOfPeople[i].job;
+    content.appendChild(heading2);
+  }
 }
 
 /**
@@ -25,7 +35,23 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+
+  let content = document.querySelector("#content");
+  console.log("enteered function")
+
+  var ul=document.createElement("ul");
+  ul.className="list";
+
+  content.appendChild(ul);
+
+  for(let i=0;i<shopping.length;i++)
+  {
+    var li=document.createElement("li");
+    li.textContent+=shopping[i];
+    console.log("before append")
+    ul.appendChild(li);
+    
+  }
 }
 
 /**
@@ -58,7 +84,43 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+
+  let content = document.querySelector("#content");
+  let ul=document.createElement("ul");
+  ul.className="ulList";
+  content.appendChild(ul);
+  // created an array of links for images source.
+  var imageSource=["https://m.media-amazon.com/images/I/416Hql52NCL.jpg",
+  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1295465264l/8884400.jpg",
+  "https://images-na.ssl-images-amazon.com/images/I/51cUVaBWZzL.jpg" ]
+
+  
+  for(let i=0;i<books.length;i++)
+  {
+    var p=document.createElement("p");
+    var li=document.createElement("li");
+    li.className="liItem";
+
+    p.textContent+=books[i].title +"-" + books[i].author;
+    li.appendChild(p);
+    
+
+    let img=document.createElement("img");
+    img.className="imgDimension";
+
+    img.src=imageSource[i];
+    img.alt= books[i].title +"-" + books[i].author;
+
+    li.appendChild(img);
+
+    if(books[i].alreadyRead)
+    li.style.backgroundColor="green";
+    else 
+    li.style.backgroundColor="red";
+    
+    ul.appendChild(li);
+
+  }
 }
 
 //
