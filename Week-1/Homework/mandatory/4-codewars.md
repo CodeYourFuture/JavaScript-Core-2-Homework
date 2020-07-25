@@ -69,7 +69,14 @@ var languages = {
 }
 
 - [Crash Override](https://www.codewars.com/kata/crash-override/train/javascript)
-
+function aliasGen(first, last){
+    first = first[0].toUpperCase()
+    last = last[0].toUpperCase()
+    if (!first.match(/[A-Z]/) || !last.match(/[A-Z]/)){
+      return "Your name must start with a letter from A - Z."
+    } 
+    return `${firstName[first]} ${surname[last]}`
+}
 
 - [Job Matching #1](https://www.codewars.com/kata/56c22c5ae8b139416c00175d/train/javascript)
 - [Split the Bill](https://www.codewars.com/kata/5641275f07335295f10000d0/train/javascript)

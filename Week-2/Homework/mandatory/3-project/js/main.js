@@ -38,20 +38,20 @@ greenBtnEL.addEventListener('click', onGreenBtnClick);
 
 // validate form https://www.tutorialspoint.com/javascript/javascript_form_validations.htm
 
-let submitBtnEl = document.querySelector('.btn.btn-primary');
+let submitBtnEl = document.querySelector('form .btn-primary');
 
-let onSubmitBtnClick = function() {
-    let emailField = document.querySelector('#exampleInputEmail1').value;
+let onSubmitBtnClick = function(event) {
+    let emailField = document.querySelector('#exampleInputEmail1');
     let nameField = document.querySelector('#example-text-input').value;
     let describeField = document.querySelector('#exampleTextarea').value;
 
-    if (emailField < 0) {
+    if (emailField.value.length < 0) {
         document.querySelector('#exampleInputEmail1').style.backgroundColor = '#FF0000';
     }
-    if (nameField < 0) {
+    if (nameField.length < 0) {
         document.querySelector('#example-text-input').style.backgroundColor = '#FF0000';
     }
-    if (describeField < 0) {
+    if (describeField.length < 0) {
         document.querySelector('#exampleTextarea').style.backgroundColor = '#FF0000';
     }
     event.preventDefault();
