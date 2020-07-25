@@ -1,4 +1,4 @@
-Complete the following CodeWars on JavaScript concepts you learned in previous weeks.
+Complete the following CodeWars on JavaScript concepts you learned in previous weeks. (DONE)
 
 # CodeWars
 
