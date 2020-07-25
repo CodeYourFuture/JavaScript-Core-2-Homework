@@ -1,50 +1,171 @@
-/*
-Task 1
-=======
-Write JavaScript below that logs:
-    1. all the "p" element nodes of the document,
-    --> should log a list of nodes with a length of 6
+/**
+ *
+ * For each of the names in the array passed into this function
+ *
+ * - Add a <h1> tag to the website containing the name of the person
+ * - Add a <h2> tag to the website containing the job of the person
+ *
+ * All of your HTML should go inside the Div tag with the id "content".
+ *
+ * <div id="content">
+ *      <h1>{Name Here}</h1>
+ *      <h2>{Job Here}</h2>
+ *      .....
+ * </div>
+ */
 
-    2. the first div element node
-    --> should log the ".site-header" node
+function exerciseOne(arrayOfPeople) {
+	let content = document.querySelector('#content');
 
-    3. the element with id "jumbotron-text"
-    --> should log the "#jumbotron-text" node
+	for (var i = 0; i < arrayOfPeople.length; i++) {
+		let header1 = document.createElement('h1');
+		let header2 = document.createElement('h2');
+		header1.innerText = arrayOfPeople[i].name;
+		header2.innerText = arrayOfPeople[i].job;
+		content.appendChild(header1);
+		content.appendChild(header2);
+	}
+}
+/**
+ *
+ * Create a list of shopping items. You should use an unordered list.
+ *
+ * All of your HTML should go inside the Div tag with the id "content".
+ *
+ */
+function exerciseTwo(shopping) {
+	//Write your code in here
+	let content = document.querySelector('#content');
+	let unlist = document.createElement('ul');
+	content.appendChild(unlist);
 
-    4. all the "p" elements of contained inside  the .primary-content element node
-    --> should log a list of nodes with a length of 3
+	shopping.forEach((item) => {
+		let list = document.createElement('li');
+		list.innerText = item;
+		unlist.appendChild(list);
+	});
+}
 
-*/
+/**
+    I'd like to display my three favorite books inside a nice webpage!
 
+    const books = [
+        {
+            title: "The Design of Everyday Things",
+            author: "Don Norman",
+			alreadyRead: false,
+			
+        },
+        {
+            title: "The Most Human Human",
+            author: "Brian Christian",
+			alreadyRead: true,
+			
+        },
+        {
+            title: "The Pragmatic Programmer",
+            author: "Andrew Hunt",
+			alreadyRead: true,
+			
+        }
+	];
+	
+	
+    Iterate through the array of books.
+    - For each book, create a <p> element with the book title and author and append it to the page.
+    - Use a <ul> and <li> to display the books.
+    - Add an <img> to each book that links to a URL of the book cover.
+    - Change the style of the book depending on whether you have read it (green) or not (red).
 
-/*
-Task 2
-======
+    The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
+**/
+function exerciseThree(books) {
+	//Write your code in here
 
-When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
-*/
+	/*	books.forEach(book => {
+		var currentBookPara = document.createElement('p');
+		currentBookPara.innerText = book.title + '-' + book.author;
 
+	});*/
 
-/*
-Task 3
-=======
+	booksURL = [
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQy4q93p1VrxtPzUKqIbHbtpwGtWoNyYQlEow&usqp=CAU',
+		'https://m.media-amazon.com/images/I/41m1rQjm5tL._SL350_.jpg',
+		'https://images-na.ssl-images-amazon.com/images/I/418M2053aNL.jpg'
+	];
+	var bookHeader = document.createElement('h1');
+	bookHeader.innerText = 'Book List';
+	document.body.appendChild(bookHeader);
+	var bookList = document.createElement('ul');
+	books.forEach((book, index) => {
+		var currentBookList = document.createElement('li');
+		var currentBookPara = document.createElement('p');
+		currentBookPara.innerText = book.title + ' - ' + book.author;
+		currentBookList.appendChild(currentBookPara);
+		var currentBookImg = document.createElement('img');
+		currentBookImg.setAttribute('src', booksURL[index]);
+		currentBookList.appendChild(currentBookImg);
+		if (book.alreadyRead) {
+			currentBookList.style.backgroundColor = 'green';
+		} else {
+			currentBookList.style.backgroundColor = 'red';
+		}
 
-Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
-*/
+		bookList.appendChild(currentBookList);
+		bookList.style.display = 'flex';
+		currentBookList.style.padding = '10px';
+		currentBookList.style.margin = '20px';
+		currentBookList.style.listStyle = 'none';
+		document.body.appendChild(bookList);
+	});
+}
 
+//
+//
+//
+//
+// DO NOT EDIT BELOW HERE
+//
+//
+//
+//
 
-/*
-Task 4
-======
+let people = [
+	{ name: 'Chris', job: 'Teacher' },
+	{ name: 'Joanna', job: 'Student' },
+	{ name: 'Boris', job: 'Prime Minister' }
+];
 
-When a user clicks the 'Add some text' button, a new paragraph should be added below the buttons that says "Read more below."
-*/
+exerciseOne(people);
 
+let shopping = [
+	'Milk',
+	'Break',
+	'Eggs',
+	'A Dinosaur',
+	'Cake',
+	'Sugar',
+	'Tea'
+];
 
+exerciseTwo(shopping);
 
-/*
-Task 5
-======
+const books = [
+	{
+		title       : 'The Design of Everyday Things',
+		author      : 'Don Norman',
+		alreadyRead : false
+	},
+	{
+		title       : 'The Most Human Human',
+		author      : 'Brian Christian',
+		alreadyRead : true
+	},
+	{
+		title       : 'The Pragmatic Programmer',
+		author      : 'Andrew Hunt',
+		alreadyRead : true
+	}
+];
 
-When the 'Larger links!' button is clicked, the text of all links on the page should increase.
-*/
+exerciseThree(books);
