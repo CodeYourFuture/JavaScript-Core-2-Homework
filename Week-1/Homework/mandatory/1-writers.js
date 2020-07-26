@@ -42,3 +42,9 @@ let writers = [
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+for(let objs=0; objs<writers.length;objs++){
+  if(writers[objs].alive===true){
+    //console.log(writers.)
+    console.log(`Hi, my name is ${writers[objs].firstName} ${writers[objs].lastName}.I am ${writers[objs].age} years old, and work as a ${writers[objs].occupation }`)
+  } 
+}

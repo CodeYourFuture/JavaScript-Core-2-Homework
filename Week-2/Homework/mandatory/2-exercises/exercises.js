@@ -10,11 +10,22 @@
  * <div id="content">
  *      <h1>{Name Here}</h1>
  *      <h2>{Job Here}</h2>
- *      .....
+ *      ....
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  // let h1El = document.createElement("h1");
+  // let h2El = document.createElement("h2");
+  arrayOfPeople.forEach(arr=>{
+    let h1El = document.createElement("h1");
+    let h2El = document.createElement("h2");
+    h1El.textContent = arr.name
+    h2El.textContent = arr.job
+    content.appendChild(h1El);
+    content.appendChild(h2El);
+  })  
+  
 }
 
 /**
@@ -26,7 +37,29 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let shopContent = document.getElementById("content");
+  let ulElement = document.createElement("ul");
+  shopContent.appendChild(ulElement);
+  //console.log(shopContent)
+
+  shopping.forEach(shopItem => {
+    let liElement = document.createElement("li");
+    //let arrItem = document.createTextNode(shopItem);
+    liElement.textContent = shopItem
+    //liElement.appendChild(arrItem);
+    
+
+    ulElement.appendChild(liElement);
+  });
 }
+
+// var liEl2 = document.createElement("li");
+// liEl2.textContent = "sugar";
+// var liEl3 = document.createElement("li");
+// liEl3.textContent = "lettuce";
+// ulEl.appendChild(liEl1);
+// ulEl.appendChild(liEl2);
+// ulEl.appendChild(liEl3);
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
@@ -59,6 +92,65 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+/*
+list-style:none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: calc( 100% - 41px);
+}
+
+li {
+    width: calc(25% - 51px);
+    margin: 15px;
+    padding: 10px;
+    min-width: 350px;
+}
+*/
+    imgSrc =["https://m.media-amazon.com/images/I/416Hql52NCL.jpg",
+   "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1295465264l/8884400.jpg",
+     "https://images-na.ssl-images-amazon.com/images/I/51cUVaBWZzL.jpg"]
+ 
+  let contentDiv = document.getElementById("content");
+  let ulElement = document.createElement("ul");
+  contentDiv.appendChild(ulElement);
+  ulElement.style.listStyle="none";
+  ulElement.style.display="flex";
+  ulElement.style.flexWrap="wrap";
+  ulElement.style.padding="20px";
+  ulElement.style.width="calc(100%-41px)";
+  
+ 
+  
+
+
+  books.forEach((booksElement,index) => {
+    let li = document.createElement("li");
+    ulElement.appendChild(li);
+    let pElement = document.createElement("p");
+    pElement.textContent = booksElement.title + " - " + booksElement.author;
+    let img = document.createElement("img");
+    img.style.width = "200px";
+    img.src = imgSrc[index];
+    
+    //console.log(booksElement.imgSrc) 
+    li.appendChild(pElement);
+    li.appendChild(img);
+    //li.style.listStyleType = "none"
+    li.style.width ="calc(25% - 51px)";
+    li.style.margin = "15px";
+    li.style.padding="10px";
+    li.style.minWidth = "350px";
+
+    if (booksElement.alreadyRead) {
+      li.style.backgroundColor = "green"
+    } else
+      li.style.backgroundColor = "red";
+
+    //img.src = `${booksElement.toString()}.jpg`
+    
+     });
+  
 }
 
 //
@@ -74,7 +166,7 @@ function exerciseThree(books) {
 let people = [
   { name: "Chris", job: "Teacher" },
   { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Boris", job: "Prime Minister" },
 ];
 
 exerciseOne(people);
@@ -87,18 +179,18 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);
