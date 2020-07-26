@@ -124,15 +124,8 @@ function exerciseThree(books) {
 content.appendChild(bookLists);
 }
 
-//
-//
-//
-//
+
 // DO NOT EDIT BELOW HERE
-//
-//
-//
-//
 
 let people = [{
     name: "Chris",
