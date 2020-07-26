@@ -1,3 +1,4 @@
+
 ### Arrays of objects
 
 In the past weeks, you've learned about using arrays of numbers, arrays of string etc... In the following, we will learn how to use arrays of objects.

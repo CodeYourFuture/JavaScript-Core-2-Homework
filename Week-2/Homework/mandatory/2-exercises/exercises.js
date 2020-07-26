@@ -8,14 +8,37 @@
  * All of your HTML should go inside the Div tag with the id "content".
  *
  * <div id="content">
- *      <h1>{Name Here}</h1>
+ *      <h1>{Name Here}</h1> 
  *      <h2>{Job Here}</h2>
  *      .....
  * </div>
+ * 
  */
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  let heading1, heading2;
+  arrayOfPeople.forEach((person) => {
+      heading1 = document.createElement("h1");
+      heading1.innerText = person.name;
+      content.appendChild(heading1);
+      heading2 = document.createElement("h2");
+      heading2.innerText = person.job;
+      content.appendChild(heading2);
+  });
 }
+
+// another approach//
+//  function exerciseOne(arrayOfPeople) {
+//   let content = document.querySelector("#content");
+//   for(let i = 0; i < arrayOfPeople.length; i++) {
+//     let heading1 = document.createElement("h1");
+//     let heading2 = document.createElement("h2")
+//     content.appendChild(heading1).innerHTML = arrayOfPeople[i].name;
+//     content.appendChild(heading2).innerHTML = arrayOfPeople[i].job;
+//     heading1.style.backgroundColor = "indigo";
+//   }
+//}
 
 /**
  *
@@ -24,8 +47,16 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+
 function exerciseTwo(shopping) {
-  //Write your code in here
+let content = document.querySelector("#content");
+let shoppingList =  document.createElement("ul");
+content.appendChild(shoppingList);
+shopping.forEach((item) => {
+ let eachItem = document.createElement("li");
+ eachItem.innerText = item;
+ shoppingList.appendChild(eachItem);
+});
 }
 
 /**
@@ -57,9 +88,95 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+
 function exerciseThree(books) {
-  //Write your code in here
+  // appending the image source with the url was not aligning properly //
+  books[0].src = "./img/image1.jpg"
+    // "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._SX326_BO1,204,203,200_.jpg"; //
+  books[1].src = "./img/image2.jpeg";
+    // "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg"; //
+  books[2].src = "./img/image3.jpg";
+    // "https://images-na.ssl-images-amazon.com/images/I/418M2053aNL.jpg"; //
+  
+  let contentDiv = document.querySelector("#content");
+  let ul = document.createElement("ul");
+  contentDiv.appendChild(ul);
+
+  books.forEach((book) => {
+    //  create a <p> element
+    //Assign textContent with the book title and author
+    // append it to the page.
+    
+    let li = document.createElement("li");
+    let p = document.createElement("p");
+    let img = document.createElement("img");
+    let a = document.createElement("a");
+    p.textContent = book.title + " - " + book.author;
+    img.src = book.src;
+
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+    ul.style.listStyle = "none";
+    ul.style.display = "flex";
+    li.style.margin = "20px";
+    
+    if (book.alreadyRead) {
+      li.style.backgroundColor = "green";
+    } else {
+      li.style.backgroundColor = "red";
+    }
+  });
+ 
 }
+
+// Another approach //
+// let bookImages = [
+//   {
+//     title: "The Design of Everyday Things",
+//     src: "./img/image1.jpg"
+// },
+//   {
+//     title: "The Most Human Human",
+//     src: "./img/image2.jpeg"
+// }, 
+//   {
+//     title: "The Pragmatic Programmer",
+//     src: "./img/image3.jpg"
+// }
+// ];
+
+// function exerciseThree(books) {
+//   let content = document.querySelector("#content");
+//   ulElement = document.createElement("ul");
+//   ulElement.style.listStyle = "none";
+//   ulElement.style.display = "flex";
+// content.appendChild(ulElement);
+// books.forEach((bookItem) => {
+//   let imageSrc;
+//   let liElement = document.createElement("li");
+//   ulElement.appendChild(liElement);
+//   let paragraph = document.createElement("p");
+//   paragraph.textContent = `${bookItem.title} - ${bookItem.author}`;
+//   liElement.appendChild(paragraph);
+//   let imageElement = document.createElement("img");
+//   bookImages.find(image => {
+//     if(image.title === bookItem.title) {
+//       imageSrc = image.src;
+//     }
+//   }) 
+// imageElement.src = imageSrc;
+// liElement.appendChild(imageElement);
+// liElement.style.margin = "20px"
+// if(bookItem.alreadyRead) {
+//   liElement.style.backgroundColor = "green";
+// }
+// else {
+// liElement.style.backgroundColor = "red";
+// }
+// })
+
+// }
 
 //
 //

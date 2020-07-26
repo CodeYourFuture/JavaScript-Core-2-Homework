@@ -25,18 +25,21 @@ WRITE YOUR CODE BELOW
 */
 
 
-var persons = // Complete here
+var persons = [person1, person2, person3]// Complete here
 
-var personNames = // Complete here
-
-var personsYoungerThan28YearsOld = // Complete here
+var personNames = persons.map(function(person) {
+return person.name
+})
+ 
+var personsYoungerThan28YearsOld = persons.filter(person => person.age < 28)
+ // Complete here
 
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
-console.log("Question 1: array defined with 3 persons -> ", 
+'console.log("Question 1: array defined with 3 persons -> ", 
     (persons[0] === person1 && persons[1] === person2 && persons[2] === person3) ? 'Passed :)' : 'Not yet :(');
 
 console.log("Question 2: array containing the person names -> ", 

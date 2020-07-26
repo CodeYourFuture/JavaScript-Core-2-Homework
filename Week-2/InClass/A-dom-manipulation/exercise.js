@@ -16,6 +16,24 @@ Write JavaScript below that logs:
 
 */
 
+// let paragraph = document.querySelectorAll("p");
+
+// let firstDiv = document.querySelector(".site-header")
+
+// let jumbotronText = document.getElementById("jumbotron-text");
+
+// let paragraghWith = document.
+
+// console.log(paragraph.length === 6);
+
+// console.log(document.querySelector(".site-header")); 
+
+// console.log(document.querySelector("jumbotron-text"));
+
+// console.log();
+
+
+// console.log(paragraph);
 
 /*
 Task 2
@@ -23,6 +41,12 @@ Task 2
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
+
+// let clickAlert = document.querySelector(".button")
+
+// let clickMessageChild = clickAlert.children[1]; 
+
+// console.log(clickMessageChild);
 
 
 /*
@@ -39,8 +63,17 @@ Task 4
 
 When a user clicks the 'Add some text' button, a new paragraph should be added below the buttons that says "Read more below."
 */
+// let myButton = document.querySelector("#addTextBtn");
 
 
+// myButton.addEventListener("click", function(){
+//     let paragrph = document
+//     myElement.appendChild(paragraph)
+//     /*
+//     let randomColor = Math.floor(Math.random() * colors.length );
+//     document.body.style.backgroundColor = colors[randomColor];
+//     */
+//   });
 
 /*
 Task 5
@@ -48,3 +81,13 @@ Task 5
 
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
+
+
+let largerButton = document.querySelector("#largerLinksBtn");
+
+largerButton.addEventListener("click", function(){
+   let selectAllLinks = document.querySelectorAll("a");
+   for(i = 0; i < selectAllLinks.length; i++) {
+       selectAllLinks[i].style.fontSize = "3rem";
+   }
+})
