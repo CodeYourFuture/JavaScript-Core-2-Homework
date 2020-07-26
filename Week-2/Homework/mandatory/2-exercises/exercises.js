@@ -44,7 +44,6 @@ function exerciseTwo(shopping) {
     shoppingList.appendChild(listItem);
   }
   content.appendChild(shoppingList);
-
 }
 
 /**
@@ -74,50 +73,56 @@ function exerciseTwo(shopping) {
     - Use a <ul> and <li> to display the books.
     - Add an <img> to each book that links to a URL of the book cover.
     - Change the style of the book depending on whether you have read it (green) or not (red).
-    IMAGE
-https: //m.media-amazon.com/images/I/51A8l+FxFNL._SL500_.jpg
+    
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 
-    THE DESIGN
-    https: //encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXoxX8sHG_dbNKdD1m56ayaT3MZOCl44XtlZvgUk-O_GBkNoemy1SnGGNi3W0235Ei2GMUvOI&usqp=CAc
-    THE MOST HUMAN
-    https: //images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg
+    
 **/
 let bookStand = [{
     title: "The Design of Everyday Things",
-    link: " https: //encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXoxX8sHG_dbNKdD1m56ayaT3MZOCl44XtlZvgUk-O_GBkNoemy1SnGGNi3W0235Ei2GMUvOI&usqp=CAc",
-
+    link: "https://assets.wired.com/photos/w_1001/wp-content/uploads/2015/09/design-of-everyday-things.jpg",
   },
   {
     title: "The Most Human Human",
-    link: "https: //images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg",
-
+    link: "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg",
   },
   {
     title: "The Pragmatic Programmer",
-    link: "https: //m.media-amazon.com/images/I/51A8l+FxFNL._SL500_.jpg",
-
-  }
+    link: "https://www.nytbooks.com/audiobooks/computers-technology/img/B0833FBNHV-300.jpg",
+  },
 ];
 
 function exerciseThree(books) {
   //Write your code in here
   let content = document.querySelector("#content");
   let bookLists = document.createElement("ul");
+  let bookImageSource = "";
   for (i = 0; i < books.length; i++) {
     let book = books[i];
     let bookDetails = document.createElement("li");
     let bookItem = document.createElement("p");
     bookItem.innerHTML = book.title + "- " + book.author;
     let bookImage = document.createElement("img");
-    bookImage.src = "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg"
+    if (book.title === bookStand[i].title) {
+      bookImageSource = bookStand[i].link;
+    }
+    bookImage.src = bookImageSource;
+
+    // bookImage.src = "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg"
     bookDetails.appendChild(bookItem);
     bookDetails.appendChild(bookImage);
     bookLists.appendChild(bookDetails);
-  }
-  content.appendChild(bookLists);
-}
 
+    if (books[i].alreadyRead === true) {
+      bookDetails.style.backgroundColor = "green";
+    } else {
+      bookDetails.style.backgroundColor = "red";
+
+    }
+  }
+
+content.appendChild(bookLists);
+}
 
 //
 //
@@ -131,16 +136,16 @@ function exerciseThree(books) {
 
 let people = [{
     name: "Chris",
-    job: "Teacher"
+    job: "Teacher",
   },
   {
     name: "Joanna",
-    job: "Student"
+    job: "Student",
   },
   {
     name: "Boris",
-    job: "Prime Minister"
-  }
+    job: "Prime Minister",
+  },
 ];
 
 exerciseOne(people);
@@ -152,18 +157,18 @@ exerciseTwo(shopping);
 const books = [{
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);
