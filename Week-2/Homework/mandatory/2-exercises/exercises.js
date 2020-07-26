@@ -90,7 +90,7 @@ shopping.forEach((item) => {
 **/
 
 function exerciseThree(books) {
-  // appending the image source from the url was not aligning properly //
+  // appending the image source with the url was not aligning properly //
   books[0].src = "./img/image1.jpg"
     // "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._SX326_BO1,204,203,200_.jpg"; //
   books[1].src = "./img/image2.jpeg";
@@ -113,7 +113,7 @@ function exerciseThree(books) {
     let a = document.createElement("a");
     p.textContent = book.title + " - " + book.author;
     img.src = book.src;
-    // img.setAttribute("src", book.src)
+
     li.appendChild(p);
     li.appendChild(img);
     ul.appendChild(li);
