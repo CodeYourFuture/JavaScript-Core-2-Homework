@@ -92,31 +92,62 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+/*
+list-style:none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: calc( 100% - 41px);
+}
 
-  // imgSrc =[
-  //   "img/The Design of Everyday Things.jpg","img/The Most Human Human.jpg","img/The Pragmatic Programmer.jpg"]
-
+li {
+    width: calc(25% - 51px);
+    margin: 15px;
+    padding: 10px;
+    min-width: 350px;
+}
+*/
+    imgSrc =["https://m.media-amazon.com/images/I/416Hql52NCL.jpg",
+   "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1295465264l/8884400.jpg",
+     "https://images-na.ssl-images-amazon.com/images/I/51cUVaBWZzL.jpg"]
+ 
   let contentDiv = document.getElementById("content");
   let ulElement = document.createElement("ul");
   contentDiv.appendChild(ulElement);
+  ulElement.style.listStyle="none";
+  ulElement.style.display="flex";
+  ulElement.style.flexWrap="wrap";
+  ulElement.style.padding="20px";
+  ulElement.style.width="calc(100%-41px)";
+  
+ 
+  
 
-  books.forEach(booksElement => {
+
+  books.forEach((booksElement,index) => {
     let li = document.createElement("li");
     ulElement.appendChild(li);
     let pElement = document.createElement("p");
     pElement.textContent = booksElement.title + " - " + booksElement.author;
     let img = document.createElement("img");
+    img.style.width = "200px";
+    img.src = imgSrc[index];
     
     //console.log(booksElement.imgSrc) 
     li.appendChild(pElement);
     li.appendChild(img);
-    li.style.listStyleType = "none"
+    //li.style.listStyleType = "none"
+    li.style.width ="calc(25% - 51px)";
+    li.style.margin = "15px";
+    li.style.padding="10px";
+    li.style.minWidth = "350px";
+
     if (booksElement.alreadyRead) {
       li.style.backgroundColor = "green"
     } else
       li.style.backgroundColor = "red";
 
-    img.src = `img/${booksElement.toString()}.jpg`
+    //img.src = `${booksElement.toString()}.jpg`
     
      });
   
