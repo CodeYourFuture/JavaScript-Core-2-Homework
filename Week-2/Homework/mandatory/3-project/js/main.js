@@ -15,14 +15,14 @@ blueBtn.addEventListener("click", function () {
 orangeBtn.addEventListener("click", function () {
   jumbotron.style.backgroundColor = "#f0ad4e";
   donateABikeBtn.style.backgroundColor = "#5751fd";
-  volunteer.style.backgroundColor = "##31b0d5";
+  volunteer.style.backgroundColor = "#31b0d5";
   volunteer.style.color = "#ffffff";
 });
 
 greenBtn.addEventListener("click", function () {
   jumbotron.style.backgroundColor = "#87ca8a";
   donateABikeBtn.style.backgroundColor = "black";
-  volunteer.style.backgroundColor = "#8c9c08`";
+  volunteer.style.backgroundColor = "#8c9c08";
   volunteer.style.color = "#ffffff";
 });
 
@@ -32,54 +32,35 @@ const name = document.querySelector("#example-text-input");
 const email = document.querySelector("#exampleInputEmail1");
 const describe = document.querySelector("#exampleTextarea");
 
-submitBtn.addEventListener("click", function (event) {
-  event.preventDefault();
+submitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
 
-  const emailMatch = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-
-  if (email.value.length <= 0) {
-    alert("Please enter an email");
+  //check for email validity
+  let emailMatch = "@";
+  // Check for non-empty
+  if (!email.value.includes(emailMatch) || email.value.length <= 0) {
+    alert("Please enter a valid email");
     email.style.backgroundColor = "red";
   }
-
+  if (email.value.length <= 0) {
+    alert("Please enter your email");
+    email.style.backgroundColor = "red";
+  }
   if (name.value.length <= 0) {
     alert("Please enter your name");
     name.style.backgroundColor = "red";
   }
-
   if (describe.value.length <= 0) {
-    alert("Please enter a description");
+    alert("Please enter your description");
     describe.style.backgroundColor = "red";
   }
 
-  // if (
-  //   email.value.length >= 0 &&
-  //   name.value.length >= 0 &&
-  //   describe.value.length >= 0
-  // ) {
-  //   alert("Thank you for filling the form");
-  //   name.value = "";
-  //   email.value = "";
-  //   describe.value = "";
-  // }
-
-  //Email Validation
-  // if (!email.value.match(emailMatch)) {
-  //   alert("Please enter a valid email");
-  //    email.style.backgroundColor = "yellow";
-  // } else if (
-  //   email.value.length >= 0 &&
-  //   name.value.length >= 0 &&
-  //   describe.value.length >= 0
-  // ) {
-  //   alert("Thank you for filling the form");
-  //   name.value = "";
-  //   email.value = "";
-  //   describe.value = "";
-  // }
-
-  if (email.validity.patternMismatch) {
-    alert("Enter Valid Email");
-    email.style.backgroundColor = "red";
+  // check for all fields entered
+  if (!email.value == "" && !name.value == "" && !describe.value == "") {
+    alert("Thank you for filling the form");
   }
+
+  email.value = "";
+  name.value = "";
+  describe.value = "";
 });

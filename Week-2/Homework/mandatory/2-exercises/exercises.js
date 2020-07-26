@@ -132,7 +132,7 @@ let people = [
   { name: "Boris", job: "Prime Minister" },
 ];
 
-// exerciseOne(people);
+ exerciseOne(people);
 
 let shopping = ["Milk", "Break", "Eggs", "A Dinosaur", "Cake", "Sugar", "Tea"];
 
