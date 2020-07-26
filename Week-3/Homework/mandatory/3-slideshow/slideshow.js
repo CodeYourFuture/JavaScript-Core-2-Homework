@@ -3,32 +3,71 @@ window.onload = function () {
   const imagesArray = Array.from(imagesNodes);
   const backBtn = document.getElementById('back');
   const forwardBtn = document.getElementById('forward');
-
-  // index of visible slide
-  let currentIndex = 0;
+  const autoForwardBtn = document.getElementById('autoForward');
+  const autoBackBtn = document.getElementById('autoBack');
+  const stopBtn = document.getElementById('stop');
+  const slideIndex = document.getElementById('slideIndex');
+  let timer;
+  let counter = 0;
 
   // show first image on page load
-  showImage(currentIndex);
+  showImage(counter);
 
-  function showImage(index) {
+  function showImage(counter) {
+    let index = getIndex(counter);
+
     imagesArray.forEach((image, i) => {
       // hide image when indexes don't match
       if (index !== i) {
         image.style.display = 'none';
       } else {
-        // display image for currentIndex
+        // display image for index
         image.style.display = 'inline-block';
       }
+      slideIndex.textContent = index;
     });
   }
 
-  forwardBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % imagesArray.length;
-    showImage(currentIndex);
+  function getIndex(num) {
+    // get index of a slide from any number
+    if (num >= 0) {
+      return num % imagesArray.length;
+    } else {
+      return (
+        (imagesArray.length - (Math.abs(num) % imagesArray.length)) %
+        imagesArray.length
+      );
+    }
+  }
+
+  function goBack() {
+    counter--;
+    showImage(counter);
+  }
+
+  function goForward() {
+    counter++;
+    showImage(counter);
+  }
+
+  forwardBtn.addEventListener('click', goForward);
+  backBtn.addEventListener('click', goBack);
+
+  autoForwardBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    timer = setInterval(() => {
+      goForward();
+    }, 2000);
   });
 
-  backBtn.addEventListener('click', () => {
-    currentIndex = currentIndex > 0 ? --currentIndex : imagesArray.length - 1;
-    showImage(currentIndex);
+  autoBackBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    timer = setInterval(() => {
+      goBack();
+    }, 2000);
+  });
+
+  stopBtn.addEventListener('click', () => {
+    clearInterval(timer);
   });
 };
