@@ -88,52 +88,95 @@ shopping.forEach((item) => {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
-let bookImages = [
-  {
-    title: "The Design of Everyday Things",
-    src: "./img/image1.jpg"
-},
-  {
-    title: "The Most Human Human",
-    src: "./img/image2.jpeg"
-}, 
-  {
-    title: "The Pragmatic Programmer",
-    src: "./img/image3.jpg"
-}
-];
 
 function exerciseThree(books) {
-  let content = document.querySelector("#content");
-  ulElement = document.createElement("ul");
-  ulElement.style.listStyle = "none";
-  ulElement.style.display = "flex";
-content.appendChild(ulElement);
-books.forEach((bookItem) => {
-  let imageSrc;
-  let liElement = document.createElement("li");
-  ulElement.appendChild(liElement);
-  let paragraph = document.createElement("p");
-  paragraph.textContent = `${bookItem.title} - ${bookItem.author}`;
-  liElement.appendChild(paragraph);
-  let imageElement = document.createElement("img");
-  bookImages.find(image => {
-    if(image.title === bookItem.title) {
-      imageSrc = image.src;
-    }
-  }) 
-imageElement.src = imageSrc;
-liElement.appendChild(imageElement);
-liElement.style.margin = "20px"
-if(bookItem.alreadyRead) {
-  liElement.style.backgroundColor = "green";
-}
-else {
-liElement.style.backgroundColor = "red";
-}
-})
+  // appending the image source from the url was not aligning properly //
+  books[0].src = "./img/image1.jpg"
+    // "https://images-na.ssl-images-amazon.com/images/I/410RTQezHYL._SX326_BO1,204,203,200_.jpg"; //
+  books[1].src = "./img/image2.jpeg";
+    // "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg"; //
+  books[2].src = "./img/image3.jpg";
+    // "https://images-na.ssl-images-amazon.com/images/I/418M2053aNL.jpg"; //
+  
+  let contentDiv = document.querySelector("#content");
+  let ul = document.createElement("ul");
+  contentDiv.appendChild(ul);
 
+  books.forEach((book) => {
+    //  create a <p> element
+    //Assign textContent with the book title and author
+    // append it to the page.
+    
+    let li = document.createElement("li");
+    let p = document.createElement("p");
+    let img = document.createElement("img");
+    let a = document.createElement("a");
+    p.textContent = book.title + " - " + book.author;
+    img.src = book.src;
+    // img.setAttribute("src", book.src)
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+    ul.style.listStyle = "none";
+    ul.style.display = "flex";
+    li.style.margin = "20px";
+    
+    if (book.alreadyRead) {
+      li.style.backgroundColor = "green";
+    } else {
+      li.style.backgroundColor = "red";
+    }
+  });
+ 
 }
+
+// Another approach //
+// let bookImages = [
+//   {
+//     title: "The Design of Everyday Things",
+//     src: "./img/image1.jpg"
+// },
+//   {
+//     title: "The Most Human Human",
+//     src: "./img/image2.jpeg"
+// }, 
+//   {
+//     title: "The Pragmatic Programmer",
+//     src: "./img/image3.jpg"
+// }
+// ];
+
+// function exerciseThree(books) {
+//   let content = document.querySelector("#content");
+//   ulElement = document.createElement("ul");
+//   ulElement.style.listStyle = "none";
+//   ulElement.style.display = "flex";
+// content.appendChild(ulElement);
+// books.forEach((bookItem) => {
+//   let imageSrc;
+//   let liElement = document.createElement("li");
+//   ulElement.appendChild(liElement);
+//   let paragraph = document.createElement("p");
+//   paragraph.textContent = `${bookItem.title} - ${bookItem.author}`;
+//   liElement.appendChild(paragraph);
+//   let imageElement = document.createElement("img");
+//   bookImages.find(image => {
+//     if(image.title === bookItem.title) {
+//       imageSrc = image.src;
+//     }
+//   }) 
+// imageElement.src = imageSrc;
+// liElement.appendChild(imageElement);
+// liElement.style.margin = "20px"
+// if(bookItem.alreadyRead) {
+//   liElement.style.backgroundColor = "green";
+// }
+// else {
+// liElement.style.backgroundColor = "red";
+// }
+// })
+
+// }
 
 //
 //
