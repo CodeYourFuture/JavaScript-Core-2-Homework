@@ -1,6 +1,6 @@
 # For homework
 
-## Part 1
+## Part 1 
 
 Open `index.html` in your browser. Notice there are 3 buttons: blue, orange and green.
 Edit the file `./js/main.js` and add the following functionality:
