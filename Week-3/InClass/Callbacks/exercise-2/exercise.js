@@ -61,8 +61,24 @@ const movies = [
   },
 ];
 
-// create showMovies function
+////////////////////////////////////////////////////////////
+// Task-1 ; create showMovies function
 
+function showMovies (){
+let divAllMovies = document.querySelector("#all-movies");
+let spanMoviesNumberEl = document.querySelector("#movies-number");
+console.log(divAllMovies);
+console.log(spanMoviesNumberEl);
+
+  movies.forEach(movie => {
+    let newPEl = document.createElement("p");
+    console.log(newPEl);
+    newPeL.textContent = `${movie.title}-${movie.director}`;
+    divAllMovies.appendChild(newPeL);
+    spanMoviesNumberEl.innerText = movies.length;
+  });
+
+}
 
 // create a new movie object for your favorite movie
 

@@ -26,6 +26,6 @@ let randomIndex = Math.floor(Math.random() * colorChoice.length);
 
 setInterval (function(){
      mainH1Element.style.backgroundColor = colorChoice[randomIndex];
-}, 1000);
+}, 5000);
 
 
