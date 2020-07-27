@@ -18,3 +18,7 @@ body {
 h2{
     padding-top: 20%;
 }
+button{
+    background-color: blue;
+    color: white;
+}
