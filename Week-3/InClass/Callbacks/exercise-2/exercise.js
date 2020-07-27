@@ -62,9 +62,31 @@ const movies = [
 ];
 
 // create showMovies function
+/*Create a function called "showMovies" that
+  - iterates through the "movies" array and
+    - for each movie, it creates a < p > element with the movie title and director and append it to the #all - movies div.
+- it sets the innerText of the #movies - number element to the total number of the movies in the array "movies"*/
+
+function showMovies(movies) {
+  let divEl = document.querySelector("#all-movies");
+  for (let i = 0; i < movies.length; i++) {
+    let pEl = document.createElement("p");
+    pEl.textContent = `${movies[i].title} Directed by ${movies[i].director}`;
+    divEl.appendChild(pEl);
+  }
+  let movieNum = document.getElementById("movies-number");
+  movieNum.innerText = movies.length;
+}
+setTimeout(showMovies(movies), 1000);
 
 
 // create a new movie object for your favorite movie
-
+let favMovie = {
+  title: "Don't have a favorite movie",
+  director: "Hadiyah Lawal",
+  type: "whodunnit",
+  haveWatched: true,
+}
 
 // create addMovies function
+

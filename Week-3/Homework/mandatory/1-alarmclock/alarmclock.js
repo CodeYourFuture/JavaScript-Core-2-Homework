@@ -1,4 +1,17 @@
-function setAlarm() {}
+function setAlarm() {
+  let setAlarmBtn = document.getElementById("set");
+  let timeTitle = document.getElementById("timeRemaining");
+  let inputField = document.getElementById("alarmSet")
+  setAlarmBtn.addEventListener('click', () => {
+    timeTitle.textContent =  inputField.value;
+    console.log(timeTitle);
+  })
+}
+  
+
+  console.log(setAlarmBtn);
+  console.log(inputField);
+  console.log(timeTitle);
 
 // DO NOT EDIT BELOW HERE
 

@@ -11,3 +11,21 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+//  TASK 1
+
+setTimeout(changeBodyColor, 1000);
+function changeBodyColor() {
+  document.body.style.backgroundColor = "hotpink";
+}
+
+
+//  TASK 2
+let colors = ["green", "hotpink", "orange", "orangered", "blue", "beige"];
+let backgroundEl = document.querySelector("#main");
+let changes = setInterval(backgroundChange, 1000);
+function backgroundChange() {
+  let randomIndex = Math.floor(Math.random() * colors.length);
+  backgroundEl.style.backgroundColor = colors[randomIndex];
+}
+
+clearInterval(changes, 6000);
