@@ -1,3 +1,24 @@
+function randomQuote()
+{
+  var randomIndex=Math.floor(Math.random() * quotes.length)
+  var currentQuote=quotes[randomIndex];
+
+  var quoteEl=document.querySelector(".quote");
+  var authorEl=document.querySelector(".author");
+
+  var line =currentQuote.quote;
+  var author=currentQuote.author;
+
+  quoteEl.textContent=line;
+  authorEl.textContent=author;
+}
+
+window.onload=function(){
+
+  var btnEl=document.getElementById("btn");
+  btnEl.addEventListener("click",randomQuote);
+}
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
