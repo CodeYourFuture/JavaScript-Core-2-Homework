@@ -23,6 +23,11 @@ footer {
 img {
   max-width: 300px;
 }
+ .img-center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
 
 section {
   padding: 2%;

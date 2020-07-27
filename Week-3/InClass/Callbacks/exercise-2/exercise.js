@@ -111,6 +111,75 @@ function addMovies(){
   }, 2000)
  
 }
+//////////////////////////////////////////////////////////////
+//Task-3 Callbacks,
 
 
 
+///////////////////////////////////////////////////////////////
+// Task 4 - **Extra**
+
+let bodyEl = document.querySelector("body");
+let newFormEl = document.createElement("form");
+newFormEl.className = "new-form";
+
+let label1 = document.createElement("label");
+label1.innerHTML = `movie title`;     
+label1.for = "mTitle";
+let inputEl1 = document.createElement("input");
+inputEl1.type = "text";
+inputEl1.for = "mTitle";
+
+newFormEl.appendChild(label1);
+newFormEl.appendChild(inputEl1);
+
+bodyEl.appendChild(newFormEl);
+let scriptEl = document.getElementsByTagName("script");
+bodyEl.lastChild = scriptEl;
+
+let label2 = document.createElement("label");
+label2.innerHTML = `movie director`;
+label2.for = "mDirector";
+let inputEl2 = document.createElement("input");
+inputEl2.type = "text";
+inputEl2.for = "mDirector";
+
+newFormEl.appendChild(label2);
+newFormEl.appendChild(inputEl2);
+
+let label3 = document.createElement("label");
+label3.innerHTML = `movie type`;
+label3.for = "mType";
+let inputEl3 = document.createElement("input");
+inputEl3.type = "text";
+inputEl3.for = "mType";
+
+newFormEl.appendChild(label3);
+newFormEl.appendChild(inputEl3);
+
+let label4 = document.createElement("label");
+label4.innerHTML = `having watched`;
+label4.for = "mHaveWatched";
+let inputEl4 = document.createElement("input");
+inputEl4.type = "text";
+inputEl4.for = "mHaveWatched";
+
+newFormEl.appendChild(label4);
+newFormEl.appendChild(inputEl4);
+
+let newButtonEl = document.createElement("button");
+newButtonEl.type = "button";
+newButtonEl.textContent = "Save";
+newFormEl.appendChild(newButtonEl);
+
+////////////////////////////////////////////////////////////
+// Function with "click";
+
+newButtonEl.addEventListener("click", addNewMovie);
+
+function addNewMovie(movie){
+
+  movies.title = movie.title;
+
+  movies = movies + movie;
+}
