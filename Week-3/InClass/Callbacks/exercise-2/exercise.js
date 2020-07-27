@@ -73,8 +73,8 @@ console.log(spanMoviesNumberEl);
   movies.forEach(movie => {
     let newPEl = document.createElement("p");
     console.log(newPEl);
-    newPeL.textContent = `${movie.title}-${movie.director}`;
-    divAllMovies.appendChild(newPeL);
+    newPEl.textContent = `${movie.title}-${movie.director}`;
+    divAllMovies.appendChild(newPEl);
     spanMoviesNumberEl.innerText = movies.length;
   });
 
@@ -82,5 +82,35 @@ console.log(spanMoviesNumberEl);
 
 // create a new movie object for your favorite movie
 
+movies[4] = {
+  title: "Annihilation",
+  director: "Alex Garland",
+  type: "Science Fiction",
+  haveWatched: true,
+}
+
+//////////////////////////////////////////////////////////////
+// Task-2 amend the showMovies with setTimeout to 1 second.
+
+setTimeout (function(){
+  showMovies();
+}, 1000);
 
 // create addMovies function
+ let myMovieOb = {
+  title: "The Martian",
+  director: "Ridley Scott",
+  type: "Science Fiction",
+  haveWatched: true,
+ }
+
+function addMovies(){
+  setTimeout (function(){
+    movies[5] = myMovieOb;
+    showMovies ();
+  }, 2000)
+ 
+}
+
+
+
