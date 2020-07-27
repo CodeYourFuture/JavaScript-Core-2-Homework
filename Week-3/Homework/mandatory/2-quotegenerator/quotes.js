@@ -1,3 +1,29 @@
+  //SELECTORS
+  let nextButton = document.querySelector('#nextBtn');
+  let h2El = document.querySelector('h2');
+  let p = document.querySelector('p');
+  let main = document.querySelector('.main');
+
+  //COLOR ARRAYS
+  let myColors = ["hotpink", "orange ", "skyBlue", "red", "green", "maroon", "brown", "black"];
+  let authorColors = ["white", "yellow"];
+
+
+
+  //EVENT LISTENER     
+  nextButton.addEventListener('click', function(){
+      
+        h2El.textContent = quotes[Math.floor(Math.random() * quotes.length)].quote;
+        p.textContent = quotes[Math.floor(Math.random() * quotes.length)].author;
+        main.style.backgroundColor = myColors[Math.floor(Math.random() * myColors.length)];
+        h2El.style.color = authorColors[Math.floor(Math.random() * authorColors.length)];
+        p.style.color = authorColors[Math.floor(Math.random() * authorColors.length)];
+
+        
+      
+      });
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
@@ -19,6 +45,9 @@
 // You DO NOT need to understand how this function works.
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
+
+
+
 }
 
 // A list of quotes you can use in your app.
@@ -490,3 +519,5 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+
