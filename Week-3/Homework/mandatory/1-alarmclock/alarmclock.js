@@ -1,11 +1,6 @@
-//Selectors
-
-
-//event listeners
-
+let myColors = ["yellow", "blue", "red"];
+let randonNum = 0;
  
-
-
 function setAlarm() {
   //SELECTORS
   let timerValue = document.getElementById('alarmSet');
@@ -21,9 +16,17 @@ function setAlarm() {
       
       if(timer < 0){
         playAlarm();
+        timerValue.value = "";
       }else{
-        timeRemaining.textContent = ` Time Remaining: 00:0${timer}`;
-        timer--;
+        if(timer >= 10){
+          timeRemaining.textContent = `Time Remaining: 00:${timer}`;
+          timer--;
+
+        }else{
+          timeRemaining.textContent = ` Time Remaining: 00:0${timer}`;
+          timer--;
+        }
+       
       }
     } 
 
