@@ -1,10 +1,11 @@
-let myColors = ["yellow", "blue", "red"];
-let randonNum = 0;
+let myColors = ["yellow", "blue", "red", "purple", "orange", "green"];
+
  
 function setAlarm() {
   //SELECTORS
   let timerValue = document.getElementById('alarmSet');
   let timeRemaining = document.querySelector('#timeRemaining');
+  let page = document.querySelector('.centre');
   let stop = document.querySelector('#stop');
   let timer =  timerValue.value;
 
@@ -16,6 +17,7 @@ function setAlarm() {
       
       if(timer < 0){
         playAlarm();
+        page.style.backgroundColor = myColors[Math.floor(Math.random() * myColors.length)];
         timerValue.value = "";
       }else{
         if(timer >= 10){
