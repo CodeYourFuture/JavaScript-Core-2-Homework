@@ -1,5 +1,4 @@
 /**
- *
  * For each of the names in the array passed into this function
  *
  * - Add a <h1> tag to the website containing the name of the person
@@ -12,9 +11,20 @@
  *      <h2>{Job Here}</h2>
  *      .....
  * </div>
+ *
+ * @format
  */
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for (let i = 0; i < arrayOfPeople.length; i++) {
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    h1.textContent = arrayOfPeople[i].name;
+    h2.textContent = arrayOfPeople[i].job;
+    content.appendChild(h1);
+    content.appendChild(h2);
+  }
 }
 
 /**
@@ -25,7 +35,14 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  let ul = document.createElement("ul");
+  for (let i = 0; i < shopping.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = shopping[i];
+    ul.appendChild(li);
+  }
+  content.appendChild(ul);
 }
 
 /**
@@ -58,7 +75,34 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  let ul = document.createElement("ul");
+  let images = [
+    "https://i.chzbgr.com/thumb800/1633029/h3E5780ED/and-come-indoors-and-another-cat-climbing-the-toy-paper-roll-and-captioned-that-you-are-home-early",
+    "https://filmdaily.co/wp-content/uploads/2020/05/cat-memes-lede-1300x890.jpg",
+    "https://filmdaily.co/wp-content/uploads/2020/04/CatMemeQuarantine-lede.jpg",
+  ];
+  for (let i = 0; i < books.length; i++) {
+    let p = document.createElement("p");
+    let li = document.createElement("li");
+    let img = document.createElement("img");
+    let title = books[i].title;
+    let author = books[i].author;
+    let alreadyRead = books[i].alreadyRead;
+    p.textContent = `${title}, ${author}, ${alreadyRead}`;
+    img.src = images[i];
+    img.style.width = "300px";
+    if (alreadyRead === true) {
+      li.style.backgroundColor = "green";
+    } else {
+      li.style.backgroundColor = "red";
+    }
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+  }
+
+  content.appendChild(ul);
 }
 
 //
@@ -74,7 +118,7 @@ function exerciseThree(books) {
 let people = [
   { name: "Chris", job: "Teacher" },
   { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Boris", job: "Prime Minister" },
 ];
 
 exerciseOne(people);
@@ -87,18 +131,18 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);
