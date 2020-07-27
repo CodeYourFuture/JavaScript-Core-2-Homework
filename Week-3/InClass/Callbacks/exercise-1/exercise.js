@@ -21,5 +21,11 @@ Update your code to make the colour change every 5 seconds to something differen
 Prefer to work on a codepen? https://codepen.io/makanti/pen/abOreLg
 ================
 */
+let colorChoice = ["red", "green", "yellow", "black", "purple"];
+let randomIndex = Math.floor(Math.random() * colorChoice.length);
+
+setInterval (function(){
+     mainH1Element.style.backgroundColor = colorChoice[randomIndex];
+}, 1000);
 
 
