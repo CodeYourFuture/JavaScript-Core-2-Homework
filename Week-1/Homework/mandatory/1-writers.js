@@ -42,3 +42,13 @@ let writers = [
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
+
+function getwriters(writers){
+  if(writers.alive){
+return "Hi, my name is " + writers.firstName + " " + writers.lastName+". I am "+writers.age+" years old, and work as a "+writers.occupation+".";
+} else {
+  return false;
+}
+}
+
+console.log(writers.map(getwriters).filter(Boolean));
