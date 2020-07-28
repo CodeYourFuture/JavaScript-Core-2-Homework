@@ -12,12 +12,13 @@ function setAlarm() {
       let countDown = setInterval(function () {
         let minLeft = Math.floor(timeLeft / 60);
         let secLeft = timeLeft % 60;
-        timeRemaining.textContent = `Time Remaining: ${minLeft}:${secLeft}`;
-        let timeover = timeLeft--;
-        if (!timeover) {
+        timeRemaining.textContent = `Time Remaining: ${("0" + minLeft).slice(-2)}:${("0" + secLeft).slice(-2)}`;
+        //let timeover = 
+        if (!timeLeft) {
           playAlarm();
           return clearInterval(countDown);
         }
+        timeLeft--;
       }, 1000);
     }
   } else{
