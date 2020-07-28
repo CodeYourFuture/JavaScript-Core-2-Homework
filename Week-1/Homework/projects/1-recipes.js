@@ -22,4 +22,20 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    Name : "Mole",
+    Serving: 2,
+    Ingredients: {
+        a:"cinnamon",
+        b:"cumin",
+        c:"cocoa"
+    }
+};
+
+  
+console.log( `${recipes.Name} 
+Serves: ${recipes.Serving}
+Ingredients:
+${recipes.Ingredients.a}
+${recipes.Ingredients.b}
+${recipes.Ingredients.c}`);
