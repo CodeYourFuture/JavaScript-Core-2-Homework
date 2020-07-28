@@ -10,3 +10,13 @@ let groceryList = {
   item2: "",
   item3: ""
 };
+
+groceryList.item1 = "Potatoes";
+groceriesToBuy.push(groceryList.item1);
+groceryList.item2 = "Orange Juice";
+groceriesToBuy.push(groceryList.item2);
+groceryList.item3 = "Rice";
+groceriesToBuy.push(groceryList.item3);
+
+     
+      console.log(groceriesToBuy);

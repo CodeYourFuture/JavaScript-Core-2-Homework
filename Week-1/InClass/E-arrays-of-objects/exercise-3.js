@@ -53,22 +53,42 @@ let restaurants = [restaurant1, restaurant2, restaurant3];
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
-
+  
+  
 
 let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
+        return restaurants.map(function(restaurant){
+           if ((restaurant.totalSeats - restaurant.numberOfCustomers) > numberOfPeople){
+            return restaurant.name;
+           }
+        });
         // Complete here
     },
     findRestaurantServingDish: function (dishName) {
-        // Complete here
+        return restaurants.map(function (restaurant) {
+            if (restaurant.menu.includes(dishName)) {
+                return restaurant.name;
+            }
+        }); // Complete here
     },
     countNumberOfRestaurantsInArea: function (area) {
-        // Complete here
+        let count = 0;
+         restaurants.map(function (restaurant) {
+            if (restaurant.address.area.includes(area)) {
+               
+                return count=count+1;
+            }
+
+        });
+        return count;  // Complete here
     }
 };
+
+
 
 
 /*
