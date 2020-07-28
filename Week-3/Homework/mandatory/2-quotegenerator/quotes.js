@@ -2,9 +2,12 @@ let bodyHTML = document.querySelector("body");
 let newPEl = document.createElement("p");
 bodyHTML.appendChild(newPEl);
 
-let selectQuotes = quotes.forEach(function(){
-                      newPEl.textContent = `${quotes.quote}-${quotes.author}`;
-                    })
+let randomNum = Math.floor(Math.random() * quotes.length); 
+
+function selectQuotes (){
+  let quotesSelected = quotes[randomNum];
+  newPEl.textContent = ` ${quotesSelected.quote}-${quotesSelected.author}`;
+} 
 
 document.addEventListener("click", selectQuotes);
 
