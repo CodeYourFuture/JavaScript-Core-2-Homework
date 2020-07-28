@@ -13,7 +13,7 @@ titleTimeRemaining.textContent = `Time Remaining: ${inputAlarmSet.textContent}`;
 
 // Step-3 and Step4
   setInterval(function(){
-    var audio = new Audio('alarmsound.mp3');
+    let audio = new Audio('alarmsound.mp3');
     let secondClock = inputAlarmSet.textContent;
 
     if (secondClock > 0){

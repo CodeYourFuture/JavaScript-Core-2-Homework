@@ -1,3 +1,15 @@
+let bodyHTML = document.querySelector("body");
+let newPEl = document.createElement("p");
+bodyHTML.appendChild(newPEl);
+
+let selectQuotes = quotes.forEach(function(){
+                      newPEl.textContent = `${quotes.quote}-${quotes.author}`;
+                    })
+
+document.addEventListener("click", selectQuotes);
+
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
