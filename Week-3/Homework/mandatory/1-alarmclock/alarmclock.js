@@ -1,5 +1,9 @@
 function setAlarm() {
-  
+let Date = new Date();
+  let myClock = document.getElementById("set");
+  let alarmSet = document.getElementById("alarmSet").innerHTML = Date.getSeconds ;
+  let remainingTime = document.getElementById("timeRemaining");
+ 
 }
 
 // DO NOT EDIT BELOW HERE
@@ -19,7 +23,7 @@ function setup() {
 function playAlarm() {
   audio.play();
 }
-
+ 
 function pauseAlarm() {
   audio.pause();
 }
