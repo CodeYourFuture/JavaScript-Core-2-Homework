@@ -1,22 +1,17 @@
 
 let bodyHTML = document.getElementsByTagName("body");
-let newPEl = document.createElement("p");
-bodyHTML.appendChild(newPEl);
+let newPEl = document.querySelector("#quote-para");
+let newButtonEl = document.querySelector("#quote-select");
 
+// let quotesArray = quotes;
+// let randomNum = Math.floor(Math.random() * quotes.length); 
 
 function selectQuotes (){
   let quotesSelected = quotes[randomNum];
-  newPEl.textContent = ` ${quotesSelected.quote}-${quotesSelected.author}`;
+  return newPEl.textContent = ` ${quotesSelected.quote}-${quotesSelected.author}`;
 } 
 
-let randomNum = Math.floor(Math.random() * quotes.length); 
-
-
-let newButtonEl = document.createElement("button");
-bodyHTML.appendChild(newButtonEl);
-
 newButtonEl.addEventListener("click", selectQuotes);
-
 
 
 // DO NOT EDIT BELOW HERE

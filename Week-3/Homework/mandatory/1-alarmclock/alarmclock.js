@@ -1,3 +1,42 @@
+function setAlarm (){
+  let inputAlarmSet = document.getElementById("alarmSet").value;
+  let titleTimeRemaining = document.getElementById("timeRemaining");
+
+  let startAlarm = setInterval (()=> {
+    if (inputAlarmSet === 0){
+      playAlarm();
+      clearInterval(startAlarm);
+    }
+    getTime(inputAlarmSet);
+    titleTimeRemaining.textContent = `Time remaining: ${getTime(inputAlarmSet)}`;
+    inputAlarmSet --;
+  }, 1000);
+}
+
+
+function getTime (time){
+  let minutes;
+  let seconds;
+
+  if (time > 60){
+    minutes = Math.floor(time / 60);
+    seconds = time - minutes * 60;
+  } else{
+    minutes = 0;
+    seconds = time;
+  }
+
+  if (minutes < 10){
+    minutes = "0" + minutes;
+  }
+
+  if (seconds < 10){
+    seconds = "0" + seconds;
+  }
+  return `${minutes}:${seconds}`;
+}
+
+/* First try
 // Step-1
 function setAlarm(number) {
   let inputAlarmSet = document.getElementById("alarmSet");
@@ -27,11 +66,9 @@ titleTimeRemaining.textContent = `Time Remaining: ${inputAlarmSet.textContent}`;
 
 // Step-4
 
-
+*/
  
   
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////
 // DO NOT EDIT BELOW HERE
 
