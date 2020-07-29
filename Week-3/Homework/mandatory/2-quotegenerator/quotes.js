@@ -12,9 +12,9 @@
 
   //EVENT LISTENER     
   nextButton.addEventListener('click', function(){
-      
-        h2El.textContent = quotes[Math.floor(Math.random() * quotes.length)].quote;
-        p.textContent = quotes[Math.floor(Math.random() * quotes.length)].author;
+        const counter = Math.floor(Math.random() * quotes.length);
+        h2El.textContent = quotes[counter].quote;
+        p.textContent = quotes[counter].author;
         main.style.backgroundColor = myColors[Math.floor(Math.random() * myColors.length)];
         h2El.style.color = authorColors[Math.floor(Math.random() * authorColors.length)];
         p.style.color = authorColors[Math.floor(Math.random() * authorColors.length)];
