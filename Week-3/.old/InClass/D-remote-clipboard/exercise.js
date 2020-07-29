@@ -23,7 +23,7 @@ Also, for GET request, you can use the url directly in your browser address bar
 var clipboardTitle = "CHANGE ME";
 var clipboardText = "CHANGE ME";
 var requestBody = { title: clipboardTitle, text: clipboardText };
-
+var url = `https://codeyourfuture.herokuapp.com/api/clipboard?title=myClipboardId`;
 var postRequestParameters = {
     body: JSON.stringify(requestBody),
     method: 'POST',
@@ -32,12 +32,17 @@ var postRequestParameters = {
     }
 };
 
-fetch(/* Write the API address here */, postRequestParameters);
+fetch(url, postRequestParameters);
 
 
 // Task 2: Load an existing clipboard
 // Add your code below
 
-fetch(/* ... */).then(function(response) {
+fetch(url).then(function(response) {
     return response.text();
-}).then(/* ... */);
+}).then(function(data){
+    let myData = document.getElementById("greeting-text");
+    console.log(data);
+    myData.innerText = data;
+    return;
+});

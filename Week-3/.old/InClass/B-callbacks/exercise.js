@@ -61,11 +61,13 @@ function exercise2(result) {
 */
 
 function exercise3(callback) {
+  callback("Hello from the callback");
   // Write your implementation here
 
   // Write your explanation here
+  // This callback is already a defined function and it is now used as a parameter
+  // in exercise3 function and also called in it
 }
-
 // 
 // -------------------------------------
 // 
