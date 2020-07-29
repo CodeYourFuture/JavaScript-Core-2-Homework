@@ -1,3 +1,37 @@
+function randomQuote()
+{
+  var randomIndex=Math.floor(Math.random() * quotes.length)
+  var currentQuote=quotes[randomIndex];
+
+  var quoteEl=document.querySelector(".quote");
+  var authorEl=document.querySelector(".author");
+
+  var line =currentQuote.quote;
+  var author=currentQuote.author;
+
+  quoteEl.textContent=line;
+  authorEl.textContent=author;
+}
+
+window.onload=function(){
+
+  var btnEl=document.getElementById("btn");
+  var autoPlayButton=document.querySelector("#auto-play-button");
+  var autoPlayControl;
+  var autoPlayMode=document.getElementById("autoplay-mode");
+
+  autoPlayButton.addEventListener("click", function(){
+    autoPlayMode.textContent="AutoPlay:On"
+    autoPlayControl=setInterval(randomQuote,3000);
+  })
+  btnEl.addEventListener("click",function(){
+
+    clearInterval(autoPlayControl); // we will stop autoPlay when we click the next button.
+    autoPlayMode.textContent="AutoPlay:Off";
+    randomQuote();
+  });
+}
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at

@@ -1,1 +1,72 @@
 /** Write your CSS in here **/
+
+
+.body
+{
+    background-color: rgb(39, 175, 164);
+    font: 1rem/1.56 "ubuntu",Verdana,Arial,sans-serif;
+}
+
+.quote-container
+{
+    background-color: rgb(164, 240, 211);
+    width:70%;
+    margin: 10em auto;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:1em;
+    border:5px solid;
+    border-color: rgb(25, 99, 74);
+}
+
+
+.quote
+{
+    font-size: 1.7em;
+    margin-top: -10rem;
+}
+
+.author
+{
+    align-self: flex-end;
+    margin-right: 3em;
+    /* margin-bottom: -3em; */
+    font-size: 1.5em;
+    position: absolute;
+    right:13rem;
+    top:15em;
+}
+
+
+#btn
+{
+    background-color: rgb(39, 175, 164);
+    width:5em;
+    align-self: flex-end;
+    margin-right: 3em;
+    font-size: 1.2em;
+    position: absolute;
+    right:13rem;
+    top:21.5em;
+}
+
+.autoplay-container
+{
+    position: absolute;
+    left:15rem;
+    top:23.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#auto-play-button
+{
+    background-color: rgb(39, 175, 164);
+    width:5em;
+    margin:1em;
+}

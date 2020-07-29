@@ -1,1 +1,29 @@
 /** Write your CSS in here **/
+
+.body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font: 1rem/1.56 "ubuntu",Verdana,Arial,sans-serif;
+    background: linear-gradient(rgb(255, 183, 183),rgb(228, 66, 66));
+}
+
+.heading
+{
+    font-size: 2.5em;
+}
+.button-container
+{
+    margin: 0.5em auto;
+    font-size: 1.4em;
+}
+
+.image
+{
+    width:50em;
+    height: 30em;
+    border: 10px solid;
+    border-color: rgb(241, 203, 192);
+}
