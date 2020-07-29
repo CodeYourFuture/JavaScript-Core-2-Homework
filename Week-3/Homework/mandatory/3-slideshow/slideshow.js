@@ -22,7 +22,12 @@ window.onload=function()
     var currentIndex=0;
     var slideshow1;
     var slideshow2;
-
+    var seconds=document.querySelector("#seconds").value; // seconds will be in tens, we need to convert them into milliseconds for setInterval.
+    var timer;
+    if(seconds > 0)
+        timer=second*1000;
+    else 
+    timer=1000;    
 
     autoForward.addEventListener("click", function(){
         clearInterval(slideshow2);
@@ -38,7 +43,7 @@ window.onload=function()
             imageEl.src=imageSource[currentIndex];
             currentIndex=currentIndex+1;
 
-        },1000);
+        },timer);
     });
 
     autoBack.addEventListener("click", function(){
@@ -54,7 +59,7 @@ window.onload=function()
             console.log(currentIndex);
             imageEl.src=imageSource[currentIndex];
             currentIndex=currentIndex-1;
-        },1000);
+        },timer);
     });
 
     backButton.addEventListener("click",function(){

@@ -13,7 +13,6 @@ function randomQuote()
   authorEl.textContent=author;
 }
 
-
 window.onload=function(){
 
   var btnEl=document.getElementById("btn");
