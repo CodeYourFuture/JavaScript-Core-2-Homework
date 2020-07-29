@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
+    <script defer src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+     <div class="container">
+       <div class="jumbotron">
+         <h1 id="title">Image carousel</h1>
+         <div class="images">
+           <img id="myImages" src="./images/nasa-Q1p7bh3SHj8-unsplash.jpg" width="414px" height="400px" alt="">
+         </div>
+         <div id="btns">
+         <button id="autopBtn">Auto previous</button>
+         <button id="pBtn" class="pBtn">Back</button>
+         <button id="stopBtn">Stop</button>
+         <button id="nBtn">Forward</button>
+         <button id="autofBtn">Auto forward</button>
+         </div>
+       </div>
+
+    </div>
   </body>
 </html>

@@ -19,8 +19,6 @@
         h2El.style.color = authorColors[Math.floor(Math.random() * authorColors.length)];
         p.style.color = authorColors[Math.floor(Math.random() * authorColors.length)];
 
-        
-      
       });
 
 
