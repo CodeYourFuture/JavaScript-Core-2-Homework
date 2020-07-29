@@ -27,3 +27,28 @@ on the submit button. Then check the following:
 
 
 // Write your code here
+var postRequestParameters = {
+    body: JSON.stringify({ "content":new Date() }),
+    method: 'POST',
+    headers: {
+        'content-type': 'application/json'
+    }
+};
+
+fetch('https://codeyourfuture.herokuapp.com/api/messages',postRequestParameters);
+
+fetch('https://codeyourfuture.herokuapp.com/api/messages')
+.then(function(response){
+    return response.json();
+})
+.then(function(messages){
+//document.querySelector('#message-list').innerHTML ="";
+document.querySelector('#message-list').innerHTML+='<p>'+messages[messages.length-1].content +'</p>'
+
+// messages.forEach(function(message){
+//  document.querySelector('#message-list').innerHTML+='<p>'+message.content +'</p>'
+// //  let newParagraph = document.createElement('p');
+// //  newParagraph.innerText
+// //  document.querySelector('message-list').appendChild(newParagraph);
+// })
+})
