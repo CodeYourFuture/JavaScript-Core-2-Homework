@@ -13,10 +13,24 @@ function randomQuote()
   authorEl.textContent=author;
 }
 
+
 window.onload=function(){
 
   var btnEl=document.getElementById("btn");
-  btnEl.addEventListener("click",randomQuote);
+  var autoPlayButton=document.querySelector("#auto-play-button");
+  var autoPlayControl;
+  var autoPlayMode=document.getElementById("autoplay-mode");
+
+  autoPlayButton.addEventListener("click", function(){
+    autoPlayMode.textContent="AutoPlay:On"
+    autoPlayControl=setInterval(randomQuote,3000);
+  })
+  btnEl.addEventListener("click",function(){
+
+    clearInterval(autoPlayControl); // we will stop autoPlay when we click the next button.
+    autoPlayMode.textContent="AutoPlay:Off";
+    randomQuote();
+  });
 }
 
 // DO NOT EDIT BELOW HERE
