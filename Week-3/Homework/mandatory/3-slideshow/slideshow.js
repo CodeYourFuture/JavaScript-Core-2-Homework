@@ -7,8 +7,11 @@ window.onload = function () {
   const autoBackBtn = document.getElementById('autoBack');
   const stopBtn = document.getElementById('stop');
   const slideIndex = document.getElementById('slideIndex');
+  const delayInput = document.getElementById('delay');
+  const delayBtn = document.getElementById('delayBtn');
   let timer;
   let counter = 0;
+  let delayTime = 2000; // milliseconds
 
   // show first image on page load
   showImage(counter);
@@ -57,17 +60,21 @@ window.onload = function () {
     clearInterval(timer);
     timer = setInterval(() => {
       goForward();
-    }, 2000);
+    }, delayTime);
   });
 
   autoBackBtn.addEventListener('click', () => {
     clearInterval(timer);
     timer = setInterval(() => {
       goBack();
-    }, 2000);
+    }, delayTime);
   });
 
   stopBtn.addEventListener('click', () => {
     clearInterval(timer);
+  });
+
+  delayBtn.addEventListener('click', () => {
+    delayTime = delayInput.value;
   });
 };
