@@ -7,7 +7,6 @@ body {
 #bigCon {
   width: 100%;
   height: 700px;
-
   display: flex;
   align-items: center;
 }
@@ -20,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow:  12px 12px #142B3D;
 }
 #child {
   font-size: xx-large;
