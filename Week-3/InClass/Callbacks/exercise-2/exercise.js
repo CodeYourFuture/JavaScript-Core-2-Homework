@@ -7,16 +7,19 @@ You are given the following list of movies
 Task 1
 Create a function called "showMovies" that
 - iterates through the "movies" array and
-- for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
+- for each movie, it creates a <p> element with 
+the movie title and director and append it 
+to the #all-movies div.
 - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
-
+*/
+/*
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
 - it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
-How many movies can you see on your page?
+How many movies can you see on your page=8
 
 Task 3
 Can you make sure the new movie you just added is showing on the screen? 
@@ -61,10 +64,41 @@ const movies = [
   },
 ];
 
-// create showMovies function
+// create showMovies function//#all-movies //#movies-number
+let paragraph;
+function showMovies(){
+  
+  movies.forEach(function(each){
+    paragraph=document.createElement("p");
+    paragraph.textContent=each.title+" by "+each.director;
+    document.querySelector("#all-movies").appendChild(paragraph);
+    document.querySelector("#movies-number").innerHTML=movies.length;
+  })
+}
 
 
-// create a new movie object for your favorite movie
 
-
+let set=setTimeout(function(){
+  showMovies();
+  clearInterval(set);
+  return;
+},1000); 
+// create a new movie object for your favorite 
+//movie//myMovies
+let myMovies={
+    title: "code-your-future",
+    director: "zubeda",
+    type: "web development",
+    haveWatched: true
+};
 // create addMovies function
+function addMovies(myMovies){
+  setTimeout(function(){
+    movies.push(myMovies);
+    paragraph.textContent="";
+    showMovies();
+  },2000)
+  
+  
+}
+addMovies(myMovies);
