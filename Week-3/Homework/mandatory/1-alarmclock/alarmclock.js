@@ -4,10 +4,13 @@ function setAlarm () {
     let timeRem = document.querySelector ('#timeRemaining');
     let inputTxt = document.querySelector ('#alarmSet').value;
     let intTxt = parseInt (inputTxt);
+    let interv;
+    let mins;
+    let sec;
 
     if (intTxt > 0 && intTxt < 10) {
       timeRem.textContent = `Time Remaining: 00:0${inputTxt}`;
-      let interv = setInterval (function () {
+      interv = setInterval (function () {
         if (inputTxt > 0)
           timeRem.textContent = `Time Remaining: 00:0${--inputTxt}`;
         if (inputTxt === 0) {
@@ -20,7 +23,7 @@ function setAlarm () {
 
     if (intTxt >= 10 && intTxt < 60) {
       timeRem.textContent = `Time Remaining: 00:${inputTxt}`;
-      let interv = setInterval (function () {
+      interv = setInterval (function () {
         if (inputTxt > 10) {
           timeRem.textContent = `Time Remaining: 00:${--inputTxt}`;
         } else {
@@ -35,10 +38,10 @@ function setAlarm () {
     }
 
     if (intTxt >= 60 && intTxt < 600) {
-      let mins = Math.floor (intTxt / 60);
-      let sec = intTxt - mins * 60;
+      mins = Math.floor (intTxt / 60);
+      sec = intTxt - mins * 60;
       timeRem.textContent = `Time Remaining: 0${mins}:0${sec}`;
-      let interv = setInterval (function () {
+      interv = setInterval (function () {
         if (sec > 0 && sec < 10) {
           if (sec > 0)
             timeRem.textContent = `Time Remaining: 0${mins}:0${--sec}`;
@@ -57,9 +60,9 @@ function setAlarm () {
     }
 
     if (intTxt > 600 && intTxt < 6000) {
-      let mins = Math.floor (intTxt / 60);
-      let sec = intTxt - mins * 60;
-      let interv = setInterval (function () {
+      mins = Math.floor (intTxt / 60);
+      sec = intTxt - mins * 60;
+      interv = setInterval (function () {
         if (sec > 0 && sec < 10) {
           if (sec > 0)
             timeRem.textContent = `Time Remaining: ${mins}:0${--sec}`;
