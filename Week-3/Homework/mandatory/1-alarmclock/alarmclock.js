@@ -4,6 +4,7 @@ function setAlarm (){
 
   let startAlarm = setInterval (()=> {
     if (inputAlarmSet === 0){
+      //titleTimeRemaining.style.backgroundColor = "yellow";
       playAlarm();
       clearInterval(startAlarm);
     }

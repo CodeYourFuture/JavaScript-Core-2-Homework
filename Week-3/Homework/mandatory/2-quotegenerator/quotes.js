@@ -3,11 +3,11 @@ let bodyHTML = document.getElementsByTagName("body");
 let newPEl = document.querySelector("#quote-para");
 let newButtonEl = document.querySelector("#quote-select");
 
-// let quotesArray = quotes;
-// let randomNum = Math.floor(Math.random() * quotes.length); 
+let quotesArray = quotes;
+let randomNum = Math.floor(Math.random() * quotes.length); 
 
-function selectQuotes (){
-  let quotesSelected = quotes[randomNum];
+function selectQuotes ( ){
+  let quotesSelected = quotesArray[randomNum];
   return newPEl.textContent = ` ${quotesSelected.quote}-${quotesSelected.author}`;
 } 
 
