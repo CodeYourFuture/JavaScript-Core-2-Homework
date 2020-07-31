@@ -27,3 +27,44 @@ greenBtn.addEventListener("click", function () {
   donateBtn.style.backgroundColor = "#000000";
   volunteerBtn.style.backgroundColor = "#8c9c08";
 });
+
+//part two of homework
+
+let emailInput = document.getElementById("exampleInputEmail1");
+let nameInput = document.getElementById("example-text-input");
+let description = document.getElementById("exampleTextarea");
+let submitBtn = document.querySelector("form button");
+
+let validateUser = function (e) {
+  e.preventDefault();
+  let emailValue = emailInput.value;
+  let nameValue = nameInput.value;
+  let descriptionValue = description.value;
+  if (emailValue.trim() === "" || emailValue.includes("@") === false) {
+    emailInput.style.backgroundColor = "red";
+  } else {
+    emailInput.style.backgroundColor = "white";
+  }
+
+  if (nameValue.trim() === "") {
+    nameInput.style.backgroundColor = "red";
+  } else {
+    nameInput.style.backgroundColor = "white";
+  }
+
+  if (descriptionValue.trim() === "") {
+    description.style.backgroundColor = "red";
+  } else {
+    description.style.backgroundColor = "white";
+  }
+
+  if (
+    descriptionValue.trim() !== "" &&
+    nameValue.trim() !== "" &&
+    emailValue.trim() !== "" &&
+    emailValue.includes("@") === true
+  ) {
+    alert("Thank you for filling out the form!");
+  }
+};
+submitBtn.addEventListener("click", validateUser);
