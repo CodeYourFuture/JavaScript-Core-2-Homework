@@ -1,1 +1,42 @@
 /** Write your CSS in here **/
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+h1{
+    text-align: center;
+
+}
+.container{
+    background-color: palevioletred;
+   
+
+}
+
+#myImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.jumbotron{
+    background-color: skyblue;
+    height: 100vh;
+}
+
+#btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+button{
+    background-color: rgb(196, 161, 45);
+    border-radius: 20px;
+}
+img{
+    border-radius: 30px;
+}
