@@ -1,1 +1,24 @@
 /** Write your CSS in here **/
+#canvas{
+    padding: 6em;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    text-align: center;
+    background-color: #B8860B;   
+}
+#buttonEl{
+    background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+#authorEl{
+   text-align: start;
+   color: #000080;
+   font-family: cursive;
+   font-size: 18px;
+}
