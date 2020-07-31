@@ -1,3 +1,14 @@
+let quoteEl = document.getElementById("quoteEl");
+let authorEl = document.getElementById("authorEl");
+let buttonEl = document.getElementById("buttonEl");
+
+buttonEl.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  quoteEl.textContent = quotes[randomIndex].quote;
+  authorEl.textContent = quotes[randomIndex].author;
+});
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
