@@ -78,6 +78,7 @@ console.log(spanMoviesNumberEl);
     spanMoviesNumberEl.innerText = movies.length;
   });
 
+
 }
 
 // create a new movie object for your favorite movie
@@ -92,9 +93,7 @@ movies[4] = {
 //////////////////////////////////////////////////////////////
 // Task-2 amend the showMovies with setTimeout to 1 second.
 
-setTimeout (function(){
-  showMovies();
-}, 1000);
+ setTimeout (showMovies, 1000);
 
 // create addMovies function
  let myMovieOb = {
@@ -104,13 +103,13 @@ setTimeout (function(){
   haveWatched: true,
  }
 
-function addMovies(){
-  setTimeout (function(){
-    movies[5] = myMovieOb;
-    showMovies ();
-  }, 2000)
- 
+function addMovies(x){
+   setTimeout(function(){
+     movies.push(x)
+   }, 3000)
 }
+addMovies(myMovieOb);
+// setTimeout(addMovies(myMovieOb), 3000)
 //////////////////////////////////////////////////////////////
 //Task-3 Callbacks,
 
