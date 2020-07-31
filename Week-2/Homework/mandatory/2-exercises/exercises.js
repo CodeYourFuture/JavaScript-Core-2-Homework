@@ -47,7 +47,6 @@ function exerciseTwo(shopping) {
     li.appendChild(list);
     ul.appendChild(li);
   });
-  
 }
 
 /**
@@ -81,44 +80,57 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
-  let content = document.getElementById("content");
-  let div = document.createElement('div');
-  
+  //this code works but it is really messy
+  let div = document.createElement("div");
   content.appendChild(div);
-  for (let i=0; i<books.length; i++) {
-    let p = document.createElement('p');
-    div.appendChild(p);
+  for (let i = 0; i < books.length; i++) {
+    
+    
+    let p = document.createElement("p");
     let txt = books[i].title + " " + books[i].author;
     let bookInfo = document.createTextNode(txt);
     p.appendChild(bookInfo);
-    let ul = document.createElement('ul');
-    content.appendChild(ul);
-    let li = document.createElement('li');
+    div.appendChild(p);
+    let ul = document.createElement("ul");
+    div.appendChild(ul);
+    let li = document.createElement("li");
+    li.appendChild(p);
     ul.appendChild(li);
-    li.style.width = '300';
-    li.style.height = '300';
-    
-    let img = document.createElement('img');
-    if(i === 0) {
-      img.setAttribute('src', 'https://mitpress.mit.edu/sites/default/files/9780262640374.jpg');
+    li.style.width = "300";
+    li.style.height = "300";
+    li.style.padding = "15px";
+    ul.style.listStyle = "none";
+    div.style.display = "flex";
+
+    let img = document.createElement("img");
+    li.appendChild(img);
+    if (i === 0) {
+      img.setAttribute(
+        "src",
+        "https://mitpress.mit.edu/sites/default/files/9780262640374.jpg"
+      );
     }
     if (i === 1) {
-      img.setAttribute('src', 'https://www.kurzweilai.net/images/The-Most-Human-Human-Paperback-Front-Cover.jpg');
+      img.setAttribute(
+        "src",
+        "https://www.kurzweilai.net/images/The-Most-Human-Human-Paperback-Front-Cover.jpg"
+      );
     }
     if (i === 2) {
-      img.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/en/8/8f/The_pragmatic_programmer.jpg');
+      img.setAttribute(
+        "src",
+        "https://upload.wikimedia.org/wikipedia/en/8/8f/The_pragmatic_programmer.jpg"
+      );
     }
-    img.style.width = '150';
+    img.style.width = "150";
     li.appendChild(img);
     if (books[i].alreadyRead === true) {
-      li.style.background = 'green';
+      li.style.background = "green";
     } else if (books[i].alreadyRead === false) {
-      li.style.background = 'red';
+      li.style.background = "red";
     }
-
   }
-  
-}  
+}
 
 //
 //
