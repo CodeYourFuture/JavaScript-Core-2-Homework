@@ -3,20 +3,17 @@ let bodyHTML = document.getElementsByTagName("body");
 let newPEl = document.querySelector("#quote-para");
 let newButtonEl = document.querySelector("#quote-select");
 
-// let quotesArray = quotes;
-// let randomNum = Math.floor(Math.random() * quotes.length); 
 
-let test = [{quote:"men",author:"ben"}, {quote:"zet",author:"ven"}];
+let randomNum = Math.floor(Math.random() * quotes.length); 
 
-function selectQuotes (index, quotes ){
+
+function selectQuotes ( ){
   //let quotesSelected = quotes[index];
-  return newPEl.textContent = ` ${quotes[index].quote}-${quotes[index].author}`;
+  return newPEl.textContent = ` ${quotes[randomNum].quote}-${quotes[randomNum].author}`;
 } 
 
-document.body.backgroundColor = "green";
-bodyHTML.style.backgroundColor = "orange";
-newButtonEl.style.backgroundColor = "white";
-document.querySelector("#quote-select").addEventListener("click", alert("Hello"));
+
+document.querySelector("#quote-select").addEventListener("click", selectQuotes);
 
 
 // DO NOT EDIT BELOW HERE

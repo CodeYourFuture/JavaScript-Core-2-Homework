@@ -11,7 +11,6 @@ imagesArr[3]= "images/t-6-texan.jpg";
 
 
 function changeTheImage (){
-
     if ( i < imagesArr.length - 1 ){
         i++;
     }else {
@@ -20,6 +19,18 @@ function changeTheImage (){
     document.querySelector(".slider").src = imagesArr[i];
 }
 
+function changeBackwards (){
+        if ( i < imagesArr.length - 1 ){
+        i--;
+    }else {
+        i = 0;
+    }
+    document.querySelector(".slider").src = imagesArr[i];
+}
+
 let forwardButton = document.querySelector(".forward-button");
 forwardButton.addEventListener ("click", changeTheImage);
+
+let backButton = document.querySelector(".back-button")
+backButton.addEventListener ("click", changeBackwards);
 
