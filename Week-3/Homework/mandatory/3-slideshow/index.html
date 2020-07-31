@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Slideshow</title>
-    <script src="slideshow.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Write your HTML in here -->
-  </body>
+
+<head>
+  <title>Slideshow</title>
+  <script src="slideshow.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Image Carousel</h1>
+  <div class="container">
+    <div class="slideshow">
+      <img src="images/dog1.jpg" alt="dog 1">
+      <img src="images/dog2.jpg" alt="dog 2">
+      <img src="images/dog3.jpg" alt="dog 3">
+      <img src="images/dog4.jpg" alt="dog 4">
+    </div>
+    <div id="slideIndex"></div>
+    <div class="options">
+      <button id="autoBack">Auto Back</button>
+      <button id="back">Back</button>
+      <button id="stop">Stop</button>
+      <button id="forward">Forward</button>
+      <button id="autoForward">Auto Forward</button>
+    </div>
+    <div>
+      <label for="delay">Delay time (ms): </label>
+      <input type="text" id="delay">
+      <button id="delayBtn">apply</button>
+    </div>
+  </div>
+</body>
+
 </html>
