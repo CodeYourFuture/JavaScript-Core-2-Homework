@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Quote Generator</title>
-    <script src="quotes.js"></script>
+    <script defer src="quotes.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -11,7 +11,15 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="generateQuote();">
     <!-- Write your HTML in here -->
+    <div id="quoteBox">
+      <h1 id ="myH1">
+      </h1>
+      <p id= "myP"></p>
+      <button id="myButton">
+Next Quote
+      </button>
+    </div>
   </body>
 </html>
