@@ -6,6 +6,8 @@ function setAlarm () {
   let mins;
   let sec;
   let decCheck = Math.floor (intTxt);
+  let colors = ['#9A48D0', '#63458A', '#7E5A9B', '#B288C0', '#E4B7E5'];
+  let randomColor = Math.floor (Math.random () * 5);
 
   if (
     inputTxt === '' ||
@@ -25,6 +27,9 @@ function setAlarm () {
         playAlarm ();
         clearInterval (interv);
       }
+      changeColors = setInterval (function () {
+        document.body.style.backgroundColor = colors[randomColor];
+      }, 1000);
     }, 1000);
   }
 
@@ -40,6 +45,10 @@ function setAlarm () {
         timeRem.textContent = `Time Remaining: 00:00`;
         playAlarm ();
         clearInterval (interv);
+
+        changeColors = setInterval (function () {
+          document.body.style.backgroundColor = colors[randomColor];
+        }, 1000);
       }
     }, 1000);
   }
