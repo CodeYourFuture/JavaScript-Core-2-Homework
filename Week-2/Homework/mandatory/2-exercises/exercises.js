@@ -15,6 +15,17 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for (let i = 0; i < arrayOfPeople.length; i++) {
+    let h1 = document.createElement("h1");
+    content.appendChild(h1);
+    let txtH1 = document.createTextNode(arrayOfPeople[i].name);
+    h1.appendChild(txtH1);
+
+    let h2 = document.createElement("h2");
+    content.appendChild(h2);
+    let txtH2 = document.createTextNode(arrayOfPeople[i].job);
+    h2.appendChild(txtH2);
+  }
 }
 
 /**
@@ -26,6 +37,16 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.getElementById("content");
+  let ul = document.createElement("ul");
+  content.appendChild(ul);
+
+  shopping.forEach(function (item) {
+    let li = document.createElement("li");
+    let list = document.createTextNode(item);
+    li.appendChild(list);
+    ul.appendChild(li);
+  });
 }
 
 /**
@@ -59,6 +80,56 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  //this code works but it is really messy
+  let div = document.createElement("div");
+  content.appendChild(div);
+  for (let i = 0; i < books.length; i++) {
+    
+    
+    let p = document.createElement("p");
+    let txt = books[i].title + " " + books[i].author;
+    let bookInfo = document.createTextNode(txt);
+    p.appendChild(bookInfo);
+    div.appendChild(p);
+    let ul = document.createElement("ul");
+    div.appendChild(ul);
+    let li = document.createElement("li");
+    li.appendChild(p);
+    ul.appendChild(li);
+    li.style.width = "300";
+    li.style.height = "300";
+    li.style.padding = "15px";
+    ul.style.listStyle = "none";
+    div.style.display = "flex";
+
+    let img = document.createElement("img");
+    li.appendChild(img);
+    if (i === 0) {
+      img.setAttribute(
+        "src",
+        "https://mitpress.mit.edu/sites/default/files/9780262640374.jpg"
+      );
+    }
+    if (i === 1) {
+      img.setAttribute(
+        "src",
+        "https://www.kurzweilai.net/images/The-Most-Human-Human-Paperback-Front-Cover.jpg"
+      );
+    }
+    if (i === 2) {
+      img.setAttribute(
+        "src",
+        "https://upload.wikimedia.org/wikipedia/en/8/8f/The_pragmatic_programmer.jpg"
+      );
+    }
+    img.style.width = "150";
+    li.appendChild(img);
+    if (books[i].alreadyRead === true) {
+      li.style.background = "green";
+    } else if (books[i].alreadyRead === false) {
+      li.style.background = "red";
+    }
+  }
 }
 
 //
@@ -74,7 +145,7 @@ function exerciseThree(books) {
 let people = [
   { name: "Chris", job: "Teacher" },
   { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Boris", job: "Prime Minister" },
 ];
 
 exerciseOne(people);
@@ -87,18 +158,18 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);

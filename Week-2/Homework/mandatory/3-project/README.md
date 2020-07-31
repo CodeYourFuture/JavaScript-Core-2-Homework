@@ -23,7 +23,7 @@ Clicking on the buttons should change the "theme" of the website:
   - **Jumbotron** background color to `#87ca8a`
   - **Donate a bike** button background color to `black`
   - **Volunteer** button background color to `#8c9c08`
-
+ 
 Here's an example of how the website should look for the blue button:
 
 ![Blue button example](images/blue_clicked.png)
