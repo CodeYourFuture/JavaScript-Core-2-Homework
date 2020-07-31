@@ -30,7 +30,7 @@ let emailFild = document.querySelector("#exampleInputEmail1");
 let nameFild = document.querySelector("#example-text-input");
 let describeFild = document.querySelector("#exampleTextarea");
 
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   let isValid = true;
   if (!emailFild.value.includes("@")) {
