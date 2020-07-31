@@ -1,1 +1,45 @@
 /** Write your CSS in here **/
+
+
+html{
+
+}
+body{
+    background-image: linear-gradient(to right ,#22a192, #74a122);
+   
+}
+.container{
+    margin-top: 200px;
+    background-color: #ffffff;
+    
+    padding: 100px 5%;
+    box-shadow: 1px 1px 10px rgb(17, 65, 29);
+    position: relative;
+}
+
+.quote{
+    color: #22a192;
+}
+
+.author{
+    text-align: right;
+    color: #000000;
+    font-size: 20px;
+}
+
+#new-quote-btn,
+#new-quote-btn:active{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background-color: #74a122;
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    color: white;
+}
+
+#new-quote-btn:hover{
+    background-color: #22a192;
+    outline: none;
+}
