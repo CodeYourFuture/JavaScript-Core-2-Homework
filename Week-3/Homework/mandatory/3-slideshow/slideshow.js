@@ -11,15 +11,13 @@ imagesArr[3]= "images/t-6-texan.jpg";
 
 
 function changeTheImage (){
-    let imageContainer = document.querySelector(".slider");
-    imageContainer.src.textContent = imagesArr[i];
-    console.log(imageContainer.src.textContent);
 
     if ( i < imagesArr.length - 1 ){
         i++;
     }else {
         i = 0;
     }
+    document.querySelector(".slider").src = imagesArr[i];
 }
 
 let forwardButton = document.querySelector(".forward-button");
