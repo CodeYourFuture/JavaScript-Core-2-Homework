@@ -1,13 +1,21 @@
 function setAlarm () {
-  let setBtn = document.querySelector ('#set');
   let timeRem = document.querySelector ('#timeRemaining');
   let inputTxt = document.querySelector ('#alarmSet').value;
   let intTxt = parseInt (inputTxt);
   let interv;
   let mins;
   let sec;
-  console.log (inputTxt);
-  if (intTxt > 0 && intTxt < 10) {
+  let decCheck = Math.floor (intTxt);
+
+  if (
+    inputTxt === '' ||
+    typeof intTxt != 'number' ||
+    inputTxt > decCheck ||
+    inputTxt <= 0
+  ) {
+    timeRem.textContent = 'Please Enter posive number > than 0';
+    document.querySelector ('#alarmSet').value = '';
+  } else if (intTxt > 0 && intTxt < 10) {
     timeRem.textContent = `Time Remaining: 00:0${inputTxt}`;
     interv = setInterval (function () {
       if (inputTxt > 0)
