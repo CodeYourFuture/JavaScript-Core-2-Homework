@@ -1,1 +1,31 @@
 /** Write your CSS in here **/
+body {
+  background-color: coral;
+}
+.heading {
+  margin: 20px;
+  color: rgb(59, 2, 2);
+}
+.slides {
+  display: none;
+}
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sliderContainer {
+  margin: 20px;
+}
+.button {
+  padding: 5px 10px;
+  margin: 2px;
+  background-color: rgb(59, 2, 2);
+  border: none;
+  color: wheat;
+}
+.button:hover {
+  background-color: cornsilk;
+  color: rgb(59, 2, 2);
+}

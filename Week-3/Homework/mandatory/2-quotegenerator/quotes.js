@@ -1,28 +1,3 @@
-// DO NOT EDIT BELOW HERE
-
-// A function which will return one item, at
-// random, from the given array.
-//
-// Parameters
-// ----------
-// choices: an array of items to pick from.
-//
-// Returns
-// -------
-// One item of the given array.
-//
-// Examples of use
-// ---------------
-// pickFromArray([1,2,3,4])     //maybe returns 2
-// pickFromArray(coloursArray)  //maybe returns "#F38630"
-//
-// You DO NOT need to understand how this function works.
-function pickFromArray(choices) {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
-
-// A list of quotes you can use in your app.
-// Feel free to edit them, and to add your own favourites.
 const quotes = [
   {
     quote: "Life isn’t about getting and having, it’s about giving and being.",
@@ -490,3 +465,51 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+function quoteGenerator(quotes, colors) {
+  let quotation = document.querySelector(".quote");
+  let quotesBy = document.querySelector(".quoteBy");
+  let randomIndex = Math.floor(Math.random() * quotes.length);
+
+  //let chosenQuote = `${array[randomIndex].quote} -${array[randomIndex].author}`;
+
+  quotation.textContent = quotes[randomIndex].quote;
+  quotesBy.textContent = quotes[randomIndex].author;
+
+  let colorRandomIndex = Math.floor(Math.random() * colors.length);
+  document.body.style.backgroundColor = colors[colorRandomIndex];
+}
+let colors = ["red", "blue", "pink", "orangered", "grey"];
+
+quoteGenerator(quotes, colors);
+
+let onClickBtn = document.querySelector(".newQuote");
+onClickBtn.addEventListener("click", () => {
+  quoteGenerator(quotes, colors);
+});
+//setInterval("quoteGenerator(quotes), colors" , 2000);
+// DO NOT EDIT BELOW HERE
+
+// A function which will return one item, at
+// random, from the given array.
+//
+// Parameters
+// ----------
+// choices: an array of items to pick from.
+//
+// Returns
+// -------
+// One item of the given array.
+//
+// Examples of use
+// ---------------
+// pickFromArray([1,2,3,4])     //maybe returns 2
+// pickFromArray(coloursArray)  //maybe returns "#F38630"
+//
+// You DO NOT need to understand how this function works.
+function pickFromArray(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+// A list of quotes you can use in your app.
+// Feel free to edit them, and to add your own favourites.

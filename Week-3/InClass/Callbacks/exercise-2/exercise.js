@@ -63,8 +63,68 @@ const movies = [
 
 // create showMovies function
 
+function showMovies(movies) {
+  let divEl = document.querySelector("#all-movies");
+  for (let i = 0; i < movies.length; i++) {
+    let pEl = document.createElement("p");
+    pEl.textContent = `${movies[i].title} Directed by ${movies[i].director}`;
+    divEl.appendChild(pEl);
+  }
+  let movieNum = document.getElementById("movies-number");
+  movieNum.innerText = movies.length;
+}
+
+setTimeout("showMovies(movies)", 1000);
 
 // create a new movie object for your favorite movie
-
+let favMovie = {
+  title: "Don't have a favorite movie",
+  director: "Hadiyah Lawal",
+  type: "whodunnit",
+  haveWatched: true,
+};
 
 // create addMovies function
+
+function addMovie(movie) {
+  movies.push(movie);
+}
+addMovie(favMovie);
+setTimeout(function (movie) {
+  movies.push(movie);
+}, 2000);
+
+/*
+Task 4 - **Extra**
+Create a form anywhere on your page. The form should have
+- 4 input text fields, one for each property of your movie object
+- a "save" button.
+When the button is clicked
+- The field values should be used to create a new movie object literal
+- The new movie is then added to the list of movies and gets displayed on your page
+TIP: Use the functions you created on tasks 1-3
+*/
+let propArr = ["title", "director", "type", "haveWatched"];
+
+let form = document.createElement("form");
+document.body.appendChild(form);
+
+propArr.forEach((item, index, arr) => {
+  let label = document.createElement("label");
+  item = document.createElement("input");
+  label.setAttribute("for", arr[index]);
+  item.setAttribute("type", "text");
+  form.appendChild(label);
+  form.appendChild(item);
+  label.textContent = arr[index];
+  item.setAttribute("id", arr[index]);
+  item.style.margin = "30px";
+  //item.style.display = 'block';
+});
+form.style.width = "90%";
+form.style.margin = "30px auto";
+let btnEl = document.createElement("button");
+btnEl.textContent = "Save";
+form.appendChild(btnEl);
+btnEl.style.display = "block";
+btnEl.style.margin = "10px auto";
