@@ -34,49 +34,48 @@ TIP: Use the functions you created on tasks 1-3
 Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
-const movies = [
-  {
-    title: "Color Out of Space",
-    director: "Richard Stanley",
-    type: "sci-fi",
-    haveWatched: true,
-  },
-  {
-    title: "A Twelve-Year Night",
-    director: "Álvaro Brechner",
-    type: "horror",
-    haveWatched: false,
-  },
-  {
-    title: "The Whistlers",
-    director: "Corneliu Porumboiu",
-    type: "comedy",
-    haveWatched: true,
-  },
-  {
-    title: "The Invisible Man",
-    director: "Leigh Whannell",
-    type: "horror",
-    haveWatched: false,
-  },
+const movies = [{
+        title: "Color Out of Space",
+        director: "Richard Stanley",
+        type: "sci-fi",
+        haveWatched: true,
+    },
+    {
+        title: "A Twelve-Year Night",
+        director: "Álvaro Brechner",
+        type: "horror",
+        haveWatched: false,
+    },
+    {
+        title: "The Whistlers",
+        director: "Corneliu Porumboiu",
+        type: "comedy",
+        haveWatched: true,
+    },
+    {
+        title: "The Invisible Man",
+        director: "Leigh Whannell",
+        type: "horror",
+        haveWatched: false,
+    },
 ];
 
 ////////////////////////////////////////////////////////////
 // Task-1 ; create showMovies function
 
-function showMovies (){
-let divAllMovies = document.querySelector("#all-movies");
-let spanMoviesNumberEl = document.querySelector("#movies-number");
-console.log(divAllMovies);
-console.log(spanMoviesNumberEl);
+function showMovies() {
+    let divAllMovies = document.querySelector("#all-movies");
+    let spanMoviesNumberEl = document.querySelector("#movies-number");
+    console.log(divAllMovies);
+    console.log(spanMoviesNumberEl);
 
-  movies.forEach(movie => {
-    let newPEl = document.createElement("p");
-    console.log(newPEl);
-    newPEl.textContent = `${movie.title}-${movie.director}`;
-    divAllMovies.appendChild(newPEl);
-    spanMoviesNumberEl.innerText = movies.length;
-  });
+    movies.forEach(movie => {
+        let newPEl = document.createElement("p");
+        console.log(newPEl);
+        newPEl.textContent = `${movie.title}-${movie.director}`;
+        divAllMovies.appendChild(newPEl);
+        spanMoviesNumberEl.innerText = movies.length;
+    });
 
 
 }
@@ -84,18 +83,29 @@ console.log(spanMoviesNumberEl);
 // create a new movie object for your favorite movie
 
 movies[4] = {
-  title: "Annihilation",
-  director: "Alex Garland",
-  type: "Science Fiction",
-  haveWatched: true,
+    title: "Annihilation",
+    director: "Alex Garland",
+    type: "Science Fiction",
+    haveWatched: true,
 }
 
 //////////////////////////////////////////////////////////////
 // Task-2 amend the showMovies with setTimeout to 1 second.
 
+<<<<<<< HEAD
  setTimeout (showMovies, 1000);
+||||||| merged common ancestors
+setTimeout (function(){
+  showMovies();
+}, 1000);
+=======
+setTimeout(function() {
+    showMovies();
+}, 1000);
+>>>>>>> b154b4b6cfdca7b5286d93b8688353e3c0401876
 
 // create addMovies function
+<<<<<<< HEAD
  let myMovieOb = {
   title: "The Martian",
   director: "Ridley Scott",
@@ -107,6 +117,35 @@ function addMovies(x){
    setTimeout(function(){
      movies.push(x)
    }, 3000)
+||||||| merged common ancestors
+ let myMovieOb = {
+  title: "The Martian",
+  director: "Ridley Scott",
+  type: "Science Fiction",
+  haveWatched: true,
+ }
+
+function addMovies(){
+  setTimeout (function(){
+    movies[5] = myMovieOb;
+    showMovies ();
+  }, 2000)
+ 
+=======
+let myMovieOb = {
+    title: "The Martian",
+    director: "Ridley Scott",
+    type: "Science Fiction",
+    haveWatched: true,
+}
+
+function addMovies() {
+    setTimeout(function() {
+        movies[5] = myMovieOb;
+        showMovies();
+    }, 2000)
+
+>>>>>>> b154b4b6cfdca7b5286d93b8688353e3c0401876
 }
 addMovies(myMovieOb);
 // setTimeout(addMovies(myMovieOb), 3000)
@@ -123,7 +162,7 @@ let newFormEl = document.createElement("form");
 newFormEl.className = "new-form";
 
 let label1 = document.createElement("label");
-label1.innerHTML = `movie title`;     
+label1.innerHTML = `movie title`;
 label1.for = "mTitle";
 let inputEl1 = document.createElement("input");
 inputEl1.type = "text";
@@ -176,9 +215,7 @@ newFormEl.appendChild(newButtonEl);
 
 newButtonEl.addEventListener("click", addNewMovie);
 
-function addNewMovie(movie){
-
-  movies.title = movie.title;
-
-  movies = movies + movie;
+function addNewMovie(movie) {
+    movies.title = movie.title;
+    movies = movies + movie;
 }
