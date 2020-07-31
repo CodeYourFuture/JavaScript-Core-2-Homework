@@ -1,7 +1,7 @@
 // Write your code here
 let catIndex1 = 6;
 let catIndex2 = 0;
-let catRevCount = 6;
+let catRevCount = 5;
 let catForCount = 0;
 let catReverse;
 let catForward;
@@ -13,10 +13,10 @@ autoRev.addEventListener("click", () => {
         
         document.getElementById("images").src = catArray[catIndex1];  
         catIndex1--;  
-        if(catIndex1 === 0) {
-            catIndex1 = 6;
+        if(catIndex1 < 0) {
+            catIndex1 = 5;
         }
-    }, 2000);
+    }, 5000);
     
 })
 
@@ -29,7 +29,7 @@ autoFor.addEventListener("click", () => {
         if (catIndex2 === 6) {
             catIndex2 = 0;
         }
-    }, 2000);
+    }, 5000);
 
 })
 
@@ -50,12 +50,12 @@ forward.addEventListener("click", () => {
 
     setTimeout(() => {
         document.getElementById("images").src = catArray[catForCount];
-        if (catForCount > 5) {
-            catForCount = 0;
+        if (catForCount === 5) {
+            catForCount = -1;
         }
     }, 500);
     catForCount++;
-})
+});
 
 let stopImages = document.getElementById("stop");
 stopImages.addEventListener("click", () => {
