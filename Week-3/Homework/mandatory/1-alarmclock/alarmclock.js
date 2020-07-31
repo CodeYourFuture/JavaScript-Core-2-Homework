@@ -1,15 +1,17 @@
 let isPause = false;
+let timeLeft = 0;
+let countDown;
 function setAlarm() {
   let alarmSet = document.getElementById("alarmSet");
   
   if (!isPause) {
-    let timeLeft = Number(alarmSet.value);
+    timeLeft = Number(alarmSet.value);
     if (timeLeft > 0) {
       let setButton = document.getElementById("set");
       setButton.textContent = "Pause";
       isPause = true;
       let timeRemaining = document.getElementById("timeRemaining");
-      let countDown = setInterval(function () {
+      countDown = setInterval(function () {
         let minLeft = Math.floor(timeLeft / 60);
         let secLeft = timeLeft % 60;
         timeRemaining.textContent = `Time Remaining: ${("0" + minLeft).slice(-2)}:${("0" + secLeft).slice(-2)}`;
@@ -22,7 +24,8 @@ function setAlarm() {
       }, 1000);
     }
   } else{
-
+  alert(" Wow!")  ;
+return clearInterval(countDown);
   }
 }
 
