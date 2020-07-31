@@ -490,3 +490,27 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+//alert("What the hell!!?");
+// let boddy = document.querySelector("body";)
+//  let div = document.createElement("p");
+    
+//     // div.style.backgroundColor = "pink";
+//     // div.style.width = "80%";
+//     // div.style.height = "50%";
+//     // div.style.border = "solid red 5px";
+//     div.textContent = " dfdf";
+//     boddy.appendChild(div);
+//     let findDiv = document.querySelector("p");
+//     console.log(findDiv);
+// //function showQuote(quotes) {}
+let p = document.createElement("p");
+let m = document.querySelector("div");
+console.log(m);
+
+
+p.textContent = " sssss";
+
+m.appendChild(p);
+
+   
+

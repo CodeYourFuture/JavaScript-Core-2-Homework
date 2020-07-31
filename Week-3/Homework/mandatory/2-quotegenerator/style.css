@@ -1,1 +1,8 @@
-/** Write your CSS in here **/
+body {
+    background-color: aquamarine;
+}
+#quoteHolder {
+    width: 80%;
+    height: auto;
+    background-color: beige;
+}
