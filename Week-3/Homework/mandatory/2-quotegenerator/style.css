@@ -1,1 +1,55 @@
-/** Write your CSS in here **/
+ /** Write your CSS in here **/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin : 0;
+   
+}
+
+body{
+ background-color: orange;
+
+}
+.quotesWrapper {
+    width: 80%;
+    max-width: 1000px;
+    background-color: white;
+    margin: 150px auto;
+    height: 500px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Grenze Gotisch', cursive;
+}
+.quote {
+    margin-top: 20px;
+ font-size: 30px;
+ padding: 10px;
+ font-style: italic;
+ font-weight: 600;
+
+}
+.quote::before {
+    content : '"';
+    font-family: font-family: 'Passion One', cursive;
+    font-size: 40px;
+}
+.quoteBy {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    align-self: flex-end;
+
+}
+.newQuote {
+    padding: 10px;
+    border:none;
+    background-color: rgb(133, 45, 16);
+    color: rgb(247, 245, 242);
+    font-weight: 600;
+    margin-top: 50px;
+
+}
