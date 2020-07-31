@@ -1,3 +1,29 @@
+function generateQuote() {
+  let q = pickFromArray(quotes);
+  document.getElementById("quote-content").innerHTML = `“${q.quote}”`;
+  document.getElementById("author").innerHTML = `- <i>${q.author}</i>`;
+}
+
+function setup() {
+  document.getElementById("get-new").addEventListener("click", generateQuote);
+
+  var toggleSwitch = document.getElementById("auto-generation");
+  
+  toggleSwitch.addEventListener("change", function() {
+    if(this.checked) {     
+      document.querySelector("#auto-switch > p").innerHTML = "auto-play: on";
+      setTimeout(generateQuote, 2000);
+      autoGeneration = setInterval(generateQuote, 60000);
+    } 
+    else {
+      document.querySelector("#auto-switch > p").innerHTML = "auto-play: off";
+      clearInterval(autoGeneration);
+    }
+});
+}
+
+window.onload = setup;
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
