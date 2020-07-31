@@ -15,6 +15,15 @@ Write JavaScript below that logs:
     --> should log a list of nodes with a length of 3
 
 */
+let allP = document.querySelectorAll('p');
+console.log(allP);
+
+const firstDiv = document.querySelector('div');
+console.log(firstDiv);
+
+let idJumbotron = document.querySel('#jumbotron-text');
+console.log(idJumbotron);
+
 
 
 /*
@@ -23,7 +32,9 @@ Task 2
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
-
+document.getElementById('alertBtn').addEventListener('click', function(){
+    alert("Thanks for visiting Bikes for Refugees!");
+});
 
 /*
 Task 3
@@ -39,7 +50,12 @@ Task 4
 
 When a user clicks the 'Add some text' button, a new paragraph should be added below the buttons that says "Read more below."
 */
-
+let paragraph = document.createElement('p');
+paragraph.textContent = 'add more text'
+let addSomeText = document.getElementById('addTextBtn');
+addSomeText.addEventListener('click', function(){
+    addSomeText.appendChild(paragraph);
+});
 
 
 /*
