@@ -4,16 +4,16 @@ let newPEl = document.querySelector("#quote-para");
 let newButtonEl = document.querySelector("#quote-select");
 
 
-let randomNum = Math.floor(Math.random() * quotes.length); 
+// let randomNum = Math.floor(Math.random() * quotes.length); 
 
 
 function selectQuotes ( ){
   //let quotesSelected = quotes[index];
-  return newPEl.textContent = ` ${quotes[randomNum].quote}-${quotes[randomNum].author}`;
+  newPEl.textContent = `${pickFromArray.quote}-${pickFromArray.author}`;
 } 
 
 
-document.querySelector("#quote-select").addEventListener("click", selectQuotes);
+newButtonEl.addEventListener("click", selectQuotes);
 
 
 // DO NOT EDIT BELOW HERE
