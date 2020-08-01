@@ -1,3 +1,16 @@
+let btn=document.querySelector(".btn");
+
+function quote(index){
+  return quotes[index].quote;
+}
+btn.addEventListener("click",function(event){
+  let index=Math.floor(Math.random()*quotes.length);
+  
+  document.querySelector("h4").textContent=quote(index);
+  document.querySelector("h6").textContent=`by:${quotes[index].author}`;
+ 
+});
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at

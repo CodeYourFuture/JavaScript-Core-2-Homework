@@ -1,1 +1,55 @@
 /** Write your CSS in here **/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    height:100vh;
+    width: 100vw;
+    font-size: 10px;
+    font-family: monospace;
+}
+.container{
+    display: flex; 
+    width:100%;
+    height: 100%;
+     justify-content: center;
+    align-items: center;  
+}
+.main{
+    padding:0.2rem;
+    height: auto;
+    width: 71%;
+    background-color: turquoise;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.h4{
+    font-size: 1.8rem;
+}
+.img-container{
+    width:100%;
+    height:24rem;
+    border:0.1rem solid hotpink;
+}
+.img{
+    width:100%;
+    height:100%;
+}
+.btn-bar{
+    padding-top: 0rem;
+    width:23rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn{
+    height:2rem;
+    width:auto;
+    font-size: 0.6rem;
+    font-weight: bold;
+    background-color:palevioletred;
+    color: white;
+}
