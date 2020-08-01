@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Quote Generator</title>
-    <script src="quotes.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -10,8 +9,20 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Barlow+Condensed:400,400i,700,700i" rel="stylesheet">
   </head>
   <body>
     <!-- Write your HTML in here -->
+    
+      <div id="quote-container">
+        <button id="change-quote">Next Quote</button>
+        <div class="blockquote-wrapper">
+          <div class="blockquote">
+            <h1 id="text"></h1>
+            <h4 id="author"></h4>
+          </div>
+        </div>
+      </div>
+      <script src="quotes.js"></script>
   </body>
 </html>
