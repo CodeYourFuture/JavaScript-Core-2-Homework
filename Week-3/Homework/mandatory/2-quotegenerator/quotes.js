@@ -441,10 +441,13 @@ window.onload = function () {
   let btnEl = document.getElementById ('btn');
   let txtEl = document.getElementById ('child');
 
+  
+
   let p = document.createElement ('p');
   let obj = pickFromArray (quotes);
   let mycheck1 = document.getElementById ('myCheck');
   mycheck1.checked = true;
+  btnEl.disabled = true;
 
   let interv = setInterval (function () {
     obj = pickFromArray (quotes);
@@ -457,14 +460,28 @@ window.onload = function () {
     if (mycheck1.checked === false) {
       clearInterval (interv);
       labelEl.textContent = 'Auto-Play:Off';
-    } else {
+      btnEl.disabled = false;
+    } else if(mycheck1.checked === true)
+    {
+      labelEl.textContent = 'Auto-Play:ON';
+      btnEl.disabled = true;
       let interv = setInterval (function () {
         obj = pickFromArray (quotes);
         p.textContent = `${obj.quote} \r\n by: ${obj.author}`;
         txtEl.appendChild (p);
         p.style.marginLeft = '20px';
+        
+
+        mycheck1.addEventListener ('change', function () {
+          if (mycheck1.checked === false) {
+            clearInterval (interv);
+            labelEl.textContent = 'Auto-Play:Off';
+            btnEl.disabled = false;
+          }
+        }, 2000);
+
       }, 2000);
-    }
+     }
   });
 
   p.textContent = `${obj.quote} \n by: ${obj.author}`;
