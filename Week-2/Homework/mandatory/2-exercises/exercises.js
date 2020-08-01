@@ -15,6 +15,17 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  arrayOfPeople.map(item=> {
+    let h1 = document.createElement('H1');
+    let h2 = document.createElement('H2');
+    h1.textContent = item.name;
+    h2.textContent = item.job;
+    content.appendChild(h1);
+    content.appendChild(h2);
+  })
+
+
 }
 
 /**
@@ -26,6 +37,17 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  let unorderedList = document.createElement('ul');
+  content.appendChild(unorderedList);
+ 
+  shopping.map(item => {
+    
+    let li = document.createElement('li');
+    li.textContent = item;
+    unorderedList.appendChild(li);
+  })
+  
 }
 
 /**
@@ -59,6 +81,51 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  let content = document.querySelector("#content");
+  let unorderedList = document.createElement('ul');
+  let imageURL = 
+  [
+    'https://productdork.com/uploads/default/original/1X/ddbda1150301e89cdf0119d84f2a7fb8930beffb.png',
+    'https://images-na.ssl-images-amazon.com/images/I/41m1rQjm5tL._SX322_BO1,204,203,200_.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/418M2053aNL.jpg'   
+  ]
+  let heading = document.createElement('h1');
+  content.appendChild(heading);
+  heading.textContent = 'Book List';
+  
+  books.map((item, index) => {
+    //CREATE ELEMENTS
+    let paragraph = document.createElement('p');
+    let image = document.createElement('img');
+    let listItem = document.createElement('li');
+    
+    //
+
+    //STYLES
+    
+    listItem.style.margin = '20px';
+    listItem.style.padding = '20px';
+    listItem.style.width = '350px';
+    unorderedList.style.display = 'flex';
+    unorderedList.style.flexWrap = 'wrap';
+    unorderedList.style.listStyleType = 'none';
+    image.style.width = '200px';
+    item.alreadyRead ? listItem.style.backgroundColor = 'green' :  listItem.style.backgroundColor = 'red';
+    //
+
+
+    paragraph.textContent = `${item.title} - ${item.author}`;
+    image.src = imageURL[index];
+    
+    
+    listItem.appendChild(paragraph);
+    listItem.appendChild(image);
+    unorderedList.appendChild(listItem);
+    content.appendChild(unorderedList);
+    
+
+
+  })
 }
 
 //

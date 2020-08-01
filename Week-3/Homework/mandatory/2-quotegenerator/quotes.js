@@ -1,3 +1,14 @@
+
+let quoteText = document.querySelector('.quote');
+let authorText = document.querySelector('.author');
+let btn = document.getElementById('new-quote-btn');
+
+btn.addEventListener('click', () => {
+  let random = Math.floor(Math.random() * quotes.length);
+  quoteText.textContent = quotes[random].quote;
+  authorText.textContent = quotes[random].author;
+})
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
