@@ -435,11 +435,38 @@ const quotes = [
 ];
 
 window.onload = function () {
+  let labelEl = document.getElementById ('ontxt');
+  labelEl.textContent = 'Auto-Play:ON';
+
   let btnEl = document.getElementById ('btn');
   let txtEl = document.getElementById ('child');
 
   let p = document.createElement ('p');
   let obj = pickFromArray (quotes);
+  let mycheck1 = document.getElementById ('myCheck');
+  mycheck1.checked = true;
+
+  let interv = setInterval (function () {
+    obj = pickFromArray (quotes);
+    p.textContent = `${obj.quote} \r\n by: ${obj.author}`;
+    txtEl.appendChild (p);
+    p.style.marginLeft = '20px';
+  }, 2000);
+
+  mycheck1.addEventListener ('change', function () {
+    if (mycheck1.checked === false) {
+      clearInterval (interv);
+      labelEl.textContent = 'Auto-Play:Off';
+    } else {
+      let interv = setInterval (function () {
+        obj = pickFromArray (quotes);
+        p.textContent = `${obj.quote} \r\n by: ${obj.author}`;
+        txtEl.appendChild (p);
+        p.style.marginLeft = '20px';
+      }, 2000);
+    }
+  });
+
   p.textContent = `${obj.quote} \n by: ${obj.author}`;
   txtEl.appendChild (p);
   p.style.marginLeft = '12px';
