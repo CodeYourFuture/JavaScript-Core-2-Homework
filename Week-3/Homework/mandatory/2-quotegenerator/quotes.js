@@ -26,6 +26,7 @@
     
   //   return quotes[Math.floor(Math.random() * quotes.length)] ;
     
+  
   // }
   //Function to randomly select a quote value and return a random quote object from the quotes array
   function getRandomQuote () {
