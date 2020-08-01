@@ -1,3 +1,20 @@
+let newQuote = document.querySelector("button");
+
+newQuote.addEventListener('click', function(){
+  selectQuote();
+});
+
+const selectQuote = () => {
+  let quote = pickFromArray(quotes);
+  let quoteText = document.querySelector("#text");
+  let author = document.querySelector("#author");
+
+  quoteText.textContent = quote.quote;
+  author.textContent = `\u2014${quote.author}`;
+}
+
+window.onload = selectQuote;
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
