@@ -17,6 +17,8 @@
 document.querySelector('#button1').addEventListener('click', exercise1)
 
 function exercise1() {
+  let exercise1 = document.getElementById("exercise1");
+  exercise1.textContent = "Adebola";
   // Write your implementation here
 }
 
@@ -37,6 +39,8 @@ function exercise1() {
 functionThatCallsBack(exercise2)
 
 function exercise2(result) {
+  let text = document.getElementById("exercise2");
+  text.textContent = "Hello from the function caller";
   // Write your implementation here
 }
 
@@ -57,11 +61,13 @@ function exercise2(result) {
 */
 
 function exercise3(callback) {
+  callback("Hello from the callback");
   // Write your implementation here
 
   // Write your explanation here
+  // This callback is already a defined function and it is now used as a parameter
+  // in exercise3 function and also called in it
 }
-
 // 
 // -------------------------------------
 // 

@@ -1,4 +1,24 @@
-function setAlarm() {}
+    function setAlarm() {
+      let alarmSet = document.getElementById("alarmSet");
+      remainingTime = document.getElementById("timeRemaining");
+      let time = parseInt(alarmSet.value); 
+      
+    let timeIn = setInterval(function(){
+      let min = Math.floor(time/60);
+      let sec = time-min * 60;
+      
+        remainingTime.textContent = ("Time Remaining: ") + (min>9?min:"0" +min) + ":" + (sec>9?sec:"0" + sec);
+            
+            if(time === 0){
+              playAlarm();
+
+          return clearInterval(timeIn);
+              
+            }
+            time--;
+      }, 1000);
+      
+    }
 
 // DO NOT EDIT BELOW HERE
 
@@ -17,7 +37,7 @@ function setup() {
 function playAlarm() {
   audio.play();
 }
-
+ 
 function pauseAlarm() {
   audio.pause();
 }

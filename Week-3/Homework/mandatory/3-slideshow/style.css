@@ -1,1 +1,38 @@
 /** Write your CSS in here **/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+   
+    width: 30%;
+    margin: auto;
+    overflow: hidden; 
+    border: 4px solid black;
+    position: relative;
+}
+.img-slider{
+   
+    display: flex;
+    width: 100%;
+   
+    
+}
+ .myBtn{
+display: flex;
+justify-content: center;
+
+}
+#previousBtn{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: royalblue;
+}
+#forwardBtn{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: skyblue;
+}

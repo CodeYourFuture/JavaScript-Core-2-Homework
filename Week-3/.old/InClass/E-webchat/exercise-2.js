@@ -27,3 +27,24 @@ on the submit button. Then check the following:
 
 
 // Write your code here
+// document.getElementById("submit").addEventListener("click", submit);
+// function submit(){
+//     let url = `https://codeyourfuture.herokuapp.com/api/messages`;
+// fetch(url).then(function(response) {
+//     return response.text();
+// }).then(function(message){
+//     let myMessage = document.getElementById("message-list").value;
+//     console.log(message);
+//     myMessage.innerText = message.;
+//     console.log(myMessage);
+//     return;
+  
+// })
+// }
+
+let myObj ={
+    name: "Ade",
+    Age: 37
+}
+localStorage.setItem("myObj", myObj);
+console.log(localStorage);

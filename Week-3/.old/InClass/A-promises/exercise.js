@@ -14,8 +14,16 @@
   Promise"
 */
 function exercise1() {
-  var promise1 = resolvedPromise()
+  var promise1 = resolvedPromise();
+  return promise1;
+
 }
+
+exercise1().then(values => {
+  let result = document.getElementById("exercise1");
+  result.textContent = values;
+  return;
+});
 
 /*
   EXERCISE 2
@@ -28,8 +36,14 @@ function exercise1() {
 */
 function exercise2() {
   var promise2 = rejectedPromise()
+  return promise2;
 }
-
+exercise2().then().catch(values => {
+  let result = document.getElementById("exercise2");
+  result.textContent = values;
+  console.log(result);
+  return;
+});
 /*
   EXERCISE 3
   =======
@@ -40,8 +54,14 @@ function exercise2() {
   EXPECTED RESULT: The #exercise3 element has textContent = "A Longer Promise"
 */
 function exercise3() {
-  var promise3 = delayedPromise()
+  var promise3 = delayedPromise();
+  return promise3;
 }
+exercise3().then(values => {
+  let result = document.getElementById("exercise3");
+  result.textContent = values;
+  return;
+});
 
 /*
   EXERCISE 4
@@ -55,9 +75,14 @@ function exercise3() {
   YOUR NAME"
 */
 function exercise4() {
-  var promise4 = concatPromise()
+  var promise4 = concatPromise();
+  return promise4;
 }
-
+exercise4().then(values => {
+  let result = document.getElementById("exercise4");
+  result.textContent = values.concat("Adebola");
+  return;
+});
 /*
   EXERCISE 5 (Stretch Goal)
   =======
@@ -70,10 +95,19 @@ function exercise4() {
 
   EXPECTED RESULT: The #exercise5 element has textContent = "Hello Promises!"
 */
-
+let myPromise = new Promise(function(resolve){
+  resolve("Hello Promises!");
+})
 function exercise5() {
+ let res = myPromise
+ return res;
   // Write your implementation here
 }
+exercise5().then(values => {
+  let result = document.getElementById("exercise5");
+  result.textContent = values;
+  return;
+});
 
 /*
   EXERCISE 6 (Stretch Goal)
@@ -88,9 +122,20 @@ function exercise5() {
   EXPECTED RESULT: The #exercise6 element has textContent = "Something went
   wrong!"
 */
+
+let justPromised = new Promise(function(reject){
+  reject("Something went wrong!");
+})
 function exercise6() {
+  let worstExpectation = justPromised;
+  return worstExpectation;
   // Write your implementation here
 }
+exercise6().then(values => {
+  let result = document.getElementById("exercise6");
+  result.textContent = values;
+  return;
+});
 
 
 // 
