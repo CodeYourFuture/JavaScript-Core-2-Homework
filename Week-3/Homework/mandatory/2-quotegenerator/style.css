@@ -1,1 +1,18 @@
 /** Write your CSS in here **/
+body {
+    background-color: #23861a;
+  }
+  
+  .row {
+    height: 100vh;
+  }
+  
+  .blockquote {
+    padding: 2em 1.5em;
+    border-radius: 10px;
+  }
+  
+  .btn {
+    margin-top: 2em;
+  } 
+  
