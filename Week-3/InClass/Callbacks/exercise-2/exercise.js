@@ -67,13 +67,22 @@ const movies = [
 // create showMovies function//#all-movies //#movies-number
 let paragraph;
 function showMovies(){
-  
+  if(movies.length===4){
   movies.forEach(function(each){
     paragraph=document.createElement("p");
     paragraph.textContent=each.title+" by "+each.director;
     document.querySelector("#all-movies").appendChild(paragraph);
     document.querySelector("#movies-number").innerHTML=movies.length;
   })
+}else{
+ 
+    paragraph=document.createElement("p");
+    paragraph.textContent=movies[movies.length-1].title+" by "+movies[movies.length-1].director;
+    document.querySelector("#all-movies").appendChild(paragraph);
+    document.querySelector("#movies-number").innerHTML=movies.length;
+
+
+}
 }
 
 
@@ -95,10 +104,11 @@ let myMovies={
 function addMovies(myMovies){
   setTimeout(function(){
     movies.push(myMovies);
-    paragraph.textContent="";
+ 
     showMovies();
   },2000)
   
   
 }
+
 addMovies(myMovies);

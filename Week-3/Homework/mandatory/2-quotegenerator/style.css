@@ -1,1 +1,47 @@
 /** Write your CSS in here **/
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    font-size:10px;
+    width:100vw;
+    height: 100vh;
+    background-color: rgb(238, 138, 16);
+    color:  red;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quote{
+    background-color: white; 
+    width:50%;
+    height:auto;
+    padding: 5px;
+    color: rgb(238, 138, 16);
+   
+}
+h4{
+font-size:12px;
+}
+h6{
+ text-align: right;
+ font-size: 0.5rem;
+ padding-top: 0.5rem;
+ padding-bottom: 0.5rem;
+ width:100%;
+
+ 
+}
+.btn{
+    float: right;
+    width:5rem;
+    height:1.5rem;
+    font-size:0.5rem;
+    color:white;
+    outline: 0;
+    border: 0;
+    font-weight: 800;
+    background-color: rgb(238, 138, 16);
+}
