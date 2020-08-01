@@ -490,3 +490,22 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+const quoteText = document.getElementById("quote");
+const authorText = document.getElementById("author");
+const newQuoteBtn = document.getElementById("new-quote");
+
+async function getQuote() {
+  try {
+    const response = await pickFromArray(quotes);
+    const data = await response;
+    quoteText.innerText = data.quote;
+    authorText.innerText = data.author;
+  } catch (error) {
+    console.log("I'm sorry quotes don finish");
+  }
+}
+//On load
+getQuote();
+//Button Click function
+newQuoteBtn.addEventListener("click", getQuote);
