@@ -1,1 +1,39 @@
 /** Write your CSS in here **/
+body {
+    background-color: #c0ffc0;
+}
+#gallery {
+    padding-top: 1em;
+    height: 100%
+}
+
+
+
+#image-container {
+    width: 30%;
+    margin: 0 auto;
+}
+#bassist-name {
+    text-align: center;
+}
+#bassist-img {
+    width: 100%;
+    border-radius: 20px;
+}
+#control-panel {
+    background-color: yellowgreen;
+    border: 1px solid #40c040;
+    border-radius: 20px;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.control-bg {
+    color: #c0ffc0;
+}
+
+#auto-previous:hover, #previous:hover,
+#stop:hover, #stop:visited,
+#next:hover, #auto-next:hover {
+    color: #40c040;
+}
