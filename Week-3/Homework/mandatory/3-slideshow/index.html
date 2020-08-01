@@ -2,16 +2,49 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" 
+              href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Write your HTML in here -->
+
+    <div id="gallery">
+      <div id="image-container">
+        <img id="bassist-img" src="" alt="" />
+        <p id="bassist-name"></p>
+      </div>
+      <div id="control-panel">
+        
+        <span id="auto-previous" class="fa-stack fa-lg" description=" auto forward">
+          <i class="fa fa-circle fa-stack-2x control-bg"></i>
+          <i class="fa fa-backward fa-stack-1x"></i>
+        </span>
+        <span id="previous" class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x control-bg"></i>
+          <i class="fa fa-step-backward fa-stack-1x"></i>
+        </span>
+        <span id="stop" class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x control-bg"></i>
+          <i class="fa fa-stop fa-stack-1x"></i>
+        </span>
+        <span id="next" id="previous" class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x control-bg"></i>
+          <i class="fa fa-step-forward fa-stack-1x"></i>
+        </span>
+        <span id="auto-next" class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x control-bg"></i>
+          <i class="fa fa-forward fa-stack-1x"></i>
+        </span>
+      </div>        <!-- Control Panel -->
+    </div>          <!-- Gallery Container --> 
+    <script src="slideshow.js"></script>
   </body>
 </html>
