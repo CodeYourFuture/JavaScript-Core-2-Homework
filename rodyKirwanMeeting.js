@@ -32,3 +32,29 @@ for(let i = 0; i < 10; i++) {
 
 let tech = ['html', 'css', 'javascript', 'react'];
 tech.forEach();
+
+
+// meeting with Rody 30/7/20
+function myFind(array, callback) {
+    for(let i = 0; i < array.length; i++) {
+        let item = array[i];
+
+        if (callback(item)) {
+            return array[i];
+        }
+    }
+}
+
+myFind([1, 2, 3, 4], getOddNum);
+
+function getOddNum(num) {
+    if (num % 2 !==0) {
+        return num;
+    }
+}
+
+function getEvenNum(num) {
+    if (num % 2 ===0) {
+        return num;
+    }
+}
