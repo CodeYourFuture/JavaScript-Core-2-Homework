@@ -1,1 +1,32 @@
 /** Write your CSS in here **/
+/** Write your CSS in here **/
+.slider {
+	margin: auto 60%;
+	width: 100%;
+}
+.slide {
+	width: 800px;
+	height: 500px;
+	float: left;
+	position: relative;
+}
+.slide img {
+	width: 100%;
+	height: 100%;
+	display: none;
+	border-radius: 15px;
+}
+.next,
+.prev,
+.autoBackward,
+.autoForward,
+.pauseBack,
+.pauseForward {
+	width: 60px;
+	float: left;
+	margin-top: 250px;
+	cursor: pointer;
+}
+.slide .show {
+	display: inline-block;
+}
