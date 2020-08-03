@@ -1,1 +1,5 @@
-/** Write your CSS in here **/
+img {
+    display: none;
+    max-width: 500px;
+    width: 100%;
+  } 
