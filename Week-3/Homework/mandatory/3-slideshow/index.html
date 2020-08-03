@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Slideshow</title>
-    <script src="slideshow.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Write your HTML in here -->
-  </body>
+	<head>
+		<title>Slideshow</title>
+
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="slider">
+			<img class="prev" src="images/prevArrow.png" />
+			<img class="autoBackward" src="images/fastBack.png" />
+			<img class="pauseBack" src="images/pause.png" />
+			<div class="slide">
+				<img src="images/image1.jpg" class="show" />
+				<img src="images/image2.jpg" />
+				<img src="images/image3.jpg" />
+				<img src="images/image4.jpg" />
+			</div>
+			<img class="pauseForward" src="images/pause.png" />
+			<img class="autoForward" src="images/fastFor.png" />
+			<img class="next" src="images/forwArrow.png" />
+		</div>
+		<script src="slideshow.js"></script>
+	</body>
 </html>

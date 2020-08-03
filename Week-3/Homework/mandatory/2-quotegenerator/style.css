@@ -1,1 +1,49 @@
 /** Write your CSS in here **/
+body {
+	background-color: orange;
+}
+
+.main {
+	background-color: white;
+	margin-top: 45%;
+	margin-bottom: 45%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+#quoatDiv {
+	display: inline-block;
+}
+i {
+	font-size: 300%;
+
+	padding-left: 1%;
+	color: orange;
+}
+#rightQouat {
+	padding-left: 95%;
+}
+
+#quote {
+	padding-left: 5%;
+	padding-bottom: 5%;
+	margin-bottom: 2%;
+	color: orange;
+}
+#authorNdButton {
+	padding-left: 80%;
+}
+#author {
+	color: orange;
+	padding-bottom: 20%;
+	font-size: 150%;
+}
+#next {
+	background-color: orange;
+	color: white;
+	border: none;
+	width: 50%;
+	font-size: 120%;
+	padding: 2%;
+}
