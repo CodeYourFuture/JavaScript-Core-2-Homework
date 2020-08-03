@@ -53,6 +53,7 @@ let restaurants = [restaurant1, restaurant2, restaurant3];
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
+//let findAvailableRestaurants(numberOfPeople)
 
 
 let restaurantFinderApplication = {
@@ -61,14 +62,19 @@ let restaurantFinderApplication = {
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
         // Complete here
+        return restaurants.filter(seats=>(seats.totalSeats-seats.numberOfCustomers)>=numberOfPeople).map(names=>names.name)
     },
     findRestaurantServingDish: function (dishName) {
         // Complete here
+        return restaurants.filter(menus=>menus.menu.includes(dishName)).map(names=>names.name)
     },
-    countNumberOfRestaurantsInArea: function (area) {
-        // Complete here
+    countNumberOfRestaurantsInArea: function (area){
+        return restaurants.filter(menus=>menus.address.area===area).length       
+    
+                // Complete here
     }
 };
+
 
 
 /*

@@ -22,4 +22,14 @@ cocoa
 
 **/
 
-let recipes = {};
+let recipes = {
+    title: "Banana Bread",
+    Serves: 2,
+    Ingredients: ["Banana","Flour","Egg","Milk"]
+};
+/*Object.entries(recipes).forEach(([key, value]) => {
+    console.log();})*/ 
+    console.log(recipes.title)
+    console.log(`Serves: ${recipes.Serves}`)
+    console.log("Ingredients:")
+    console.log(recipes.Ingredients + "\n")
