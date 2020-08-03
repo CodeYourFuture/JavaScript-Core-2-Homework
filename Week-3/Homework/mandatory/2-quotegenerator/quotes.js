@@ -1,3 +1,14 @@
+
+let h1E1=document.getElementById("myH1");
+let pE1=document.getElementById("myP");
+let buttonE1=document.getElementById("myButton");
+
+buttonE1.addEventListener("click", () => {
+  const number = Math.floor(Math.random()* quotes.length);
+  h1E1.textContent = quotes[number].quote;
+  pE1.textContent= quotes[number].author;
+
+});
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
