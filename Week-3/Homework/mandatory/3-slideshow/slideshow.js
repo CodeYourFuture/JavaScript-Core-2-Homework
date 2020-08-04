@@ -35,4 +35,30 @@ window.onload = function () {
       currentIndex = currentIndex > 0 ? --currentIndex : newImgArr.length - 1;
       showImage(currentIndex);
     });
+
+    let autoBack = document.getElementById("autoBack");
+autoBack.addEventListener("click", () => {
+    clearInterval(forwardSlide);
+    reverseSlide = setInterval(() => {
+        img.src = newImgArr[imgIndex];
+        imageIndex.textContent = imgIndex;
+        imgIndex--;
+        if (imgIndex < 0) {
+            imgIndex = newImgArr.length - 1;
+        }
+    },1000);
+});
+let autoForward = document.getElementById("autoForward");
+autoForward.addEventListener("click", () => {
+    clearInterval(reverseSlide);
+    imgIndex = 0;
+    forwardSlide = setInterval(() => {
+        img.src = newImgArr[imgIndex];
+        imageIndex.textContent = imgIndex;
+        imgIndex++;
+        if (imgIndex > newImgArr.length - 1) {
+            imgIndex = 0;
+        }
+    }, 1000);
+});
   };

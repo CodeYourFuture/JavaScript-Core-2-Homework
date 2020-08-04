@@ -1,3 +1,10 @@
+
+container{
+  display: flex;
+  justify-content: center;
+}
+
+
 img {
     display: none;
     max-width: 500px;
