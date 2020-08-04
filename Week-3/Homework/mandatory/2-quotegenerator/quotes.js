@@ -1,3 +1,22 @@
+let mainBody = document.querySelector("body");
+let quoteInfo = document.querySelector("h2");
+let authorOfQuote = document.querySelector("p");
+let newQuoteBtn = document.querySelector(".btn");
+
+//let colours = ["f4ab3c", "#f43c76", "#3cf4ba", "#3c76f4", "#f45e3c"];
+
+newQuoteBtn.addEventListener("click", function () {
+  let randomQuote = Math.floor(Math.random() * quotes.length);
+  quoteInfo.textContent = quotes[randomQuote].quote;
+  authorOfQuote.textContent = quotes[randomQuote].author;
+
+  //let randomColour = Math.floor(Math.random() * colours.length);
+
+  // mainbody.style.backgroundColor = randomColour;
+  // authorOfQuote.style.color = randomColour;
+  // newQuoteBtn.style.backgroundColor = randomColour;
+});
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
