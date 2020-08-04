@@ -33,7 +33,11 @@ For example, print your name every 2 seconds.
 
 // Write your code here
 
+function callback() {
+    console.log("Mursel");
+}
 
+setInterval(callback, 3000); 
 /*
 ========
 Task 4
@@ -42,4 +46,19 @@ Task 4
 Use the setInterval function to reload automatically the messages of your webchat every 2 seconds.
 The code responsible to show the messages in the page is in exercise-1.js, so you will need to write your code there :-)
 */
-
+function newPages(){
+fetch('https://codeyourfuture.herokuapp.com/api/messages')
+.then(function(response){
+    return response.json();
+})
+.then(function(messages){
+//document.querySelector('#message-list').innerHTML ="";
+messages.forEach(function(message){
+ document.querySelector('#message-list').innerHTML+='<p>'+message.content +'</p>'
+//  let newParagraph = document.createElement('p');
+//  newParagraph.innerText
+//  document.querySelector('message-list').appendChild(newParagraph);
+})
+})
+}
+setInterval(newPages,9000);

@@ -14,12 +14,13 @@
   EXPECTED RESULT: The #exercise1 element has textContent = "YOUR NAME" when
   the button is clicked
 */
-document.querySelector('#button1').addEventListener('click', exercise1)
+document.querySelector('#button1').addEventListener('click', exercise1);
+var textElement = document.querySelector('#button1');
 
 function exercise1() {
   // Write your implementation here
+  textElement.textContent = "My Name";
 }
-
 /*
   EXERCISE 2
   =======

@@ -1,1 +1,12 @@
-/** Write your CSS in here **/
+
+container{
+  display: flex;
+  justify-content: center;
+}
+
+
+img {
+    display: none;
+    max-width: 500px;
+    width: 100%;
+  } 
