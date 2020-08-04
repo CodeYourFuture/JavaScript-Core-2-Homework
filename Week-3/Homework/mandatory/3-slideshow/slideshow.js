@@ -39,9 +39,8 @@ function changeTheImageAutoForward (){
         i = 0;
     }
     document.querySelector(".slider").src = imagesArr[i];
-     clearInterval(interval);
+     // clearInterval(interval);
     }, 1000); 
-   
 }
 
 function changeAutoBackwards (){
@@ -52,7 +51,7 @@ function changeAutoBackwards (){
         i--;
     }
     document.querySelector(".slider").src = imagesArr[i];
-    clearInterval(interval2);
+    //clearInterval(interval2);
     }, 1000)
     
 }
