@@ -90,20 +90,20 @@ movies[4] = {
 //////////////////////////////////////////////////////////////
 // Task-2 amend the showMovies with setTimeout to 1 second.
 
-setTimeout (showMovies, 1000);
+setTimeout(showMovies, 1000);
 
 // create addMovies function
- let myMovieOb = {
-  title: "The Martian",
-  director: "Ridley Scott",
-  type: "Science Fiction",
-  haveWatched: true,
- }
-
-function addMovies(x){
-     movies.push(x)
+let myMovieOb = {
+    title: "The Martian",
+    director: "Ridley Scott",
+    type: "Science Fiction",
+    haveWatched: true,
 }
- addMovies(myMovieOb);
+
+function addMovies(x) {
+    movies.push(x)
+}
+addMovies(myMovieOb);
 
 //////////////////////////////////////////////////////////////
 //Task-3 Callbacks,
@@ -170,7 +170,7 @@ newFormEl.appendChild(newButtonEl);
 // Function with "click";
 
 function addNewMovie(movie) {
-    movies.title = movie.title.value;
+    movies.title.value = movie.title;
     movies.director = movie.director.value;
     movies.type = movie.type.value;
     movies.haveWatched = movie.haveWatched.value;
