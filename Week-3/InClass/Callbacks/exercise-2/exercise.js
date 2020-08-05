@@ -105,7 +105,6 @@ setTimeout(function() {
 >>>>>>> b154b4b6cfdca7b5286d93b8688353e3c0401876
 
 // create addMovies function
-<<<<<<< HEAD
  let myMovieOb = {
   title: "The Martian",
   director: "Ridley Scott",
@@ -117,21 +116,6 @@ function addMovies(x){
    setTimeout(function(){
      movies.push(x)
    }, 3000)
-||||||| merged common ancestors
- let myMovieOb = {
-  title: "The Martian",
-  director: "Ridley Scott",
-  type: "Science Fiction",
-  haveWatched: true,
- }
-
-function addMovies(){
-  setTimeout (function(){
-    movies[5] = myMovieOb;
-    showMovies ();
-  }, 2000)
- 
-=======
 let myMovieOb = {
     title: "The Martian",
     director: "Ridley Scott",
@@ -145,7 +129,6 @@ function addMovies() {
         showMovies();
     }, 2000)
 
->>>>>>> b154b4b6cfdca7b5286d93b8688353e3c0401876
 }
 addMovies(myMovieOb);
 // setTimeout(addMovies(myMovieOb), 3000)
