@@ -28,11 +28,19 @@ let btnHolder = document.createElement("div");
 document.body.appendChild(btnHolder);
 btnHolder.style.width = "70%";
 
-btnAutoBack.classList.add("btnClass");
-btnBack.classList.add("btnClass");
-btnStop.classList.add("btnClass");
-btnForward.classList.add("btnClass");
-btnAutoForward.classList.add("btnClass");
+btnAutoBack.style.height = "50px";
+btnAutoBack.style.width = "20%";
+btnBack.style.height = "50px";
+btnBack.style.width = "20%";
+btnStop.style.height = "50px";
+btnStop.style.width = "20%";
+btnForward.style.width = "20%";
+btnForward.style.height = "50px";
+btnAutoForward.style.height = "50px";
+btnAutoForward.style.width = "20%";
+
+
+
 
 btnAutoBack.innerText = "Auto back";
 btnBack.innerText = "Back";
@@ -46,17 +54,45 @@ btnHolder.appendChild(btnStop);
 btnHolder.appendChild(btnForward);
 btnHolder.appendChild(btnAutoForward);
 
-btnBack.addEventListener("click", () => {
-  if (count) {
+let auto = false;
+
+function moveImg(forward = true) {
+  if (forward) {
+    if (count < imgs.length - 1) {
+      count++;
+    } else {
+      count = 0;
+    }
+  } else {
+    if (!count) {
+      count = imgs.length;
+    }
     count--;
-    img.src = imgs[count].src;
-    img.alt = imgs[count].alt;
   }
+  img.src = imgs[count].src;
+  img.alt = imgs[count].alt;
+}
+
+btnBack.addEventListener("click", () => !auto ? moveImg(false): NaN);
+
+btnForward.addEventListener("click",() => !auto ? moveImg(): NaN);
+
+let interval;
+
+btnAutoForward.addEventListener("click", () => {
+  if(!auto)
+  {auto = true;
+  interval = setInterval(moveImg, 1000);}
 });
-btnForward.addEventListener("click", () => {
-  if (count<imgs.length-1) {
-    count++;
-    img.src = imgs[count].src;
-    img.alt = imgs[count].alt;
-  }
+btnAutoBack.addEventListener("click", () => {
+  if(!auto)
+  {auto = true;
+  interval = setInterval(() => moveImg(false), 1000);}
 });
+
+function stop(){
+  auto = false;
+  clearInterval(interval);
+}
+
+btnStop.addEventListener("click", stop);
