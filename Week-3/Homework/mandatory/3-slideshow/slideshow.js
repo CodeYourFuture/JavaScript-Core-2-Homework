@@ -39,7 +39,9 @@ btnForward.style.height = "50px";
 btnAutoForward.style.height = "50px";
 btnAutoForward.style.width = "20%";
 
-
+document.body.style.display = "flex";
+document.body.style.flexWrap = "wrap";
+document.body.style.justifyContent = "center";
 
 
 btnAutoBack.innerText = "Auto back";
@@ -53,6 +55,8 @@ btnHolder.appendChild(btnBack);
 btnHolder.appendChild(btnStop);
 btnHolder.appendChild(btnForward);
 btnHolder.appendChild(btnAutoForward);
+
+
 
 let auto = false;
 
