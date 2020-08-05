@@ -12,11 +12,11 @@ imagesArr[3]= "images/t-6-texan.jpg";
 
 ////////////////////// - Callback function for addEventListener-//////////////////////
 function moveImageForward (){
-       if ( i < imagesArr.length - 1 ){
+    if ( i < imagesArr.length - 1 ){
         i++;
-        }else {
+    }else {
         i = 0;
-        }
+    }
     document.querySelector(".slider").src = imagesArr[i]
 }
 
@@ -33,12 +33,10 @@ function changeForward (){
     moveImageForward();
 }
 
-
 function changeBackwards (){
     stopTheSlide();
     moveImageBackward();
 }
-
 
 function changeTheImageAutoForward (){
     stopTheSlide();
@@ -46,7 +44,7 @@ function changeTheImageAutoForward (){
 
 }
 
-function changeAutoBackwards (){
+function changeTheImageAutoBackwards (){
     stopTheSlide();
     interval = setInterval (moveImageBackward, TIME);
 }
@@ -68,7 +66,7 @@ let autoForwardButton = document.querySelector(".auto-forward-button");
 autoForwardButton.addEventListener ("click", changeTheImageAutoForward);
 
 let autoBackButton = document.querySelector(".auto-back-button");
-autoBackButton.addEventListener("click",changeAutoBackwards )
+autoBackButton.addEventListener("click",changeTheImageAutoBackwards )
 
 let stopButton = document.querySelector(".stop-button")
 stopButton.addEventListener ("click",stopTheSlide);
