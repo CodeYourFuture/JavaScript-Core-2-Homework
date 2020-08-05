@@ -40,13 +40,13 @@ function changeBackwards (){
 
 function changeTheImageAutoForward (){
     stopTheSlide();
-   interval = setInterval(moveImageForward, TIME); 
+    interval = setInterval(moveImageForward, TIME); 
 
 }
 
 function changeTheImageAutoBackwards (){
     stopTheSlide();
-    interval = setInterval (moveImageBackward, TIME);
+    interval = setInterval(moveImageBackward, TIME);
 }
 
 function stopTheSlide (){
