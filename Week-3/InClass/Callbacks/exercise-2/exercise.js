@@ -199,6 +199,9 @@ newFormEl.appendChild(newButtonEl);
 newButtonEl.addEventListener("click", addNewMovie);
 
 function addNewMovie(movie) {
-    movies.title = movie.title;
+    movies.title = movie.title.value;
+    movies.director = movie.director.value;
+    movies.type = movie.type.value;
+    movies.haveWatched = movie.haveWatched.value;
     movies = movies + movie;
 }
