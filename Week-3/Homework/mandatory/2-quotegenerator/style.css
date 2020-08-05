@@ -27,3 +27,14 @@ body {
   font-weight: bolder;
   background-color: yellowgreen;
 }
+
+.auto-select{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.auto-label{
+  background-color:#a6e3e9;
+  margin: 10px;
+  text-align: center;
+}

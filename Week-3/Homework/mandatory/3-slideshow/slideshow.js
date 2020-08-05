@@ -56,6 +56,10 @@ function changeAutoBackwards (){
     
 }
 
+function stopTheSlide (){
+    document.querySelector(".slider").src = imagesArr[i];
+}
+
 //////////////////////// -Button events and Calling the functions-////////////////////
 
 
@@ -73,4 +77,4 @@ autoBackButton.addEventListener("click",changeAutoBackwards )
 
 
 let stopButton = document.querySelector(".stop-button")
-stopButton.addEventListener ("click",clearInterval(interval,interval2));
+stopButton.addEventListener ("click",stopTheSlide);
