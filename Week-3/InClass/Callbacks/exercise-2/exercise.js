@@ -76,8 +76,6 @@ function showMovies() {
         divAllMovies.appendChild(newPEl);
         spanMoviesNumberEl.innerText = movies.length;
     });
-
-
 }
 
 // create a new movie object for your favorite movie
@@ -92,17 +90,7 @@ movies[4] = {
 //////////////////////////////////////////////////////////////
 // Task-2 amend the showMovies with setTimeout to 1 second.
 
-<<<<<<< HEAD
- setTimeout (showMovies, 1000);
-||||||| merged common ancestors
-setTimeout (function(){
-  showMovies();
-}, 1000);
-=======
-setTimeout(function() {
-    showMovies();
-}, 1000);
->>>>>>> b154b4b6cfdca7b5286d93b8688353e3c0401876
+setTimeout (showMovies, 1000);
 
 // create addMovies function
  let myMovieOb = {
@@ -113,29 +101,14 @@ setTimeout(function() {
  }
 
 function addMovies(x){
-   setTimeout(function(){
      movies.push(x)
-   }, 3000)
-let myMovieOb = {
-    title: "The Martian",
-    director: "Ridley Scott",
-    type: "Science Fiction",
-    haveWatched: true,
 }
+ addMovies(myMovieOb);
 
-function addMovies() {
-    setTimeout(function() {
-        movies[5] = myMovieOb;
-        showMovies();
-    }, 2000)
-
-}
-addMovies(myMovieOb);
-// setTimeout(addMovies(myMovieOb), 3000)
 //////////////////////////////////////////////////////////////
 //Task-3 Callbacks,
 
-
+setTimeout(addMovies, 2000);
 
 ///////////////////////////////////////////////////////////////
 // Task 4 - **Extra**
@@ -196,8 +169,6 @@ newFormEl.appendChild(newButtonEl);
 ////////////////////////////////////////////////////////////
 // Function with "click";
 
-newButtonEl.addEventListener("click", addNewMovie);
-
 function addNewMovie(movie) {
     movies.title = movie.title.value;
     movies.director = movie.director.value;
@@ -205,3 +176,5 @@ function addNewMovie(movie) {
     movies.haveWatched = movie.haveWatched.value;
     movies = movies + movie;
 }
+
+newButtonEl.addEventListener("click", addNewMovie);
