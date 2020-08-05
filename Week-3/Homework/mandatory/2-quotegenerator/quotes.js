@@ -1,3 +1,19 @@
+let btn = document.getElementById('btn');
+let quoteEl = document.getElementById('quote');
+let authorEl = document.getElementById('author');
+
+// btn.addEventListener('click', function(){
+//   var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+//   output.innerHTML = randomQuote['quote'] + randomQuote['author'];
+// })
+
+// Homework club version
+btn.addEventListener('click', function(){
+  const quote = pickFromArray(quotes);
+  quoteEl.innerHTML = quote.quote;
+  authorEl.innerHTML = quote.author;
+})
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
