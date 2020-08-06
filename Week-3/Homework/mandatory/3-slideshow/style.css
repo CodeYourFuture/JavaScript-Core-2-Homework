@@ -1,1 +1,10 @@
 /** Write your CSS in here **/
+.myImages {
+	margin-top: 100px;
+	margin-left: 100px;
+	width: 414px;
+	height: 350px;
+}
+.myButtons {
+	margin-left: 100px;
+}

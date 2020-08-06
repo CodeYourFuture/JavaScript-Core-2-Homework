@@ -1,1 +1,27 @@
 /** Write your CSS in here **/
+div {
+	/*background-color: darkgreen;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	border-style: solid;
+	border-width: 40px;
+	font-size: 20px;
+	padding: 50px;
+	border-color: darkmagenta;
+	margin-top: 100px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	margin-right: 50px;
+}
+.myBtn {
+	float: right;
+	margin: 100px;
+	background-color: rgb(69, 219, 9);
+	color: #fff;
+	padding: 10px;
+	font-size: 20px;
+	width: 150px;
+}
