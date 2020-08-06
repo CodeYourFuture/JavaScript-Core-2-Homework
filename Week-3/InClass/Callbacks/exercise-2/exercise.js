@@ -9,7 +9,9 @@ Create a function called "showMovies" that
 - iterates through the "movies" array and
 - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
 - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
+*/
 
+/*
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
@@ -17,11 +19,15 @@ Create a new function called "addMovie"
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
+*/
 
+/*
 Task 3
 Can you make sure the new movie you just added is showing on the screen? 
 TIP: use callbacks
+*/
 
+/*
 Task 4 - **Extra**
 Create a form anywhere on your page. The form should have
 - 4 input text fields, one for each property of your movie object
@@ -35,36 +41,55 @@ Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
 const movies = [
-  {
-    title: "Color Out of Space",
-    director: "Richard Stanley",
-    type: "sci-fi",
-    haveWatched: true,
-  },
-  {
-    title: "A Twelve-Year Night",
-    director: "Álvaro Brechner",
-    type: "horror",
-    haveWatched: false,
-  },
-  {
-    title: "The Whistlers",
-    director: "Corneliu Porumboiu",
-    type: "comedy",
-    haveWatched: true,
-  },
-  {
-    title: "The Invisible Man",
-    director: "Leigh Whannell",
-    type: "horror",
-    haveWatched: false,
-  },
+	{
+		title: "Color Out of Space",
+		director: "Richard Stanley",
+		type: "sci-fi",
+		haveWatched: true,
+	},
+	{
+		title: "A Twelve-Year Night",
+		director: "Álvaro Brechner",
+		type: "horror",
+		haveWatched: false,
+	},
+	{
+		title: "The Whistlers",
+		director: "Corneliu Porumboiu",
+		type: "comedy",
+		haveWatched: true,
+	},
+	{
+		title: "The Invisible Man",
+		director: "Leigh Whannell",
+		type: "horror",
+		haveWatched: false,
+	},
 ];
 
 // create showMovies function
+let allMovies = document.querySelector("#all-movies");
+function showMovies(movies) {
+	setTimeout(function () {
+		movies.forEach((movie) => {
+			let pElement = document.createElement("p");
+			pElement.textContent = `${movie.title} by ${movie.director}`;
+			allMovies.appendChild(pElement);
+		});
+	}, 1000);
+}
 
 
+let numberOfAllMovies = document.querySelector("#movies-number");
+numberOfAllMovies.innerText = movies.length;
+console.log(showMovies(movies));
+console.log(numberOfAllMovies);
 // create a new movie object for your favorite movie
-
-
+let newMovie = {
+	title: "let It Shine",
+	Director: "Paul Hoen",
+	type: "Musical",
+	haveWatched: true,
+};
 // create addMovies function
+
