@@ -1,1 +1,27 @@
 /** Write your CSS in here **/
+
+
+
+
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    min-width: 100%;
+    max-height: 30rem;
+}
+
+p {
+  margin-left: 100px;
+}
+
+
+
+
+
+
+
+
+  
+
+
