@@ -23,6 +23,7 @@ let mentorsNames = Object.keys(mentorsAges) ;
 console.log(mentorsNames);
 
 let mentorsNamedUppercased = mentorsNames.map(upperCaseTheNames);
+console.log(mentorsNamedUppercased);
 
 // ONLY EDIT ABOVE THIS LINE
 
