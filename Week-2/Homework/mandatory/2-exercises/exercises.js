@@ -13,8 +13,18 @@
  *      .....
  * </div>
  */
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  for (let i = 0; i < arrayOfPeople.length; i++) {
+    let h = document.createElement("H1");
+    let t = document.createElement("H2");
+    h.innerText = arrayOfPeople[i].name;
+    t.innerText = arrayOfPeople[i].job;
+    content.appendChild(h);
+    content.appendChild(t);
+  }
 }
 
 /**
@@ -25,7 +35,12 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  document.createElement("ul");
+  for (let i = 0; i < shopping.length; i++) {
+    let li = document.createElement("li");
+    li.innerText = shopping[i];
+    content.appendChild(li);
+  }
 }
 
 /**
@@ -57,8 +72,32 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+let bookpics = [
+  "https://mitpress.mit.edu/sites/default/files/9780262640374.jpg",
+  "https://images.gr-assets.com/books/1295465264l/8884400.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/8/8f/The_pragmatic_programmer.jpg",
+];
+
 function exerciseThree(books) {
-  //Write your code in here
+
+  let unorderedList = document.createElement("ul");
+  content.appendChild(unorderedList);
+  for (let i = 0; i < bookpics.length; i++) {
+    let p = document.createElement("p");
+    let list = document.createElement("li");
+    let images = document.createElement("img");
+    p.innerText = books[i].title + " " + books[i].author;
+    images.src = bookpics[i];
+    unorderedList.appendChild(list);
+    list.appendChild(p);
+    list.appendChild(images);
+
+    if (books[i].alreadyRead === true) {
+      list.style.backgroundColor = "green";
+    } else {
+      list.style.backgroundColor = "red";
+    }
+  }
 }
 
 //
@@ -74,7 +113,7 @@ function exerciseThree(books) {
 let people = [
   { name: "Chris", job: "Teacher" },
   { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Boris", job: "Prime Minister" },
 ];
 
 exerciseOne(people);
@@ -87,18 +126,18 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);

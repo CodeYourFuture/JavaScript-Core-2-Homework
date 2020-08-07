@@ -1,3 +1,15 @@
+let button = document.getElementById("smlbtn");
+let p = document.querySelector("p")
+
+let onButtonClick = function() {
+  p.textContent =
+    pickFromArray(quotes).quote + "..." + " " +
+    "says" +
+    " " +
+    pickFromArray(quotes).author;
+}
+button.addEventListener("click", onButtonClick);
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
