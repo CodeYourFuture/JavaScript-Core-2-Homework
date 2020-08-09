@@ -1,48 +1,60 @@
 // Write your code here
 let imgArray = [
-  "images/cake1.jpg",
-  "images/cake2.jpg",
-  "images/cake3.jpg",
-  "images/cake4.jpg",
+  "images/Abraham_Lincolm.jpg",
+  "images/Dalal_Lama.jpg",
+  "images/Franklin_Roosevelt.jpg",
+  "images/Nelson_Mandela.jpg",
+  "images/Queen_Victoria.jpg",
+  "images/Ronald_Reagan.jpg",
+  "images/Winson_Churchill.jpg",
 ];
-let i = 0;
-let imgArray = [];
-let time = 2000;
-function changeTheImage() {
-  console.log("hey man");
-  if (i < imgArray.length 
-  ]- 1) {
-    i++;
-  } else {
-    i = 0;
-  }
-  document.querySelector(".image-set").src = imgArray[i];
-}
-function changeBackwards() {
-  if (i === 0) {
-    i = i + 3;
-  } else if (i < imgArray.length) {
-    i--;
-  }
-  document.querySelector(".image-set").src = imgArray[i];
-}
-function changeTheImageAutoForward() {
-  setInterval(function () {
-    if (i === 3) {
-      document.querySelector(".image-set").src = imgArray[3];
-    } else if (i < imgArray.length) {
-      i++;
-    }
-    document.querySelector(".image-set").src = imgArray[i];
-  }, 1000);
-}
-let forward = document.querySelector("#forward");
-forward.addEventListener("click", changeTheImage);
 
-let backward = document.querySelector("#backward");
-backward.addEventListener("click", changeBackwards);
-/*
-let stopButton = document.querySelector(“.stop-button”)
-stopButton.addEventListener (“click”,); */
-let autoForward = document.querySelector("#auto-forward");
-autoForward.addEventListener("click", changeTheImageAutoForward);
+// selectors //
+let autoForwardBtn = document.querySelector("#auto-forward");
+let forwardBtn = document.querySelector("#forward");
+let stopBtn = document.querySelector("#stop");
+let backwardBtn = document.querySelector("#backward");
+let autoBackwardBtn = document.querySelector("#auto-backward");
+
+let i = 0;
+document.getElementById("image-slider").src = imgArray[0];
+
+// forward slide function //
+function forward() {
+  if (i === imgArray.length - 1) {
+    i = 0;
+  } else i++;
+  document.getElementById("image-slider").src = imgArray[i];
+}
+
+// backward slide function //
+function backward() {
+  if (i === 0) {
+    i = imgArray.length - 1;
+  } else i--;
+  document.getElementById("image-slider").src = imgArray[i];
+}
+
+// event listener for autoforward button //
+autoForwardBtn.addEventListener("click", function () {
+  let interval = setInterval(forward, 3000);
+  // stop button eventlistener //
+  stopBtn.addEventListener("click", function () {
+    clearInterval(interval);
+  });
+});
+
+// event listeners for forward button //
+forwardBtn.addEventListener("click", forward);
+
+// event listener for backward button //
+backwardBtn.addEventListener("click", backward);
+
+// event listener for autobackward button //
+autoBackwardBtn.addEventListener("click", function () {
+  let interval = setInterval(backward, 3000);
+  // stop button eventlistener //
+  stopBtn.addEventListener("click", function () {
+    clearInterval(interval);
+  });
+});

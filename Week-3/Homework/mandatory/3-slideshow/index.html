@@ -10,11 +10,12 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Write your HTML in here -->
     <div>
       <div class="image-set">
-        <img src="images/cake1.jpg" alt="cake images" />
+        <img id="image-slider" src="" alt="image gallery" />
       </div>
       <div class="button-container">
         <button id="auto-forward">
@@ -22,6 +23,9 @@
         </button>
         <button id="forward">
           Forward
+        </button>
+        <button id="stop">
+          Stop
         </button>
         <button id="backward">
           Backward
@@ -31,6 +35,6 @@
         </button>
       </div>
     </div>
+    <script src="slideshow.js"></script>
   </body>
-  <script src="slideshow.js"></script>
 </html>
