@@ -502,10 +502,12 @@ async function getQuote() {
     quoteText.innerText = data.quote;
     authorText.innerText = data.author;
   } catch (error) {
-    console.log("I'm sorry quotes don finish");
+    console.log("I'm sorry there's no more quotes to display");
   }
 }
+
 //On load
 getQuote();
-//Button Click function
+
+//Event listener on Button Click function
 newQuoteBtn.addEventListener("click", getQuote);
