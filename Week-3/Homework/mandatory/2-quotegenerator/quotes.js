@@ -491,6 +491,15 @@ const quotes = [
   },
 ];
 
+const bckGroundImages = [
+  "images/image1.jpg",
+  "images/image2.jpg",
+  "images/image3.jpg",
+  "images/image4.jpg",
+];
+
+// document.body.style.background = randomNumber;
+
 const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("author");
 const newQuoteBtn = document.getElementById("new-quote");
@@ -501,6 +510,8 @@ async function getQuote() {
     const data = await response;
     quoteText.innerText = data.quote;
     authorText.innerText = data.author;
+    const randomNumber = Math.floor(Math.random() * bckGroundImages.length);
+    document.body.style.backgroundImage = `url(${bckGroundImages[randomNumber]})`;
   } catch (error) {
     console.log("I'm sorry there's no more quotes to display");
   }
