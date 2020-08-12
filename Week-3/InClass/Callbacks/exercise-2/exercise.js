@@ -66,12 +66,9 @@ const movies = [{
 function showMovies() {
     let divAllMovies = document.querySelector("#all-movies");
     let spanMoviesNumberEl = document.querySelector("#movies-number");
-    console.log(divAllMovies);
-    console.log(spanMoviesNumberEl);
 
     movies.forEach(movie => {
         let newPEl = document.createElement("p");
-        console.log(newPEl);
         newPEl.textContent = `${movie.title}-${movie.director}`;
         divAllMovies.appendChild(newPEl);
         spanMoviesNumberEl.innerText = movies.length;
@@ -80,7 +77,7 @@ function showMovies() {
 
 // create a new movie object for your favorite movie
 
-movies[4] = {
+let newMovieOb1 = {
     title: "Annihilation",
     director: "Alex Garland",
     type: "Science Fiction",
@@ -90,10 +87,9 @@ movies[4] = {
 //////////////////////////////////////////////////////////////
 // Task-2 amend the showMovies with setTimeout to 1 second.
 
-setTimeout(showMovies, 1000);
 
 // create addMovies function
-let myMovieOb = {
+let newMovieOb2 = {
     title: "The Martian",
     director: "Ridley Scott",
     type: "Science Fiction",
@@ -101,14 +97,18 @@ let myMovieOb = {
 }
 
 function addMovies(x) {
+    console.log("Hello");
     movies.push(x)
 }
-addMovies(myMovieOb);
+
 
 //////////////////////////////////////////////////////////////
 //Task-3 Callbacks,
+setTimeout(showMovies, 1000);
+setTimeout(addMovies(newMovieOb1), 4000);
+setTimeout(addMovies(newMovieOb2), 5000);
 
-setTimeout(addMovies, 2000);
+
 
 ///////////////////////////////////////////////////////////////
 // Task 4 - **Extra**
@@ -174,7 +174,7 @@ function addNewMovie(movie) {
     movies.director = movie.director.value;
     movies.type = movie.type.value;
     movies.haveWatched = movie.haveWatched.value;
-    movies = movies + movie;
+    movies = movies + movies[movie];
 }
 
 newButtonEl.addEventListener("click", addNewMovie);
