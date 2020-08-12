@@ -68,7 +68,7 @@ button:active {
 .fa-twitter {
   font-size: 1.5rem;
 }
-/* Media Qury */
+/* Media Query */
 @media screen and (max-width: 1000px) {
   .quote-container {
     margin: auto 10px;
