@@ -1,1 +1,25 @@
 /** Write your CSS in here **/
+body{
+    background-color: #f5af18;
+    display: flex;
+}
+.container {
+    margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container div {
+  min-width: 500px;
+  min-height: 200px;
+  background-color: white;
+  
+}
+div button {
+    display: inline;
+    flex-direction: column;
+    margin: 10px;
+
+}
+      
