@@ -1,4 +1,28 @@
-// DO NOT EDIT BELOW HERE
+const quoteText = document.getElementById("quote");
+const authorText = document.getElementById("author");
+const newQuoteBtn = document.getElementById("new-quote");
+
+async function getQuote() {
+  try {
+    const response = await pickFromArray(quotes);
+    const data = await response;
+    quoteText.innerText = data.quote;
+    authorText.innerText = data.author;
+
+  } catch (error) {
+    console.log("I'm sorry there's no more quotes to display");
+  }
+}
+
+//On load
+getQuote();
+
+//Event listener on Button Click function
+newQuoteBtn.addEventListener("click", getQuote);
+
+
+// // DO NOT EDIT BELOW HERE
+
 
 // A function which will return one item, at
 // random, from the given array.
