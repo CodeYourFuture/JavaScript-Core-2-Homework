@@ -1,6 +1,7 @@
 /*
 ================
 Exercise 2
+
 ----------
 You are given the following list of movies
 
@@ -62,9 +63,112 @@ const movies = [
 ];
 
 // create showMovies function
+let allMovies = document.getElementById("all-movies");
+let movieNumber = document.getElementById("movies-number");
+function myMovies() {
+  movies.forEach(function (movie) {
+    let pElement = document.createElement("p");
 
+    let quoteString = `${movie.title} directed by ${movie.director}`;
+
+    allMovies.appendChild(pElement);
+    pElement.innerHTML = quoteString;
+  });
+  movieNumber.innerText = movies.length;
+}
+setTimeout(myMovies, 1000);
 
 // create a new movie object for your favorite movie
 
+let newMovie = {
+  title: "Pursuit of happiness",
+  director: "Gabriele Muccino",
+  type: "drama",
+  haveWatched: true,
+};
 
 // create addMovies function
+function addMovies(movie) {
+  movies.push(movie);
+  let deleteEl = allMovies.querySelectorAll("p");
+  deleteEl.forEach((p, index) => (index ? allMovies.removeChild(p) : NaN));
+  myMovies();
+}
+setTimeout(addMovies, 2000, newMovie);
+
+// Create a break line element
+var br = document.createElement("br");
+function createForm() {
+  var form = document.createElement("form");
+  form.setAttribute("method", "post");
+  form.setAttribute("action", "submit");
+
+  // Create an input element for title
+  var title = document.createElement("input");
+  title.setAttribute("type", "text");
+  title.setAttribute("name", "title");
+  title.setAttribute("placeholder", "title");
+  title.setAttribute("id", "title");
+
+  // Create an input element for director
+  var director = document.createElement("input");
+  director.setAttribute("type", "text");
+  director.setAttribute("name", "director");
+  director.setAttribute("placeholder", "director");
+  director.setAttribute("id", "director");
+
+  // Create an input element for type
+  var type = document.createElement("input");
+  type.setAttribute("type", "text");
+  type.setAttribute("name", "type");
+  type.setAttribute("placeholder", "type");
+  type.setAttribute("id", "type");
+
+  // Create an input element for haveWatched
+  var haveWatched = document.createElement("input");
+  haveWatched.setAttribute("type", "havewatched");
+  haveWatched.setAttribute("name", "havewatched");
+  haveWatched.setAttribute("placeholder", "havewatched");
+  haveWatched.setAttribute("id", "havewatched");
+
+  // create a submit button
+  var s = document.createElement("input");
+  s.setAttribute("type", "Submit");
+  s.setAttribute("value", "Submit");
+
+  // Append the title input to the form
+  form.appendChild(title);
+
+  // Inserting a line break
+  form.appendChild(br.cloneNode());
+
+  // Append the director to the form
+  form.appendChild(director);
+  form.appendChild(br.cloneNode());
+
+  // Append the type to the form
+  form.appendChild(type);
+  form.appendChild(br.cloneNode());
+
+  // Append the haveWatched to the form
+  form.appendChild(haveWatched);
+  form.appendChild(br.cloneNode());
+
+  // Append the submit button to the form
+  form.appendChild(s);
+
+  document.body.appendChild(form);
+
+  s.addEventListener("click", (event) => {
+    event.preventDefault();
+    let myNewMovie = {
+      title: title.value,
+      director: director.value,
+      type: type.value,
+      haveWatched: havewatched.value,
+    };
+    console.log(myNewMovie);
+    addMovies(myNewMovie);
+  });
+}
+createForm();

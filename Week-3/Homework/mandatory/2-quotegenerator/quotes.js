@@ -490,3 +490,44 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+let colors = ["#70B7D6", "#9C70D6", "#D6CD70", "#D6707C", "#0D2958"];
+
+let div = document.createElement("div");
+div.style.backgroundColor = "white";
+div.style.margin = "auto";
+div.style.marginTop = "250px";
+div.style.width = "500px";
+div.style.hight = "500px";
+div.style.alignContent = "center";
+div.style.padding = "50px";
+
+let p = document.createElement("p");
+let p1 = document.createElement("p");
+p.style.fontWeight = "bold";
+p1.style.textAlign = "right";
+
+document.body.appendChild(div);
+
+let btn = document.createElement("button");
+btn.innerText = "New quote";
+//btn.style.";
+div.appendChild(p);
+div.appendChild(p1);
+div.appendChild(btn);
+
+
+
+function getQoute() {
+  let newQuote = pickFromArray(quotes);
+  let qouteColor = pickFromArray(colors);
+  let p = document.querySelectorAll("p");
+  p[0].innerText = newQuote.quote;
+  p[1].innerText = newQuote.author;
+  p[0].style.color = qouteColor;
+  p[1].style.color = qouteColor;
+  document.body.style.backgroundColor = qouteColor;
+}
+getQoute();
+
+btn.addEventListener("click", getQoute);
