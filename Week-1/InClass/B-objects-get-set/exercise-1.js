@@ -10,7 +10,9 @@ let kitten = {
 
 // YOUR CODE GOES BELOW HERE
 
-
+for(let key in kitten){
+    console.log(kitten[key]);
+}
 
 
 
