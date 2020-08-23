@@ -15,6 +15,15 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for(var i=0;i<arrayOfPeople.length;i++){
+    var heading1 = document.createElement("h1");
+    heading1.textContent="Name: "+people[i].name;
+    content.append(heading1);
+    var heading2 = document.createElement("h2");
+    heading2.textContent = "Job: "+people[i].job;
+    content.append(heading2);
+
+  }
 }
 
 /**
@@ -26,6 +35,14 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let content = document.querySelector("#content")
+  var shoppingList = document.createElement("ul");
+  for(var i=0;i<shopping.length;i++){
+    var li = document.createElement("li");
+       li.textContent = shopping[i];
+      shoppingList.appendChild(li);
+  }
+  content.append(shoppingList);
 }
 
 /**
