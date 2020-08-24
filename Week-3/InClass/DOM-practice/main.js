@@ -12,7 +12,7 @@ for (let i =0; i < sectionTags.length; i++){
 }
 
 /* function changeBackGroundColor (){
-    section.style.backgroundColor = "green";
+    section.style.backgroundColor = "yellow";
 }
 sectionTags.forEach(changeBackGroundColor); */
 
@@ -29,8 +29,6 @@ let images = document.getElementsByTagName("img");
 for (let i=0; i < images.length; i++){
     images[i].className = "img-center";
 }
-
-
 
 
 // Task 3
