@@ -32,8 +32,8 @@ let greenButton = document.querySelector("#greenBtn");
  });
 
 let submitButton = document.querySelector("form").lastElementChild;
-submitButton.addEventListener("click",function(e){
-  e.preventDefault();
+submitButton.addEventListener("click",function(){
+ // e.preventDefault();
    let getForm = document.querySelectorAll(".form-control");
     if (getForm[0].value == "" && getForm[1].value == "" && getForm[2].value == "") {
     
