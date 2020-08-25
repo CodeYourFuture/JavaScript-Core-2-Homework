@@ -72,8 +72,8 @@ function showMovies() {
     let newPEl = document.createElement("p");
     newPEl.textContent = `${movie.title}-${movie.director}`;
     divAllMovies.appendChild(newPEl);
+    spanMoviesNumberEl.innerText = movies.length;
   });
-  spanMoviesNumberEl.innerText = movies.length;
 }
 
 // create a new movie object for your favorite movie
