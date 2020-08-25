@@ -1,37 +1,40 @@
-function setAlarm (){
+function setAlarm() {
   let inputAlarmSet = document.getElementById("alarmSet").value;
   let titleTimeRemaining = document.getElementById("timeRemaining");
 
-  let startAlarm = setInterval (()=> {
-    if (inputAlarmSet === 0){
+  let startAlarm = setInterval(() => {
+    if (inputAlarmSet === 0) {
       //titleTimeRemaining.style.backgroundColor = "yellow";
       playAlarm();
       clearInterval(startAlarm);
     }
+    if ((inputAlarmSet < 0)) {
+      pauseAlarm();
+    }
     getTime(inputAlarmSet);
     titleTimeRemaining.textContent = `Time remaining: ${getTime(inputAlarmSet)}`;
-    inputAlarmSet --;
+    inputAlarmSet--;
   }, 1000);
 }
 
-
-function getTime (time){
+// This function return in format ( 00:00) minutes and seconds with if statements.
+function getTime(time) {
   let minutes;
   let seconds;
 
-  if (time > 60){
+  if (time > 60) {
     minutes = Math.floor(time / 60);
     seconds = time - minutes * 60;
-  } else{
+  } else {
     minutes = 0;
     seconds = time;
   }
 
-  if (minutes < 10){
+  if (minutes < 10) {
     minutes = "0" + minutes;
   }
 
-  if (seconds < 10){
+  if (seconds < 10) {
     seconds = "0" + seconds;
   }
   return `${minutes}:${seconds}`;
@@ -68,8 +71,8 @@ titleTimeRemaining.textContent = `Time Remaining: ${inputAlarmSet.textContent}`;
 // Step-4
 
 */
- 
-  
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////
 // DO NOT EDIT BELOW HERE
 
