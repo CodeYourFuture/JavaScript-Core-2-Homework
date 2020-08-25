@@ -13,13 +13,13 @@ Create a function called "showMovies" that
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
-- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide 
+- it receives a movie object as an argument - your can create a new object for your favorite movie following using the "myMovies" objects as a guide
 - it adds the new movie to the list of movies after 2 seconds. Remember to setTimeout to achieve that
 Call addMovies to add the new movie to the list and then showMovies to see the movies added on the screen.
 How many movies can you see on your page?
 
 Task 3
-Can you make sure the new movie you just added is showing on the screen? 
+Can you make sure the new movie you just added is showing on the screen?
 TIP: use callbacks
 
 Task 4 - **Extra**
@@ -62,9 +62,42 @@ const movies = [
 ];
 
 // create showMovies function
+//Task 1
+ var createParagraph;
+function showMovies(){
+    movies.forEach(function (movie) {
+      createParagraph = document.createElement("p");
+      createParagraph.textContent = movie.title + " by " + movie.director;
+      document.querySelector("#all-movies").appendChild(createParagraph);
+      document.querySelector("#movies-number").innerHTML = movies.length;
+    })
+  
+ 
+}
+//showMovies();
+//Task 2
+   var createTimeout = setTimeout(function (){
+     showMovies();
+     clearTimeout(createTimeout);
+     return;
+   },1000);
 
 
 // create a new movie object for your favorite movie
-
+var myMovies = {
+  title : "Superman",
+  director : "ABC",
+  type : "Action",
+  haveWatched: true
+}
 
 // create addMovies function
+  function addMovies (movies){
+    setTimeout(function(){
+      movies.push(myMovies);
+      showMovies();
+    },2000);
+      }
+  
+    addMovies(movies);
+    
