@@ -34,81 +34,78 @@ TIP: Use the functions you created on tasks 1-3
 Prefer to work on a codepen? https://codepen.io/makanti/pen/MWwMgmW?editors
 ================
 */
-const movies = [{
-        title: "Color Out of Space",
-        director: "Richard Stanley",
-        type: "sci-fi",
-        haveWatched: true,
-    },
-    {
-        title: "A Twelve-Year Night",
-        director: "Álvaro Brechner",
-        type: "horror",
-        haveWatched: false,
-    },
-    {
-        title: "The Whistlers",
-        director: "Corneliu Porumboiu",
-        type: "comedy",
-        haveWatched: true,
-    },
-    {
-        title: "The Invisible Man",
-        director: "Leigh Whannell",
-        type: "horror",
-        haveWatched: false,
-    },
+const movies = [
+  {
+    title: "Color Out of Space",
+    director: "Richard Stanley",
+    type: "sci-fi",
+    haveWatched: true,
+  },
+  {
+    title: "A Twelve-Year Night",
+    director: "Álvaro Brechner",
+    type: "horror",
+    haveWatched: false,
+  },
+  {
+    title: "The Whistlers",
+    director: "Corneliu Porumboiu",
+    type: "comedy",
+    haveWatched: true,
+  },
+  {
+    title: "The Invisible Man",
+    director: "Leigh Whannell",
+    type: "horror",
+    haveWatched: false,
+  },
 ];
 
 ////////////////////////////////////////////////////////////
 // Task-1 ; create showMovies function
 
 function showMovies() {
-    let divAllMovies = document.querySelector("#all-movies");
-    let spanMoviesNumberEl = document.querySelector("#movies-number");
+  let divAllMovies = document.querySelector("#all-movies");
+  let spanMoviesNumberEl = document.querySelector("#movies-number");
 
-    movies.forEach(movie => {
-        let newPEl = document.createElement("p");
-        newPEl.textContent = `${movie.title}-${movie.director}`;
-        divAllMovies.appendChild(newPEl);
-        spanMoviesNumberEl.innerText = movies.length;
-    });
+  movies.forEach((movie) => {
+    let newPEl = document.createElement("p");
+    newPEl.textContent = `${movie.title}-${movie.director}`;
+    divAllMovies.appendChild(newPEl);
+  });
+  spanMoviesNumberEl.innerText = movies.length;
 }
 
 // create a new movie object for your favorite movie
 
 let newMovieOb1 = {
-    title: "Annihilation",
-    director: "Alex Garland",
-    type: "Science Fiction",
-    haveWatched: true,
-}
+  title: "Annihilation",
+  director: "Alex Garland",
+  type: "Science Fiction",
+  haveWatched: true,
+};
 
 //////////////////////////////////////////////////////////////
 // Task-2 amend the showMovies with setTimeout to 1 second.
 
-
 // create addMovies function
 let newMovieOb2 = {
-    title: "The Martian",
-    director: "Ridley Scott",
-    type: "Science Fiction",
-    haveWatched: true,
-}
+  title: "The Martian",
+  director: "Ridley Scott",
+  type: "Science Fiction",
+  haveWatched: true,
+};
 
-function addMovies(x) {
-    console.log("Hello");
-    movies.push(x)
+function addMovies(movie) {
+  movies.push(movie);
 }
-
 
 //////////////////////////////////////////////////////////////
 //Task-3 Callbacks,
 setTimeout(showMovies, 1000);
-setTimeout(addMovies(newMovieOb1), 4000);
+console.log("Hello");
+setTimeout(addMovies(newMovieOb1), 2000);
 setTimeout(addMovies(newMovieOb2), 5000);
-
-
 
 ///////////////////////////////////////////////////////////////
 // Task 4 - **Extra**
@@ -170,11 +167,11 @@ newFormEl.appendChild(newButtonEl);
 // Function with "click";
 
 function addNewMovie(movie) {
-    movies.title = movie.title.value;
-    movies.director = movie.director.value;
-    movies.type = movie.type.value;
-    movies.haveWatched = movie.haveWatched.value;
-    movies = movies + movies[movie];
+  movies.title = movie.title.value;
+  movies.director = movie.director.value;
+  movies.type = movie.type.value;
+  movies.haveWatched = movie.haveWatched.value;
+  movies = movies + movies[movie];
 }
 
 newButtonEl.addEventListener("click", addNewMovie);
