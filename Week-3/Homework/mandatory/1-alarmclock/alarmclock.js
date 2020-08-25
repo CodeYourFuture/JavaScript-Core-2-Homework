@@ -8,13 +8,15 @@ function setAlarm() {
       playAlarm();
       clearInterval(startAlarm);
     }
-    if ((inputAlarmSet < 0)) {
-      pauseAlarm();
-    }
+
     getTime(inputAlarmSet);
     titleTimeRemaining.textContent = `Time remaining: ${getTime(inputAlarmSet)}`;
     inputAlarmSet--;
   }, 1000);
+
+  if ((inputAlarmSet < 0)) {
+    pauseAlarm();
+  }
 }
 
 // This function return in format ( 00:00) minutes and seconds with if statements.
