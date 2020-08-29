@@ -1,1 +1,56 @@
 /** Write your CSS in here **/
+
+.quoteTitle{
+    height:auto ;
+    background-color: whitesmoke;
+    width: 40%;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: relative;
+    z-index: 2;
+    padding : 1%;
+    text-align: center;
+    color: coral;
+}
+.quoteBox{
+    height:auto ;
+    background-color: whitesmoke;
+    width: 50%;
+    margin: auto;
+    margin-top: 1%;
+    padding: 2%;
+    border-radius: 10px;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-align: justify;
+}
+
+h6 {
+    text-align: right;
+}
+
+.quoteButton{
+    z-index:3;
+    padding: 1%;
+    width:20%;
+    border:1px solid white;
+    font-weight: 700;
+    margin :auto;
+    margin-top:1%;
+    display: block;
+    border-radius: 5px;
+    color: rgb(20, 64, 196);
+}
+.quoteButton:hover{
+    border : 2px solid white;
+    background-color: royalblue;
+    color :white;
+}
+body{
+    background-color: coral;
+}

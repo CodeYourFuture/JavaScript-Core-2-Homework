@@ -1,1 +1,60 @@
 /** Write your CSS in here **/
+.slideshowTitle{
+    height:auto ;
+    background-color: whitesmoke;
+    width: 40%;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: relative;
+    z-index: 2;
+    padding : 1%;
+    text-align: center;
+    color: royalblue;
+}
+.imageBox{
+    height:60vh;
+    background-color: whitesmoke;
+    width: 50vw;
+    margin: auto;
+    margin-top: 1%;
+    padding: 2%;
+    border-radius: 10px;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+}
+img{
+    width: 45vw;
+    height: 50vh;
+}
+
+.autoBackButton,.backButton,.stopButton,.forwardButton,.autoForwardButton{
+    z-index:3;
+    padding: 1%;
+    width:20%;
+    border:1px solid white;
+    font-weight: 700;
+    margin: 1%;
+    margin-top:1%;
+    border-radius: 5px;
+    color: green;
+}
+.autoBackButton:hover,.backButton:hover,.stopButton:hover,.forwardButton:hover,.autoForwardButton:hover{
+    border : 2px solid white;
+    background-color: green;
+    color :white;
+}
+.buttons{
+    display: flex;
+    margin : auto;
+    width: 50%;
+}
+
+body{
+    background-color: royalblue;
+}
