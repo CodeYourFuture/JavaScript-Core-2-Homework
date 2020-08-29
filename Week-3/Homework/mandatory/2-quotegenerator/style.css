@@ -16,17 +16,24 @@
     color: coral;
 }
 .quoteBox{
-    height:300px ;
+    height:auto ;
     background-color: whitesmoke;
     width: 50%;
     margin: auto;
     margin-top: 1%;
+    padding: 2%;
     border-radius: 10px;
-    border: 1px solid white;
+    border: 2px solid white;
     position: relative;
     z-index: 1;
     display: block;
+    text-align: justify;
 }
+
+h6 {
+    text-align: right;
+}
+
 .quoteButton{
     z-index:3;
     padding: 1%;
