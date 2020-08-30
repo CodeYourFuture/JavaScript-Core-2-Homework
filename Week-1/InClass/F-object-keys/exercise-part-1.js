@@ -15,9 +15,17 @@ let mentorsAges = {
 
 // ONLY EDIT BELOW THIS LINE
 
-let mentorsNames = ;
+let mentorsNames = Object.keys(mentorsAges);
 
-let mentorsNamedUppercased = ;
+// error, see below Aman's solution -> let mentorsNamedUppercased = mentorsNames.toUpperCase();
+
+let Uppercased = function(x){
+  return x.toUpperCase();
+};
+  mentorsNamedUppercased = mentorsNames.map(Uppercased);
+
+  // OR Mursel's solution
+let mentorsNamedUppercased = mentorsNames.map(x => x.toUpperCase());
 
 // ONLY EDIT ABOVE THIS LINE
 
