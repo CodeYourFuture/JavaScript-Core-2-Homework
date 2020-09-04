@@ -95,7 +95,7 @@ function setAlarm () {
   }
 
   if (intTxt > 6000) {
-    timeRem.textContent = ` Sorry Its Is Too Big, Follow Up Our Next Version 😉`;
+    timeRem.textContent = ` Sorry this Is Too Big, Follow Up Our Next Version 😉`;
   }
 }
 
