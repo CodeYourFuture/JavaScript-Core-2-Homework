@@ -1,1 +1,46 @@
 /** Write your CSS in here **/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.carousel-container {
+  width: 50%;
+  margin: auto;
+  border: 5px solid #000;
+}
+img {
+  width: 673px;
+  height: 350px;
+}
+#carousel-slide {
+  display: flex;
+  width: 100%;
+  height: 650px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#cueBackward{
+    margin: 40px;
+}
+
+#previousBtn{
+    margin: 40px;
+}
+
+#stopBtn{
+    margin: 40px;
+}
+
+#nextBtn{
+    margin: 40px;
+}
+
+#cueForward{
+    margin: 40px;
+}
+
