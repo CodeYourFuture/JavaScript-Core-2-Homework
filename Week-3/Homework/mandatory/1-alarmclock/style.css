@@ -5,11 +5,15 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 #alarmSet {
   margin: 20px;
 }
-
 h1 {
   text-align: center;
+}
+body {
+  background: #000;
+}
+#timeRemaining {
+  color: chartreuse;
 }
