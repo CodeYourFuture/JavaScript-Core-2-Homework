@@ -1,1 +1,140 @@
 /** Write your CSS in here **/
+body {
+  background-image: url('https://images.all-free-download.com/images/graphiclarge/abstract_smooth_wave_background_vector_grapihic_art_569579.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#bigCon {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+}
+#container {
+  width: 700px;
+  height: 400px;
+  background-color: #254e70;
+  border: 1px solid #254e70;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow:  12px 12px #142B3D;
+}
+#child {
+  font-size: xx-large;
+  color: white;
+  width: 600px;
+  height: 300px;
+  background-color: #c33c54;
+  border: 1px solid #37718e;
+  margin: auto;
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+#btn {
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  background-color: #c33c54;
+  color: white;
+  font-weight: 200;
+  font-size: large;
+  border: none;
+  outline: none;
+  box-shadow: 0 3px #2f0e14;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 70px;
+}
+#btn:hover {
+  border: none;
+  background-color: #8c2b3d;
+  color: #e9afbc;
+}
+#btn:active {
+  border: none;
+  background-color: #8c2b3d;
+  box-shadow: 0 3px #2f0e14;
+  transform: translateY(4px);
+}
+
+#btn-tog{
+  width: 100%;
+  display: flex;
+  /* justify-content:space-around */
+}
+
+h3{
+  color: white;
+  margin-left: 200px;
+  width: 125px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  margin-top: 15px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #37718e;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #c33c54;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #8c2b3d;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
