@@ -1,3 +1,14 @@
+let  newBtn = document.querySelector("button");
+
+newBtn.addEventListener("click", function() {
+  let authorOut = document.getElementById("authorOut");
+  let quoteOutpu = document.getElementById("quoteOutput");
+  let randomQuo =pickFromArray(quotes);
+  quoteOutpu.innerHTML = randomQuo.quote;
+  authorOut.innerHTML = randomQuo.author;
+})
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at
