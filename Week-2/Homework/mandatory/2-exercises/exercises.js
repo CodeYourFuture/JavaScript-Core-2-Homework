@@ -15,7 +15,16 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for (let i = 0; i < arrayOfPeople.length; i++) {
+    let namesEl = document.createElement("h1");
+    let jopEl = document.createElement("h2");
+    content.appendChild(namesEl);
+    content.appendChild(jopEl);
+   namesEl.innerHTML= arrayOfPeople[i].name;
+   jopEl.innerHTML = arrayOfPeople[i].job;
+  }
 }
+
 
 /**
  *
@@ -25,9 +34,15 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+ let content = document.querySelector("#content");
+ let ul = document.createElement("ul");
+ for (let i = 0; i < shopping.length; i++){
+   let li = document.createElement("li")
+ ul.textContent = shopping[i];
+ ul.appendChild(li)  //Write your code in here
 }
-
+content.appendChild(ul);
+}
 /**
     I'd like to display my three favorite books inside a nice webpage!
 
@@ -58,7 +73,36 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  let ul = document.createElement("ul");
+  let imge = [
+   'www.bookicious.com/books/design-of-everyday-things.gif'
+   ,
+   'https://www.kurzweilai.net/images/The-Most-Human-Human-Paperback-Front-Cover.jpg',
+
+   'https://upload.wikimedia.org/wikipedia/en/8/8f/The_pragmatic_programmer.jpg'
+   
+  ];
+  for (let i = 0; i < books.length; i++) {
+    let p = document.createElement("p");
+    let li = document.createElement("li");
+    let img = document.createElement("img");
+    let title = books[i].title;
+    let author = books[i].author;
+    let alreadyRead = books[i].alreadyRead;
+    p.textContent = `${title}, ${author}, ${alreadyRead}`;
+    img.src = imge[i];
+    img.style.wedth = "250px";
+    if (alreadyRead === true) {
+      li.style.backgroundColor = "green";
+    }else {
+      li.style.backgroundColor = "red";
+    }
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+  } 
+  contect.appendChild(ul);    //Write your code in here
 }
 
 //

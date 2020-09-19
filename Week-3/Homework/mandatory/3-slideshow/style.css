@@ -1,1 +1,37 @@
 /** Write your CSS in here **/
+* {
+    padding: 0;
+    margin: 0;
+    block-size: border-box;
+    }
+    
+    .carousel-container {
+        width: 50%;
+        margin: auto;
+        border: 10px solid black;
+    }
+    img {
+        width: 700px;
+        height: 500px;
+        background-color: aquamarine;
+    }
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #backWard {
+        margin: 40px;
+    }
+    #previousBtn {
+        margin: 40px;
+    }
+    #stopBtn {
+        margin: 40px;
+    }
+    #nextBtn {
+        margin: 40px;
+    }
+    #forkWard {
+        margin: 40px;
+    }

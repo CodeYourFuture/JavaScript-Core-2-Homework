@@ -11,7 +11,8 @@ let kitten = {
 // YOUR CODE GOES BELOW HERE
 
 
-
+let x = kitten.ageMonths;
+console.log(x);
 
 
 

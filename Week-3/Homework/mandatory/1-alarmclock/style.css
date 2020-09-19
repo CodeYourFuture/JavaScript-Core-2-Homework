@@ -1,13 +1,17 @@
+
 .centre {
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background-color: aqua;
+  text-align: center;
 }
 
 #alarmSet {
   margin: 20px;
+  text-align: left;
 }
 
 h1 {
