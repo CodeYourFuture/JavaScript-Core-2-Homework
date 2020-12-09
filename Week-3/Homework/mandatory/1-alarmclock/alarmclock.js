@@ -1,7 +1,7 @@
 function setAlarm() {
 
   let setAlarmbutton=document.querySelector("#set");
-  let alarmInputValue=document.querySelector("#alarmSet").value;// this is value in box
+  let alarmInputValue=document.querySelector("#alarmSet").value;
   setAlarmbutton.addEventListener("click",alarmOn(alarmInputValue));
 }
 
@@ -30,7 +30,7 @@ function updateScreen(newValue){
 
 
 // This will convert input time (initially in seconds) into minutes and seconds format.
-function convertTime(inputValue) 
+function convertTime(inputValue)  //inputValue is times in seconds and this function returns time in minutes and seconds.
 {
   var minutes=0;
   var seconds =0;
