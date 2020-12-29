@@ -6,7 +6,21 @@
 let groceriesToBuy = [];
 
 let groceryList = {
-  item1: "",
-  item2: "",
-  item3: ""
+  item1: "Potatoes",
+  item2: "Orange Juice",
+  item3: "Rice"
 };
+//1.simple way :not required
+ groceriesToBuy=Object.values(groceryList);
+ console.log(groceriesToBuy);
+//2.loop through :required
+let len=Object.keys(groceryList).length;
+let cnt=1,key;
+for(let i=0;i<len;i++){
+  key="item".concat(cnt);
+  groceriesToBuy[i]=groceryList[key];
+   cnt++;
+}
+
+
+console.log(groceriesToBuy);

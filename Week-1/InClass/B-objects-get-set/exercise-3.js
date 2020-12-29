@@ -3,9 +3,12 @@
 */
 
 // WRITE CODE BELOW THIS
+kitten={
+    name:"Gilbert"
+};
 
 // WRITE CODE ABOVE THIS
 
-console.log(kitten.name);
+console.log(kitten["name"]);
 
 // -> it should output: "Gilbert"
