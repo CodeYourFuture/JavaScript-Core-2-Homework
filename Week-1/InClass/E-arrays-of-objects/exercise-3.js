@@ -54,31 +54,31 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
-// let restaurantFinderApplication = {
-//   applicationName: "Restaurant Finder",
-//   applicationVersion: "1.0",
-//   restaurants: restaurants,
-//   findAvailableRestaurants: function (numberOfPeople) {
-//     // Complete here
-//    return restaurants.filter((item) => {
-//      if(item.totalSeats - item.numberOfCustomers >= numberOfPeople) {return item.totalSeats}
-//     }).map((item) => {return item.name})
-//   },
+let restaurantFinderApplication = {
+  applicationName: "Restaurant Finder",
+  applicationVersion: "1.0",
+  restaurants: restaurants,
+  findAvailableRestaurants: function (numberOfPeople) {
+    // Complete here
+   return restaurants.filter((item) => {
+     if(item.totalSeats - item.numberOfCustomers >= numberOfPeople) {return item.totalSeats}
+    }).map((item) => {return item.name})
+  },
 
-//   findRestaurantServingDish: function (dishName) {
-//     // Complete here
-//     return restaurants.filter((item) => {
-//         if(item.menu.includes(dishName)) {return item.menu}
-//     }).map((item) => {return item.name})
-//   },
+  findRestaurantServingDish: function (dishName) {
+    // Complete here
+    return restaurants.filter((item) => {
+        if(item.menu.includes(dishName)) {return item.menu}
+    }).map((item) => {return item.name})
+  },
 
-//   countNumberOfRestaurantsInArea: function (area) {
-//     // Complete here
-//     return restaurants.filter((item) => {
-//         if(item.address.area.includes(area)) {return item.address.area}
-//     }).map((item) => {return item.name}).length
-//     }
-//   }
+  countNumberOfRestaurantsInArea: function (area) {
+    // Complete here
+    return restaurants.filter((item) => {
+        if(item.address.area.includes(area)) {return item.address.area}
+    }).map((item) => {return item.name}).length
+    }
+  }
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
