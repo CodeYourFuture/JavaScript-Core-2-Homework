@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -11,7 +10,31 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Write your HTML in here -->
+    <div>
+      <div class="image-set">
+        <img id="image-slider" src="" alt="image gallery" />
+      </div>
+      <div class="button-container">
+        <button id="auto-backward">
+          AutoBackward
+        </button>
+        <button id="backward">
+          Backward
+        </button>
+        <button id="stop">
+          Stop
+        </button>
+        <button id="forward">
+          Forward
+        </button>
+        <button id="auto-forward">
+          AutoForward
+        </button>
+      </div>
+    </div>
+    <script src="slideshow.js"></script>
   </body>
 </html>

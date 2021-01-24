@@ -490,3 +490,38 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+// array of background images //
+const bckGroundImages = [
+  "images/image1.jpg",
+  "images/image2.jpg",
+  "images/image3.jpg",
+  "images/image4.jpg",
+];
+
+// selectors //
+const quoteText = document.getElementById("quote");
+const authorText = document.getElementById("author");
+const newQuoteBtn = document.getElementById("new-quote");
+
+// async function //
+async function getQuote() {
+  try {
+    const response = await pickFromArray(quotes);
+    const data = await response;
+    quoteText.innerText = data.quote;
+    authorText.innerText = data.author;
+    const randomNumber = Math.floor(Math.random() * bckGroundImages.length);
+    document.getElementById(
+      "quote-container"
+    ).style.backgroundImage = `url(${bckGroundImages[randomNumber]})`;
+  } catch (error) {
+    console.log("I'm sorry there's no more quotes to display");
+  }
+}
+
+//On load
+getQuote();
+
+//Event listener on Button Click function
+newQuoteBtn.addEventListener("click", getQuote);
