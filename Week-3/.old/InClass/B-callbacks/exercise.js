@@ -17,6 +17,7 @@
 document.querySelector('#button1').addEventListener('click', exercise1)
 
 function exercise1() {
+  
   // Write your implementation here
 }
 

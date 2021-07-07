@@ -59,17 +59,47 @@ let restaurantFinderApplication = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
-    findAvailableRestaurants: function (numberOfPeople) {
-        // Complete here
+
+    findAvailableRestaurants: function(numberOfPeople) { // Complete here
+        let namesOfRestaurants = "";
+        restaurants.forEach(restaurant => {
+            if(numberOfPeople <= restaurant.totalSeats - restaurant.numberOfCustomers){
+                namesOfRestaurants += restaurant.name + "," 
+            }
+        })
+        return namesOfRestaurants;
     },
-    findRestaurantServingDish: function (dishName) {
-        // Complete here
+
+   findRestaurantServingDish: function (dishName) { // Complete here
+        return this.restaurants.filter(restaurant => restaurant.menu.includes(dishName)).map(restaurant => restaurant.name);
     },
-    countNumberOfRestaurantsInArea: function (area) {
-        // Complete here
+
+    /* findRestaurantServingDish: function(dishName) { // Complete here
+       let newArr=[];
+        restaurants.filter(menu => {
+
+            //newArr = restaurants.includes(dishName);
+            newArr.push(restaurants.menu.includes(dishName))
+        });
+        return newArr;
+    }, */
+
+/////////
+ 
+    countNumberOfRestaurantsInArea: function (area) { // Complete here
+        return (this.restaurants.filter(restaurant => restaurant.address.area == area)).length;
     }
+
+/////////
+    //countNumberOfRestaurantsInArea: function() { // Complete here
+       // return this.restaurants.address.includes("area");
+   // }
+
 };
 
+function restaurantNames (restaurant){
+    return restaurant.name;
+}
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE

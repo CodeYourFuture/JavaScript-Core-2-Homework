@@ -1,3 +1,34 @@
+
+let bodyHTML = document.getElementsByTagName("body");
+let newPEl = document.querySelector("#quote-para");
+let newButtonEl = document.querySelector("#quote-select");
+
+
+
+
+function selectQuotes ( ){
+  let randomNum = Math.floor(Math.random() * quotes.length); 
+  newPEl.textContent = `${quotes[randomNum].quote}-${quotes[randomNum].author}`;
+} 
+
+
+newButtonEl.addEventListener("click", selectQuotes);
+
+
+let buttonCheckbox = document.querySelector(".checkbox-click");
+buttonCheckbox.addEventListener("change", e=>{
+  let interval; 
+  if(e.target.checked){
+    interval = setInterval(function (){
+      let randomNum = Math.floor(Math.random() * quotes.length); 
+      newPEl.textContent = `${quotes[randomNum].quote}-${quotes[randomNum].author}`;
+    }, 1000);
+  }else{
+    clearInterval(interval);
+  }
+})
+
+
 // DO NOT EDIT BELOW HERE
 
 // A function which will return one item, at

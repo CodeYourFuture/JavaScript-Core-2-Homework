@@ -12,11 +12,24 @@
  *      <h2>{Job Here}</h2>
  *      .....
  * </div>
- */
+
+*/
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
-}
+  let nameOfPerson, jobOfPerson;
 
+  arrayOfPeople.forEach(person => {
+    nameOfPerson = document.createElement("h1");
+    nameOfPerson.innerText = person.name;
+    content.appendChild(nameOfPerson);
+
+    jobOfPerson = document.createElement("h2");
+    jobOfPerson.innerHTML = person.job;
+    content.appendChild(jobOfPerson);
+  })
+} 
+//exerciseOne();
 /**
  *
  * Create a list of shopping items. You should use an unordered list.
@@ -24,8 +37,18 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
+
+ 
 function exerciseTwo(shopping) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  let unOrderedList = document.createElement("ul")
+  content.appendChild(unOrderedList);
+
+  shopping.forEach(item => {
+    let li1 = document.createElement("li");
+    li1.innerText = item;
+    unOrderedList.appendChild(li1);
+  })
 }
 
 /**
@@ -57,10 +80,108 @@ function exerciseTwo(shopping) {
 
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
+let images = [
+  {
+    title:"The Design of Everyday Things", 
+    src:"images/the-design-of-everyday-things.jpeg" 
+  },
+   {
+    title:"The Most Human Human", 
+    src:"images/the-most-human-human.jpeg" 
+  },
+   {
+    title:"The Pragmatic Programmer", 
+    src:"images/the-pragmatic-programmer.jpeg" 
+  }
+]
+
 function exerciseThree(books) {
-  //Write your code in here
+    
+    let content = document.querySelector("#content");
+    console.log (content);
+
+    let bookList = document.createElement("ul");
+    content.appendChild(bookList);
+    
+    books.forEach((book) => {
+        let imageSrc;
+        let listItem = document.createElement("li");
+        bookList.appendChild(listItem);
+        let bookHeader = document.createElement("p");
+        bookHeader.textContent = `${book.title} - ${book.author}`;
+        listItem.appendChild(bookHeader);
+        let imageItem = document.createElement("img");
+
+        images.find((image) => {
+            if (image.title === book.title){
+            imageSrc = image.src;
+          }
+        })
+
+        imageItem.src = imageSrc;
+        listItem.style.margin = "15px";
+        listItem.appendChild(imageItem);
+
+        if (book.alreadyRead){
+          listItem.style.backgroundColor = "green";
+        } else {
+          listItem.style.backgroundColor = "yellow";
+        }
+    });
+
+    bookList.style.listStyle = "none";
+    bookList.style.display = "flex";
+
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* This is another way of solution.
+
+function exerciseThree(books) {
+
+  let bookList = document.createElement("ul");
+
+  books.forEach(book => {
+    let imageSrc;
+
+    imageArr.forEach(image => {
+      if (book.title === image.title){
+        imageSrc = image.src;
+      }
+    });
+
+    let ListItem = document.createElement("li");
+    let bookHeader = document.createElement("p");
+
+    bookHeader.textContent = `${book.title} - ${book.author}`;
+
+    let image = document.createElement("img");
+    image.src = imageSrc;
+
+    if (book.alreadyRead === true){
+      listItem.style.backgroundColor = "green";
+    } else{
+      listItem.style.backgroundColor = "red";
+    }
+
+    listItem.append(bookHeader);
+    listItem.append(image);
+    bookList.appendChild(listItem);
+    let content = document.querySelector("#content");
+
+  });
+
+  //let content = document.querySelector("#content");
+  //document.body.appendChild(bookList);
+  //content.appendChild(bookList);
+}
+
+// let listItem = document.createElement("li");
+// listItem.className = "bookItem";
+
+*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //
 //

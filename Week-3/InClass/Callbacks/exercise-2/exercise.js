@@ -61,10 +61,117 @@ const movies = [
   },
 ];
 
-// create showMovies function
+////////////////////////////////////////////////////////////
+// Task-1 ; create showMovies function
 
+function showMovies() {
+  let divAllMovies = document.querySelector("#all-movies");
+  let spanMoviesNumberEl = document.querySelector("#movies-number");
+
+  movies.forEach((movie) => {
+    let newPEl = document.createElement("p");
+    newPEl.textContent = `${movie.title}-${movie.director}`;
+    divAllMovies.appendChild(newPEl);
+    spanMoviesNumberEl.innerText = movies.length;
+  });
+}
 
 // create a new movie object for your favorite movie
 
+let newMovieOb1 = {
+  title: "Annihilation",
+  director: "Alex Garland",
+  type: "Science Fiction",
+  haveWatched: true,
+};
+
+//////////////////////////////////////////////////////////////
+// Task-2 amend the showMovies with setTimeout to 1 second.
 
 // create addMovies function
+let newMovieOb2 = {
+  title: "The Martian",
+  director: "Ridley Scott",
+  type: "Science Fiction",
+  haveWatched: true,
+};
+
+function addMovies(movie) {
+  movies.push(movie);
+}
+
+//////////////////////////////////////////////////////////////
+//Task-3 Callbacks,
+setTimeout(showMovies, 1000);
+console.log("Hello");
+setTimeout(addMovies(newMovieOb1), 2000);
+setTimeout(addMovies(newMovieOb2), 5000);
+
+///////////////////////////////////////////////////////////////
+// Task 4 - **Extra**
+
+let bodyEl = document.querySelector("body");
+let newFormEl = document.createElement("form");
+newFormEl.className = "new-form";
+
+let label1 = document.createElement("label");
+label1.innerHTML = `movie title`;
+label1.for = "mTitle";
+let inputEl1 = document.createElement("input");
+inputEl1.type = "text";
+inputEl1.for = "mTitle";
+
+newFormEl.appendChild(label1);
+newFormEl.appendChild(inputEl1);
+
+bodyEl.appendChild(newFormEl);
+let scriptEl = document.getElementsByTagName("script");
+bodyEl.lastChild = scriptEl;
+
+let label2 = document.createElement("label");
+label2.innerHTML = `movie director`;
+label2.for = "mDirector";
+let inputEl2 = document.createElement("input");
+inputEl2.type = "text";
+inputEl2.for = "mDirector";
+
+newFormEl.appendChild(label2);
+newFormEl.appendChild(inputEl2);
+
+let label3 = document.createElement("label");
+label3.innerHTML = `movie type`;
+label3.for = "mType";
+let inputEl3 = document.createElement("input");
+inputEl3.type = "text";
+inputEl3.for = "mType";
+
+newFormEl.appendChild(label3);
+newFormEl.appendChild(inputEl3);
+
+let label4 = document.createElement("label");
+label4.innerHTML = `having watched`;
+label4.for = "mHaveWatched";
+let inputEl4 = document.createElement("input");
+inputEl4.type = "text";
+inputEl4.for = "mHaveWatched";
+
+newFormEl.appendChild(label4);
+newFormEl.appendChild(inputEl4);
+
+let newButtonEl = document.createElement("button");
+newButtonEl.type = "button";
+newButtonEl.textContent = "Save";
+newFormEl.appendChild(newButtonEl);
+
+////////////////////////////////////////////////////////////
+// Function with "click";
+
+function addNewMovie(movie) {
+  movies.title = movie.title.value;
+  movies.director = movie.director.value;
+  movies.type = movie.type.value;
+  movies.haveWatched = movie.haveWatched.value;
+  movies = movies + movies[movie];
+}
+
+newButtonEl.addEventListener("click", addNewMovie);
